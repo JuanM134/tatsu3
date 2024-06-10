@@ -13,7 +13,7 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalintroexpand_1.mp4" autoplay loop muted>
+                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalimage.mp4" autoplay loop muted>
                         Your browser does not support the video tag.
                     </video>          
                 </div>
@@ -57,6 +57,7 @@ async function home() {
 <style scoped>
 .title-container {
     width: 750px;
+    
 }
  
 .container-content {
@@ -91,7 +92,7 @@ async function home() {
   right: 0;
   bottom: 0;
   top: 11%;
-  left: 5%;
+  left: 75px;
   mix-blend-mode: darken;
   
 }

@@ -13,8 +13,8 @@
                 <div class="me-auto"></div>
                 <div class="d-flex ">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <NuxtLink to="/history" class="nav-link">
+                        <li class="nav-item" >
+                            <NuxtLink to="/history" class="nav-link" >
                                 <div class="tab justify-content-center">
                                     <div >
                                         HISTORY     
@@ -94,7 +94,7 @@
     padding-left: 20px; 
     padding-right: 20px;
 
-    color: #FFC1C1;
+    color: #F47A7A;
     font-family:  MontSerrat;
     font-weight: 400;
     font-style: normal;
@@ -105,7 +105,7 @@
 
 .tab:hover {
 
-    background-color: #FFC1C1;
+    background-color: #F47A7A;
     color: #1D1B1B;
     
 } 
@@ -120,6 +120,8 @@
     background: #1B1818;
     border: 1px #1B1818 solid;
     border-radius: 8px;
+    position: relative;
+    left: -45%;
     /* justify-content: center; 
     align-items: center; 
     display: inline-flex; */
@@ -130,10 +132,11 @@
     height: 81px;  */
     width: 180px; 
     height: 70px; 
-    color: #FFC1C1; 
+    color: #F47A7A; 
     font-size: 40px;
     font-family: Bernoru;
     text-align: center;
+    letter-spacing: -2px;
     line-height: 52.40px;
     /* line-height: 49.40px; */
 }

@@ -8,7 +8,7 @@
                     <Dropupbttn style="z-index: 2; left: 89%;" />
 
 
-                    <div style="color: white; font-size: 64px; font-family: Bernoru; font-weight: 900; line-height: 50.40px; box-shadow: black 3px; padding-left: 19%; padding-top: 5%; ">TALE OF THE TATSU</div>
+                    <div style="color: white; font-size: 64px; font-family: Bernoru; font-weight: 900; line-height: 50.40px; box-shadow: black 3px; padding-left: 3%; padding-top: 5%; ">TALE OF THE TATSU</div>
 
                         <div class="containerHistory">
                             
@@ -39,12 +39,12 @@
                             <div style="width: 475px; height: 19.58px; background-color: #1D1B1B; "></div>
 
                             <span class="paragraph" style="z-index: 2; bottom: 317px; left: 7px; position: relative; color: white; font-family: IMBPlexMono; font-size: 12.5px; font-style: regular ;font-weight: 400; line-height: 25px; letter-spacing: 1.20px; word-wrap: none;"> 
-                                                 <a  v-if="showFirstText" @click="showText1" style="text-decoration: none; color: white;"> I-   Origins </a>
-                                            <br/><a  v-if="showFirstText" @click="showText3" style="text-decoration: none; color: white;"> II-     Philosophy </a>
-                                            <br/><a  v-if="showFirstText" @click="showText4" style="text-decoration: none; color: white;"> III-    Way of life </a>
-                                            <br/><a  v-if="showFirstText" @click="showText5" style="text-decoration: none; color: white;">IV-     Relation to the world</a>
-                                            <br/><a  v-if="showFirstText" @click="showText6" style="text-decoration: none; color: white;">V-      Powers</a>
-                                            <br/><a  v-if="showFirstText" @click="showText7" style="text-decoration: none; color: white;">VI-     The future</a>
+                                                 <a  v-if="showFirstText" @click="showText1" style="text-decoration: none; color: white; cursor: pointer; "> I- &nbsp;&nbsp;Origins </a>
+                                            <br/><a  v-if="showFirstText" @click="showText3" style="text-decoration: none; color: white; cursor: pointer; "> II- &nbsp;Philosophy </a>
+                                            <br/><a  v-if="showFirstText" @click="showText4" style="text-decoration: none; color: white; cursor: pointer; "> III- Way of life </a>
+                                            <br/><a  v-if="showFirstText" @click="showText5" style="text-decoration: none; color: white; cursor: pointer; ">IV- &nbsp;Relation to the world</a>
+                                            <br/><a  v-if="showFirstText" @click="showText6" style="text-decoration: none; color: white; cursor: pointer; ">V- &nbsp;&nbsp;Powers</a>
+                                            <br/><a  v-if="showFirstText" @click="showText7" style="text-decoration: none; color: white; cursor: pointer; ">VI- &nbsp;The future</a>
                                     
                             </span>
 
@@ -62,9 +62,9 @@
                                         
                                 </div>
                             
-                                <div v-if="showSecondText" @click="showText2" id="aleft" style="bottom: 447px; left: 85%; position: relative;">
+                                <div v-if="showSecondText" @click="showText2" id="aleft" style="cursor: pointer; bottom: 447px; left: 85%; position: relative; ">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
-                                        <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
+                                        <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white; " />
                                     </a>
                                 </div>
 
@@ -79,7 +79,7 @@
                                     
                                  </div>
                         
-                                <div v-if="showThirdText" id="aleft" @click="showText3" style="bottom: 447px; left: 85%; position: relative;">
+                                <div v-if="showThirdText" id="aleft" @click="showText3" style="cursor: pointer; bottom: 447px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg" beat style="color: white;" />
                                     </a>
@@ -97,7 +97,7 @@
                                       
                                 </div>
                                 
-                                <div id="aleft" v-if="showForthText" @click="showText4" style="bottom: 447px;  left: 85%; position: relative;">
+                                <div id="aleft" v-if="showForthText" @click="showText4" style="cursor: pointer; bottom: 447px;  left: 85%; position: relative;">
                                     <a class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg" beat style="color: white;" />
                                     </a>
@@ -119,7 +119,7 @@
                                     
                                 </div>
                                 
-                                <div id="aleft" v-if="showFifthText" @click="showText5" style="bottom: 447px; left: 85%; position: relative;">
+                                <div id="aleft" v-if="showFifthText" @click="showText5" style="cursor: pointer; bottom: 447px; left: 85%; position: relative;">
                                     <a   class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg" beat style="color: white;" />
                                     </a>
@@ -137,7 +137,7 @@
                                          
                                 </div>
                                 
-                                <div id="aleft" v-if="showSixthText" @click="showText6" style="bottom: 447px; left: 85%; position: relative;">
+                                <div id="aleft" v-if="showSixthText" @click="showText6" style="cursor: pointer; bottom: 447px; left: 85%; position: relative;">
                                     <a   class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg" beat style="color: white;" />
                                     </a>
@@ -157,7 +157,7 @@
                                      
                                 </div>
                             
-                                <div id="aleft" v-if="showSeventhText" @click="showText7" style="bottom: 447px; left: 85%; position: relative;">
+                                <div id="aleft" v-if="showSeventhText" @click="showText7" style="cursor: pointer; bottom: 447px; left: 85%; position: relative;">
                                     <a   class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg" beat style="color: white;" />
                                     </a>
@@ -166,7 +166,7 @@
                         </div>
 
                         <p style="font-family: Bernoru; color: #1D1B1B; font-size: larger; top: -18%;
-                        position: relative ; left: 42%;" v-if="showFirstText" >MORE TALES</p>
+                        position: relative ; left: 27%;" v-if="showFirstText" >MORE TALES</p>
 
                         <div id="aup" v-if="showFirstText" >
                            <a  href="#background2" class="ms-2 me-2 team-link link-dark text-center">
@@ -178,7 +178,7 @@
             <section id="background2" class="background2">
 
                 
-                <div style="color: rgb(252, 252, 252); font-size: 64px; font-family: Bernoru; font-weight: 900; line-height: 50.40px; padding-left: 21%; padding-top: 220px">TALE OF NOHIMA</div>
+                <div style="color: rgb(252, 252, 252); font-size: 64px; font-family: Bernoru; font-weight: 900; line-height: 50.40px; padding-left: 4.5%; padding-top: 220px">TALE OF NOHIMA</div>
                 
                     <div class="containerHistory2">
 
@@ -204,21 +204,21 @@
                             <div style="width: 470px; height: 19.58px; background-color: #1D1B1B; "></div>
                             <div style="width: 470px; height: 7px; background-color: #ffffff00; "></div>
                             <div style="width: 470px; height: 19.58px; background-color: #1D1B1B; "></div>
-                            <div style="width: 475px; height: 7px; background-color: #ffffff00; "></div>
-                            <div style="width: 475px; height: 19.58px; background-color: #1D1B1B; "></div>
-                            <div style="width: 475px; height: 7px; background-color: #ffffff00; "></div>
-                            <div style="width: 475px; height: 19.58px; background-color: #1D1B1B; "></div>
+                            <div style="width: 470px; height: 7px; background-color: #ffffff00; "></div>
+                            <div style="width: 470px; height: 19.58px; background-color: #1D1B1B; "></div>
+                            <div style="width: 470px; height: 7px; background-color: #ffffff00; "></div>
+                            <div style="width: 470px; height: 19.58px; background-color: #1D1B1B; "></div>
 
 
                             <span class="paragraph" style="z-index: 2; bottom: 316px; left: 7px; position: relative; color: white; font-size: 12.5px; font-family: IMBPlexMono; font-style: regular ;font-weight: 400; line-height: 25px; letter-spacing: 1.20px; word-wrap: none;"> 
-                                                 <a  v-if="showEigthText" @click="showText8" style="text-decoration: none; color: white;"> I- Prelude to the fall </a>
-                                            <br/><a  v-if="showEigthText" @click="showText10" style="text-decoration: none; color: white;"> II- Construction of the citadel </a>
-                                            <br/><a  v-if="showEigthText" @click="showText11" style="text-decoration: none; color: white;"> III- The great collapse</a>
-                                            <br/><a  v-if="showEigthText" @click="showText12" style="text-decoration: none; color: white;"> IV- Emergence of factions</a>
-                                            <br/><a  v-if="showEigthText" @click="showText13" style="text-decoration: none; color: white;"> V- The ascendance of the citadel</a>
-                                            <br/><a  v-if="showEigthText" @click="showText14" style="text-decoration: none; color: white;"> VI- Revolt & resistance</a>
-                                            <br/><a  v-if="showEigthText" @click="showText15" style="text-decoration: none; color: white;"> VII- The peace accords</a>
-                                            <br/><a  v-if="showEigthText" @click="showText16" style="text-decoration: none; color: white;"> VIII- The present day</a>
+                                                 <a  v-if="showEigthText" @click="showText8" style="text-decoration: none; color: white; cursor: pointer;"> I- &nbsp;&nbsp;&nbsp;Prelude to the fall </a>
+                                            <br/><a  v-if="showEigthText" @click="showText10" style="text-decoration: none; color: white; cursor: pointer; "> II- &nbsp;&nbsp;Construction of the citadel </a>
+                                            <br/><a  v-if="showEigthText" @click="showText11" style="text-decoration: none; color: white; cursor: pointer; "> III- &nbsp;The great collapse</a>
+                                            <br/><a  v-if="showEigthText" @click="showText12" style="text-decoration: none; color: white; cursor: pointer; "> IV- &nbsp;&nbsp;Emergence of factions</a>
+                                            <br/><a  v-if="showEigthText" @click="showText13" style="text-decoration: none; color: white; cursor: pointer; "> V- &nbsp;&nbsp;&nbsp;The ascendance of the citadel</a>
+                                            <br/><a  v-if="showEigthText" @click="showText14" style="text-decoration: none; color: white; cursor: pointer;"> VI- &nbsp; Revolt & resistance</a>
+                                            <br/><a  v-if="showEigthText" @click="showText15" style="text-decoration: none; color: white; cursor: pointer;"> VII- &nbsp;The peace accords</a>
+                                            <br/><a  v-if="showEigthText" @click="showText16" style="text-decoration: none; color: white; cursor: pointer;"> VIII- The present day</a>
                                     
                             </span>
 
@@ -234,7 +234,7 @@
                                        
                                 </div>
                             
-                                <div v-if="showNinthText" @click="showText9" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showNinthText" @click="showText9" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -251,7 +251,7 @@
                                         
                                 </div>
                             
-                                <div v-if="showTenthText" @click="showText10" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showTenthText" @click="showText10" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -266,7 +266,7 @@
                                        
                                 </div>
                             
-                                <div v-if="showEleventhText" @click="showText11" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showEleventhText" @click="showText11" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -282,7 +282,7 @@
                                         
                                 </div>
                             
-                                <div v-if="showTwelfthText" @click="showText12" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showTwelfthText" @click="showText12" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -298,7 +298,7 @@
                                        
                                 </div>
                             
-                                <div v-if="showThirteenthText" @click="showText13" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showThirteenthText" @click="showText13" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -314,7 +314,7 @@
                                         
                                 </div>
                             
-                                <div v-if="showFourteenthText" @click="showText14" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showFourteenthText" @click="showText14" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -330,7 +330,7 @@
                                         
                                 </div>
                             
-                                <div v-if="showFifteenthText" @click="showText15" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showFifteenthText" @click="showText15" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -346,7 +346,7 @@
                                        
                                 </div>
                             
-                                <div v-if="showSixteenthText" @click="showText16" id="aleft" style="bottom: 500px; left: 85%; position: relative;">
+                                <div v-if="showSixteenthText" @click="showText16" id="aleft" style="cursor: pointer; bottom: 500px; left: 85%; position: relative;">
                                     <a  class="ms-2 me-2 team-link link-dark text-center">
                                         <font-awesome-icon class="aleft" icon="fa-solid fa-arrow-left" size="lg"  style="color: white;" />
                                     </a>
@@ -471,10 +471,10 @@ export default {
 #aup{
 
     background-color: #1D1B1B;
-    width: 30px;
+    width: 30.5px;
     height: 30px;
     top: -23%;
-    left: 39%;
+    left: 24.5%;
     position: relative;
     
 }
@@ -483,7 +483,7 @@ export default {
 
   position: relative;
   animation-name: example;
-  animation-duration: 0.7s;
+  animation-duration: 0.9s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   
@@ -529,12 +529,13 @@ export default {
     }
 
 .background {
-    background-image: url('assets/images/v2/dragonFinal.png');
+  
+    background-image: url('/assets/images/v2/dragon.png');
     background-size: 100%;
-    
+    background-position: sticky;
     background-position-y: 90%;
     background-repeat: no-repeat;
-    background-color: white;
+    background-color: #DDD9DA;
     
     
 
@@ -553,7 +554,7 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: white;
+    background-color: #DDD9DA;
     
 
 
@@ -569,9 +570,10 @@ export default {
 
 
 .containerHistory{
+
     width: 479px; 
     height: auto; 
-    left: 20%; 
+    left: 4%; 
     top: 25px;
     position: relative; 
 
@@ -590,7 +592,7 @@ export default {
 .containerHistory2{
     width: 479px; 
     height:400px; 
-    left: 20%; 
+    left: 4%; 
     top: 30px;
     position: relative; 
 

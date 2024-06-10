@@ -1,11 +1,11 @@
 <template>
     
     <div class="dropup">
-            <button class="dropbtn">  </button>
+            <button class="dropbtn"> <font-awesome-icon icon="fa-solid fa-minus" size="xl" /> </button>
             <div class="dropup-content">
-                <a href="#"><font-awesome-icon id="prueba" icon="fa-brands fa-x-twitter" size="lg" style="color: #FFC1C1; " /></a> 
-                <a href="#"><font-awesome-icon id="prueba" icon="fa-brands fa-instagram" size="xl" style="color: #FFC1C1; " /></a>
-                <a href="#"><font-awesome-icon id="prueba" icon="fa-brands fa-discord" size="lg" style="color: #FFC1C1; " /></a>
+                <a href="https://x.com/tatsu_nyc"><font-awesome-icon id="prueba" icon="fa-brands fa-x-twitter" size="lg" style="color: #F47A7A; " /></a> 
+                <a href="https://www.instagram.com/tatsu_nyc/"><font-awesome-icon id="prueba" icon="fa-brands fa-instagram" size="xl" style="color: #F47A7A; " /></a>
+                <a href="#"><font-awesome-icon id="prueba" icon="fa-brands fa-discord" size="lg" style="color: #F47A7A; " /></a>
             </div>
         </div> 
         
@@ -33,7 +33,7 @@
 
     border-radius: 30px 30px 30px 30px;
 
-    background-image: url(assets/images/icons/minus-solid.svg);
+
 
     background-repeat: no-repeat;
     background-position-x: center ;
@@ -42,7 +42,7 @@
 
     background-color: #242323fa;
     border-color: rgb(34, 34, 34);
-    color: #FFC1C1;
+    color: #F47A7A;
     z-index: 2;   
     position: relative;
 
@@ -66,7 +66,7 @@
   display: none;
   position: absolute;
   bottom: 50px;
-  color: #FFC1C1;
+  color: #F47A7A;
 
   left: -40%;
   z-index: 1;
@@ -143,7 +143,6 @@
   height: 25px;
   margin-top: 2px;
   
-
 }
 
 

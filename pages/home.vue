@@ -6,10 +6,9 @@
         
 
         <div class="" style="z-index: -1;">
-            <video autoplay loop muted id="myVideo" src="@/assets/videos/finalintroexpand_1.mp4" >
+            <video autoplay loop muted id="myVideo" src="@/assets/videos/finalimage.mp4" >
                 Your browser does not support the video tag.
             </video>
-            
         </div>
 
 
@@ -21,7 +20,7 @@
 
 
         <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1 class="title" style="z-index: 1;">TATSU </h1>
+            <h1 class="title" style="z-index: 1;"> TATSU </h1>
         </div> 
 
         
@@ -42,7 +41,7 @@
 
 .background {
     
-    background-color: rgb(255, 255, 255);
+    background-color: #DDD9DA;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
@@ -57,13 +56,15 @@
     z-index: 0;
 }
 
+
 .title {
     font-family: 'Bernoru';
     color: #000000;
     font-size: 400px;
     font-weight: 900;
-    letter-spacing: -22px;
+    letter-spacing: -27px;
     margin-top: -5%;
+    text-shadow: #10101060 3px 3px 3px;
   
 
     z-index: 1;

@@ -11,11 +11,11 @@
         
         
 
-        <div class="center" style="z-index: 1;">
 
-            <div class="title" id="title" style="letter-spacing: -40px'; ">COMING SOON</div>
+
+            <p class="title" id="title" >COMING SOON </p>
             
-        </div> 
+
 
         
         
@@ -37,8 +37,8 @@
 <!-- CSS -->
 <style scoped>
 .background {
-    background-image: url('assets/images/v2/worldImage1.png');
-    background-color: rgb(255, 255, 255);
+    
+    background-color: #DDD9DA;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
@@ -54,14 +54,15 @@
 }
 
 .title {
-    width: 800px;
-    height: 100px; 
+
+
     color: #0A0101; 
     font-size: 100px; 
     font-family: Bernoru; 
     font-weight: 900; 
     line-height: 102.40px; 
-    
+    margin-top: 8%;
+    text-align: center;
    
     
 }
