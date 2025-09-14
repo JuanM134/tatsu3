@@ -14,7 +14,7 @@
               v-show="showVideo" 
               autoplay loop muted playsinline 
               class="video-bg">
-              <source src="@/assets/videos/finalimage2.mp4" type="video/mp4" />
+              <source src="@/assets/videos/finalImage2.mp4" type="video/mp4" />
             </video>
           </h1>
         </div>
