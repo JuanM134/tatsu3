@@ -5,9 +5,11 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
+import { faEquals } from '@fortawesome/free-solid-svg-icons'
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
 
 
 // This is important, we are going to let Nuxt worry about the CSS
@@ -20,9 +22,11 @@ library.add(faArrowUp)
 library.add(faArrowLeft)
 library.add(faPlus)
 library.add(faMinus)
+library.add(faEquals)
 library.add(faXTwitter)
 library.add(faDiscord)
 library.add(faInstagram)
+library.add(faHouse)
 
 
 

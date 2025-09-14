@@ -1,43 +1,51 @@
 <template>
 
-    <div class="background"> 
-        <navbar style="z-index: 4;" />   
-        <Dropupbttn style="z-index: 4;" /> 
+ 
         
+        <div class="background"> 
+            <navbar class="navbar"  style="z-index: 5;" />   
+            <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
+            <menubttn style="position: relative; z-index: 12;"/> 
+            <navbar2 style="z-index: 4;" /> 
 
-        <div class="" style="z-index: -1;">
-            <video autoplay loop muted id="myVideo" src="@/assets/videos/finalimage.mp4" >
-                Your browser does not support the video tag.
-            </video>
+
+            <div class="container">
+
+                <div class="" style="z-index: 0;">
+                        <img class="home-image" src="@/assets/images/home.png" style="width: 100%; height: 100%; object-fit: contain;
+                         position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA;">  
+                                          
+                        <div class="video-wrap">
+
+                            <img class="home-image-mobile" src="@/assets/images/homeMobile.png" style="width: auto; height: 110dvh; object-fit: contain;
+                            position: absolute; top: 0; left: -9dvw; z-index: 0;"> 
+                            <video autoplay loop muted playsinline class="bg-video">
+                            <source src="@/assets/videos/fireNew.mp4" type="video/mp4" /></video>
+                            
+                        </div>
+
+                </div>
+
+
+                    <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+            </div>     
+            
+
+
+            
+
         </div>
-
-
-            <video autoplay loop muted id="myVideo2"  style="z-index: 3;" >
-                <source src="@/assets/videos/fireWithSound.mp4"  type="video/mp4" > 
-                Your browser does not support the video tag.
-            </video>
-
-
-
-        <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1 class="title" style="z-index: 1;"> TATSU </h1>
-        </div> 
-
-        
-
-    </div>
-
-        <!-- <div class="d-flex justify-content-center align-items-center">
-            <h1 class="title">TATSU</h1>
-        </div> -->
     
 </template>
 
-<script setup lang="ts">
+<script >
+
+
 
 </script>
 
 <style scoped>
+
 
 .background {
     
@@ -56,27 +64,39 @@
     z-index: 0;
 }
 
+    .home-image-mobile{
+        display: none;
+
+    }
+
+
 
 .title {
     font-family: 'Bernoru';
     color: #000000;
-    font-size: 400px;
-    font-weight: 900;
-    letter-spacing: -27px;
-    margin-top: -5%;
+    font-size: clamp(8rem, 40vw, 12rem); 
+    font-weight: 500;
+    letter-spacing: -1px;
     text-shadow: #10101060 3px 3px 3px;
-  
-
-    z-index: 1;
-    /* margin-top: -100px; */
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    text-align: justify;
 }
 
-.home {
-
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    .container{
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    height: 100vh;
+    position: relative; /* allow absolutely positioned video inside */
 }
+
+    .video-wrap{ position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .bg-video{ width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; pointer-events: none; mix-blend-mode: lighten; }
 
 #myVideo {
   width: 100%;
@@ -104,8 +124,111 @@
   opacity: 100%;
   mix-blend-mode: lighten;
   /*mix-blend-mode: color-burn;*/
+  display: block;
 
 }
 
+
+.odd{
+
+    display: block;
+    color: rgb(255, 255, 255);
+    font-family: IMBPlexMono;
+    font-size: 0.6rem;
+    bottom: 1rem; /* slightly raised from absolute bottom */
+    z-index: 20;
+    text-align: center;
+    position: absolute;
+    object-fit: contain;
+
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+
+    .navbar{
+
+    display: none;
+
+    }
+
+    #myvideo2{
+        display: none;
+    }
+    .odd{
+
+        display: block;
+        color: rgb(255, 255, 255);
+        font-family: IMBPlexMono;
+        font-size: 0.6rem;
+        z-index: 5;
+        text-align: center;
+        position: absolute;
+        object-fit: contain;
+        bottom: 1dvh;
+        
+
+    }
+    .home-image{
+
+        display: none;
+
+    }
+
+    .home-image-mobile{
+        background-color: #DDD9DA;
+        display: block;
+
+    }
+
+    .background{
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .title{
+
+
+        display: none;
+        
+
+    }
+
+    .dropupbttn{
+
+
+        display: none;
+
+    }
+
+    .navbar2{
+
+        display: block;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* valid flex alignment */
+        position: relative;
+        top: 0;
+        height: 100dvh;
+        z-index: 1;
+    }
+
+    #myVideo{
+        mix-blend-mode: normal;
+    }
+
+
+}
 
 </style>

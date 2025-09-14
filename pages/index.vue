@@ -13,7 +13,7 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalimage.mp4" autoplay loop muted>
+                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalimage2.mp4" autoplay loop muted>
                         Your browser does not support the video tag.
                     </video>          
                 </div>
@@ -32,9 +32,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isActive = ref(false)
 const isDarkMode = ref(false)
+const router = useRouter()
 
 function titleMouseOver() {
     isDarkMode.value = true
@@ -50,8 +53,9 @@ function mouseLeave() {
 }
 
 async function home() {
-    await navigateTo('/home')
+    await router.push('/home')
 }
+
 </script>
 
 <style scoped>
@@ -62,6 +66,7 @@ async function home() {
  
 .container-content {
     min-height: 80vh;
+    
 }
 
 .title {
@@ -85,14 +90,13 @@ async function home() {
 } 
 
 #myVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: fixed;
-  right: 0;
+  position: absolute;
+  top: 0%;
+  left: 14.3rem;
   bottom: 0;
-  top: 11%;
-  left: 75px;
+  width: 70%;
+  height: 100vh;
+  object-fit: contain;
   mix-blend-mode: darken;
   
 }
@@ -107,7 +111,8 @@ async function home() {
 }
 
 .enter-btn-flip {
-    border: 1px #0E0303 solid;
+    border: 0px #0E0303 solid;
+    border-radius: 10px 10px 10px 10px;
 
     /*upside down*/
     -webkit-transform:rotate(180deg);
@@ -118,8 +123,9 @@ async function home() {
 }
 
 .enter-btn-normal {
-    border: 1px #F47A7A solid;
-    background: #F47A7A;
+    border: 0px #000000 solid;
+    background:  #4E4E4E;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .enter-btn-text {
@@ -138,4 +144,66 @@ async function home() {
     font-weight: 900;
     line-height: 370.50px;
 } */
+
+@media only screen and (max-width: 600px) {
+
+    .title{
+
+    font-size: 8rem;
+    letter-spacing: -13px;
+
+    }
+
+    .enter-btn {
+    
+        font-size: 8px; 
+    
+    }
+
+    .enter-btn {
+    
+    width: 10rem;
+    
+    }
+
+    #myVideo{
+
+    top: 4rem;
+    left: 8vw;
+
+    background-image: url('assets/images/finalimage2.png');
+    background-position: 2% ;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    }
+
+    .enter-btn-flip {
+    border: 1px #0E0303 solid;
+
+    /*upside down*/
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform:rotate(0deg);
+}
+
+
+    .container{
+
+        overflow-x: hidden;
+        height: 100vh;
+    }
+
+    .intro{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+
 </style>

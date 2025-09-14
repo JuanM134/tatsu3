@@ -46,11 +46,11 @@
 }
 
 @keyframes example {
-  0%   { left:0px; top:-1%;}
-  25%  { left:0px; top:1%;}
-  50%  { left:0px; top:3%;}
-  75%  { left:0px; top:1%;}
-  100% { left:0%;  top:0%;}
+  0%   { transform: translateY(7%)}
+  25%  { left:0px; transform: translateY(3%)}
+  50%  { left:0px; transform: translateY(1%);}
+  75%  {color: pink;left:0px; transform: translateY(-3%);}
+  100% {color: pink; left:0%; transform: translateY(0%);}
 }
 
 </style>
