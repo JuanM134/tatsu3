@@ -50,7 +50,7 @@
                 </div>
                 <div v-if="showMarketingAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/vector.svg"/>
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
                     <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                     <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@catu_you_are</div>
                     <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
@@ -78,7 +78,7 @@
                 </div>
                 <div v-if="showArtistAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/vector.svg"/>
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
                     <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                     <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
                     <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
@@ -105,7 +105,7 @@
                 </div>
                 <div v-if="showProgrammerAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/vector.svg"/>
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
                     <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                     <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
                     <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
@@ -132,7 +132,7 @@
                 </div>
                 <div v-if="showFinanceAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/vector.svg"/>
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
                     <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                     <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
                     <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
