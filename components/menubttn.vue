@@ -1,5 +1,5 @@
 <template>
-        <button @click="showText1()" :class="['dropbtn', { active: isClicked }]" style="z-index: 4;">
+        <button @click="showText1()" :class="['dropbtn', { active: isClicked }]" style="z-index: 7;">
             <div class="line"></div>
             <div class="line2"></div>
         </button>
