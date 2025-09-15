@@ -1,8 +1,3 @@
 {
-  "build": {
-    "env": {
-      "NUXT_PUBLIC_MY_API_KEY": "@my-api-key"
-    }
-  },
   "outputDirectory": ".output/public"
 }
