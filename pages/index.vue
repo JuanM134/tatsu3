@@ -171,10 +171,11 @@ async function home() {
     top: 4rem;
     left: 8vw;
 
-    background-image: url('assets/images/finalImage2.png');
-    background-position: 2% ;
+    background-image: url('assets/images/home.png');
+    background-position: right 25% bottom 40%;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-y: hidden;
 
     width: 100%;
     }
