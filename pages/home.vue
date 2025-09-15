@@ -5,8 +5,8 @@
         <div class="background"> 
             <navbar class="navbar"  style="z-index: 5;" />   
             <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
-            <menubttn style="position: relative; z-index: 12;"/> 
-            <navbar2 style="z-index: 4;" /> 
+            <menubttn style="z-index: 6;"/> 
+            <navbar2 style="z-index: 6;" /> 
 
 
             <div class="container">
@@ -14,11 +14,17 @@
                 <div class="" style="z-index: 0;">
                         <img class="home-image" src="@/assets/images/home.png" style="width: 100%; height: 100%; object-fit: contain;
                          position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA;">  
-                                          
+                         
+                         <img class="home-image-mobile" src="@/assets/images/homeMobile.png" style="width: auto; height: 110dvh; object-fit: contain;
+                         position: absolute; top: -5dvh; left: -7dvw; z-index: 0;"> 
+                    
+                    <video autoplay loop muted playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
+                    <source src="@/assets/videos/fireNew.mp4" type="video/mp4" /></video>
+
                         <div class="video-wrap">
 
-                            <img class="home-image-mobile" src="@/assets/images/homeMobile.png" style="width: auto; height: 110dvh; object-fit: contain;
-                            position: absolute; top: 0; left: -9dvw; z-index: 0;"> 
+                            <img class="home-image-mobile" src="@/assets/images/homeMobile1.png" style="width: auto; height: 110dvh; object-fit: contain;
+                            position: absolute; top: -5dvh; left: -7dvw; z-index: 0;"> 
                             <video autoplay loop muted playsinline class="bg-video">
                             <source src="@/assets/videos/fireNew.mp4" type="video/mp4" /></video>
                             
@@ -30,7 +36,7 @@
                     <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
             </div>     
             
-
+x
 
             
 
@@ -87,16 +93,16 @@
     text-align: justify;
 }
 
-    .container{
+.container{
     display: flex;
     justify-content: center;
     align-items: bottom;
-    height: 100vh;
-    position: relative; /* allow absolutely positioned video inside */
+    height: 100vh; 
+    
 }
 
-    .video-wrap{ position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-    .bg-video{ width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; pointer-events: none; mix-blend-mode: lighten; }
+.video-wrap{ position: absolute; inset: 0; z-index: 0; overflow: hidden; display: none;}
+.bg-video{ width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; pointer-events: none; mix-blend-mode: lighten; }
 
 #myVideo {
   width: 100%;
@@ -135,8 +141,8 @@
     color: rgb(255, 255, 255);
     font-family: IMBPlexMono;
     font-size: 0.6rem;
-    bottom: 1rem; /* slightly raised from absolute bottom */
-    z-index: 20;
+    bottom: 0;
+    z-index: 4;
     text-align: center;
     position: absolute;
     object-fit: contain;
@@ -167,7 +173,7 @@
         text-align: center;
         position: absolute;
         object-fit: contain;
-        bottom: 1dvh;
+        bottom: 3dvh;
         
 
     }
@@ -193,6 +199,7 @@
         flex-direction: column;
     }
 
+    .video-wrap{ display: block; }
 
     .title{
 
@@ -217,7 +224,7 @@
     .container{
         display: flex;
         justify-content: center;
-        align-items: flex-end; /* valid flex alignment */
+        align-items: last baseline;
         position: relative;
         top: 0;
         height: 100dvh;
