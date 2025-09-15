@@ -361,7 +361,7 @@ onBeforeUnmount(() => {
   left: 0;
   bottom: 0;
   position: fixed; /* stick to viewport bottom */
-  z-index: 1;
+  z-index: 7;
   box-sizing: border-box;
   display: block;
 }
