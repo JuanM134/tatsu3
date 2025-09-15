@@ -91,7 +91,7 @@ display: none;
     height: 100vh;
     position: absolute;
     left: 0;
-    z-index: 3;
+    z-index: 5;
 
 }
 
