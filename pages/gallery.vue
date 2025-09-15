@@ -361,7 +361,7 @@ onBeforeUnmount(() => {
   left: 0;
   bottom: 0;
   position: fixed; /* stick to viewport bottom */
-  z-index: 7;
+  z-index: 4;
   box-sizing: border-box;
   display: block;
 }
@@ -408,7 +408,7 @@ onBeforeUnmount(() => {
 @media only screen and (max-width: 600px) and (max-height: 933px) {
   /* target the rendered dropup wrapper and its menu-container (component renders roots, not a <menubttn> tag) */
   ::v-deep .dropup .menu-container {
-    top: -13% !important; /* move menu up 2% relative to component default */
+    top: -12% !important; /* move menu up 2% relative to component default */
   }
 }
 
