@@ -13,7 +13,7 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalimage2.mp4" autoplay loop muted>
+                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalImage2.mp4" autoplay loop muted>
                         Your browser does not support the video tag.
                     </video>          
                 </div>
@@ -171,7 +171,7 @@ async function home() {
     top: 4rem;
     left: 8vw;
 
-    background-image: url('assets/images/finalimage2.png');
+    background-image: url('assets/images/finalImage2.png');
     background-position: 2% ;
     background-size: cover;
     background-repeat: no-repeat;
