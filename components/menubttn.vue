@@ -146,7 +146,7 @@ display: none;
         display: flex;
         justify-content: left;
         align-items: flex-start;  
-        z-index: 4;
+        z-index: 8;
         
 }
 
