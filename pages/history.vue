@@ -8,8 +8,8 @@
 
               <navbar class="navbar" style="z-index: 4;" />
                     
-                    <menubttn style="z-index: 3;overflow-y: hidden;"/> 
-                    <navbar2 style="z-index: 4; position: absolute; top: 3%;" /> 
+                    <menubttn style="overflow-y: hidden;"/> 
+                    <navbar2 style="z-index: 6; position: absolute; top: 3%;" /> 
 
 
                     <div class="title" >TALES OF TATSU</div>
