@@ -312,7 +312,7 @@ onBeforeUnmount(() => {
   /* Layout/grid adjustments for small screens */
   .image-grid { grid-template-columns: 1fr; gap: 12px; }
   .card-img { height: 14rem; }
-  .gallery-title {padding-top: 15%; font-size: 35px; display: block; }
+  .gallery-title {padding-top: 10dvh; font-size: 35px; display: block; }
   .mobile-only { display: block; }
 
   /* Header / navbar adjustments for mobile */
