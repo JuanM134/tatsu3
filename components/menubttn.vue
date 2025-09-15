@@ -107,7 +107,7 @@ display: none;
     left: 84%;
     top: 3%;
     border-radius: 10%;;
-    z-index: 5;
+    z-index: 6;
     background-repeat: no-repeat;
     background-position-x: center ;
     background-position-y: center;
