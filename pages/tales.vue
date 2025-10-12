@@ -6,11 +6,6 @@
 
             <section class="background3">
 
-              <navbar class="navbar" style="z-index: 4;" />
-                    <menubttn style="z-index: 6; overflow-y: hidden; "/> 
-                    <navbar2 style="z-index: 6; position: absolute; top: 3%;" /> 
-
-
                     <div class="dragon-img">
                       <img src="@/assets/images/dragonMobile.png" style="width: 100%;height: 100%; object-position: center; position: fixed; top: 0%;">
                     </div>
