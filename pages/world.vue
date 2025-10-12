@@ -190,7 +190,7 @@ function getPinImage(id: number) {
   font-family: Montserrat;
   font-size: 0.55rem;
   padding: 2px 10px 15px;
-  margin-left: -8px;
+  margin-left: -15px;
   border-radius: 8px;
   letter-spacing: 2.04px;
   text-align: center;
