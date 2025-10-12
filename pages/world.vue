@@ -168,6 +168,7 @@ function getPinImage(id: number) {
   cursor: pointer;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .pin-icon {
