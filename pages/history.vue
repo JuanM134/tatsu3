@@ -552,7 +552,7 @@
     color: #fff;
     font-family: IMBPlexMono;
     font-size: 0.6rem;
-    top: 75dvh;
+    top: 67dvh;
     left: 0;
     z-index: 3;
     text-align: center;
