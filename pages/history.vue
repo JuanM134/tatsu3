@@ -391,6 +391,7 @@
     text-align: justify ; 
     align-items: stretch; 
     background-clip: content-box;
+    font-family: IMBPlexMono;
 
 
     overflow-y: hidden;
@@ -405,6 +406,7 @@
   color: #fff; /* white text */
   line-height: 1.5;
   width: fit-content; /* shrink to fit text */
+  font-family: IMBPlexMono;
 }
 
 .history-line2{
@@ -413,6 +415,7 @@
   line-height: 1.5;
   width: fit-content; /* shrink to fit text */
   text-align: end; /* align text to the end (right for LTR) */
+  font-family: IMBPlexMono;
   margin-left: auto; /* push block to the right within its container */
   display: block;
 }
@@ -442,6 +445,7 @@
   flex-direction: column;
   text-align: right;
   align-items: flex-end;
+  font-family: IMBPlexMono;
 
   overflow-y: auto;
 
@@ -470,6 +474,7 @@
 
     text-align: start;
     font-weight: normal;
+    font-family: IMBPlexMono;
     width: 90%;
 
 }
