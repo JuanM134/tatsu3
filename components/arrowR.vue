@@ -1,56 +1,46 @@
 <template>
-                       
-                    <div id="aup">
-                    <a   class="ms-2 me-2 team-link link-dark text-center" >
-                        <font-awesome-icon icon="fa-solid fa-arrow-down" class="aup" size="lg" />
-                    </a>
-                    </div>
-
+  <div id="aup">
+    <a class="ms-2 me-2 team-link link-dark text-center">
+      <font-awesome-icon icon="fa-solid fa-arrow-down" class="aup" size="lg" />
+    </a>
+  </div>
 </template>
 
 <script>
-
-
-
+export default {};
 </script>
 
 <style scoped>
-
-
-
-#aup{
-
-  top: 0;
-  left: 0;
+#aup {
   position: relative;
-
-  width: 30.5px;
-  height: 30px;
-  background-color: black;
-
-
-  
+  width: 33px;         /* Ajusta el tamaño del cuadro */
+  height: 33px;        /* Ajusta el tamaño del cuadro */
+  background-color: #4E4E4E; /* Fondo negro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;  /* Opcional: bordes redondeados */
+  overflow: hidden;    /* Para que la flecha no salga del cuadro */
 }
 
-.aup{
+a.aup {
+  width: 35px;
+}
 
-  
+.aup {
   color: white;
-
   position: relative;
-  animation-name: example;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-
+  animation: dynamicBounce 1.5s infinite ease-in-out;
+  transform-origin: center;
 }
 
-@keyframes example {
-  0%   { transform: translateY(7%)}
-  25%  { left:0px; transform: translateY(3%)}
-  50%  { left:0px; transform: translateY(1%);}
-  75%  {color: pink;left:0px; transform: translateY(-3%);}
-  100% {color: pink; left:0%; transform: translateY(0%);}
+/* Animación con rebote y rodado al final */
+@keyframes dynamicBounce {
+0% { transform: translateY(10%)} 
+25% { left:0px; transform: translateY(5%)} 
+50% { left:0px; transform: translateY(1%);} 
+75% {color: pink;left:0px; transform: translateY(-5%);} 
+100% {color: pink; left:0%; transform: translateY(0%);}
+  
 }
-
 </style>

@@ -40,7 +40,7 @@
                             <img style="width: 229.50px; height: 222.87px; left: 0px; top: 0px; position: absolute; border: 1px black solid" src="@/assets/images/team/strategist.png" />
                             <div v-if="showStrategistInfo" class="member-info" style="width: 294px; height: 107px; left: 240px; top: 124px; position: absolute">
                                 <!-- <div style="width: 10.42px; height: 11.03px; left: 10.78px; top: 71.86px; position: absolute; background: #0A0101"></div> -->
-                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/vector.svg"/>
+                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/Vector.svg"/>
                                 <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                                 <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@LabarcaAlfonso</div>
                                 <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 10px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">Spent +10 years at GE. Fitness & healthy eating 
@@ -58,7 +58,7 @@
                             <img style="width: 229.50px; height: 222.87px; left: 0px; top: 0px; position: absolute; border: 1px black solid" src="@/assets/images/team/founder.png" />
                             <div v-if="showFounderInfo" class="member-info" style="width: 294px; height: 107px; left: 240px; top: 124px; position: absolute">
                                 <!-- <div style="width: 10.42px; height: 11.03px; left: 10.78px; top: 71.86px; position: absolute; background: #0A0101"></div> -->
-                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/vector.svg"/>
+                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/Vector.svg"/>
                                 <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                                 <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@gabodds_</div>
                                 <div style="width: 260px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 10px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">Designer, Storyteller and Restauranteur. Obsessed with Japanese culture. 
@@ -75,7 +75,7 @@
                         <div v-if="!showMarketingInfo" style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">MARKETING</div>
                         <div v-if="showMarketingInfo" class="member-info" style="width: 294px; height: 107px; left: 240px; top: 124px; position: absolute">
                             <!-- <div style="width: 10.42px; height: 11.03px; left: 10.78px; top: 71.86px; position: absolute; background: #0A0101"></div> -->
-                            <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/vector.svg"/>
+                            <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/Vector.svg"/>
                             <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                             <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@catu_you_are</div>
                             <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 10px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">Master of Science in Advertising (BU).<br/>Kickstarter Success.<br/>CEO of Biz Connect.</div>
@@ -91,7 +91,7 @@
                             <img style="width: 229.50px; height: 222.87px; left: 0px; top: 0px; position: absolute; border: 1px black solid" src="@/assets/images/team/designer.png" />
                             <div v-if="showDesignerInfo" class="member-info" style="width: 294px; height: 107px; left: 240px; top: 124px; position: absolute">
                                 <!-- <div style="width: 10.42px; height: 11.03px; left: 10.78px; top: 71.86px; position: absolute; background: #0A0101"></div> -->
-                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/vector.svg"/>
+                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/Vector.svg"/>
                                 <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                                 <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@N/A</div>
                                 <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 10px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">MFA in Interior Design(PRATT), designing in NYC since 2018 and watches 
@@ -109,7 +109,7 @@
                             <img style="width: 229.50px; height: 222.87px; left: 0px; top: 0px; position: absolute; border: 1px black solid" src="@/assets/images/team/developer.png" />
                             <div v-if="showEngineerInfo" class="member-info" style="width: 294px; height: 107px; left: 240px; top: 124px; position: absolute">
                                 <!-- <div style="width: 10.42px; height: 11.03px; left: 10.78px; top: 71.86px; position: absolute; background: #0A0101"></div> -->
-                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/vector.svg"/>
+                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/Vector.svg"/>
                                 <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                                 <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@filipedc</div>
                                 <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 10px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">To be told.</div>
@@ -126,7 +126,7 @@
                             <img style="width: 229.50px; height: 222.87px; left: 0px; top: 0px; position: absolute; border: 1px black solid" src="@/assets/images/team/programmer.png" />
                             <div v-if="showProgrammerInfo" class="member-info" style="width: 294px; height: 107px; left: 240px; top: 124px; position: absolute">
                                 <!-- <div style="width: 10.42px; height: 11.03px; left: 10.78px; top: 71.86px; position: absolute; background: #0A0101"></div> -->
-                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/vector.svg"/>
+                                <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute; " src="@/assets/images/team/Vector.svg"/>
                                 <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                                 <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@N/A</div>
                                 <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 10px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">Junior road to be a Senior. <br/>Gamer by night and Platform Analyst by day. 

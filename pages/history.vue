@@ -1,6 +1,7 @@
 <template>
 
         <div style="height: 200%; width: 100%; position: relative; ">
+          <menubttn style="z-index: 6;overflow-y: hidden;"/> 
 
           <Dropupbttn class="dropupbttn"  style="z-index: 4; position: fixed; top: 88.5%;" />
 
@@ -8,31 +9,34 @@
 
               <navbar class="navbar" style="z-index: 4;" />
                     
-                    <menubttn style="z-index: 3;overflow-y: hidden;"/> 
-                    <navbar2 style="z-index: 4; position: absolute; top: 3%;" /> 
+                    
+                    <navbar2 style="z-index: 6; position: absolute; top: 3%;" /> 
 
 
                     <div class="title" >TALES OF TATSU</div>
 
                         <span class="containerHistory">
                             
-                          <div class="paragraph">Born of dragons, shaped by time, their blood runs hot with Ryūsei—the energy of the world.
-                            Through swords and will, they bend elements and unique abilities to their command <br/><br/>
+                          <div class="paragraph">
+                            <p class="history-line"><span class="history-inline">Born of dragons, shaped by time, their blood runs hot with Ryūsei—the energy of the world.</span></p>
 
-                            high in Tobirama, where the mountains touch the clouds and rivers remember the old songs
-                            The royal line remains.<br/><br/>
+                            <p class="history-line" style="margin-top: -1%;" ><span class="history-inline">Through swords and will, they bend elements and unique abilities to their command.</span></p>
 
-                            Homura, of fire.<br/><br/>
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">high in Tobirama, where the mountains touch the clouds and rivers remember the old songs</span></p>
 
-                            Kazehana, of wind.<br/><br/>
+                            <p class="history-line" style="margin-top: -1%;" ><span class="history-inline">The royal line remains.</span></p>
 
-                            Mizuraku, of water.<br/><br/>
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Homura, of fire.</span></p>
 
-                            Kemuri, of smoke.<br/><br/>
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Kazehana, of wind.</span></p>
 
-                            The rest, scattered thought the world, with thinned blood and twisted ideals<br/><br/>
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Mizuraku, of water.</span></p>
 
-                            Became something different
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Kemuri, of smoke.</span></p>
+
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">The rest, scattered thought the world, with thinned blood and twisted ideals.</span></p>
+
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Became something different.</span></p>
                           </div>
 
                         </span>
@@ -47,18 +51,19 @@
 
                         <span class="containerHistory3">
                             
-                          <div >Raised in the high sanctuaries of Tobirama, Katsuro Kenta is heir to House Kazehana, 
-                            the proudest and most revered of the dragonborn.<br/><br/>
+                          <div >
+                            <p class="history-line2"><span class="history-inline2">Raised in the high sanctuaries of Tobirama, Katsuro Kenta is heir to House Kazehana,</span></p>
+                            <p class="history-line2" style="margin-top: -1.7%;" ><span class="history-inline2">the proudest and most revered of the dragonborn.</span></p>
 
-                            His bloodline carries the prophecy of the White Dragon, the first to touch humankind.<br/><br/>
+                            <p class="history-line2" style="margin-top: 2%;"><span class="history-inline2">His bloodline carries the prophecy of the White Dragon, the first to touch humankind.</span></p>
 
-                            While his people cling to discipline and legend, the world below falls deeper into chaos<br/><br/>
+                            <p class="history-line2" style="margin-top: 2%;"><span class="history-inline2">While his people cling to discipline and legend, the world below falls deeper into chaos.</span></p>
 
-                            Tired of waiting and silence, Katsuro makes a choice.<br/><br/>
+                            <p class="history-line2" style="margin-top: 2%;"><span class="history-inline2">Tired of waiting and silence, Katsuro makes a choice.</span></p>
 
-                            From the cold heights of Tobirama to the fractured city of Nohima.<br/><br/>
+                            <p class="history-line2" style="margin-top: 2%;"><span class="history-inline2">From the cold heights of Tobirama to the fractured city of Nohima.</span></p>
 
-                            His journey begins.
+                            <p class="history-line2" style="margin-top: 2%;"><span class="history-inline2">His journey begins.</span></p>
 
                           </div>
 
@@ -73,27 +78,23 @@
                 
                 <div class="title2">TALES OF NOHIMA</div>
                 
-                    <span class="containerHistory2">
 
-                     In the ancient dawn, three dragons—Yvran, Sorkai, and Vaer—lifted mankind from darkness. 
-                      They gifted wisdom, power, and energy.Civilizations thrived under their wings.<br/><br/>
-
-                      But greed grew in mortal hearts. Betrayed, the dragons withdrew beyond the Veil, leaving humanity to its fate.<br/><br/>
-
-                      From their bloodlines rose the Tatsu—humans born with the echo of dragons in their veins. Their power brought fear... and fear bred destruction.<br/><br/>
-
-                      Years later, the world fractured. From the ashes soared the Citadel—a floating stronghold of the last elite.<br/><br/>
-
-                      Below, the city of Nohima shined briefly... before falling into darkness.<br/><br/>
-
-                      Now, the Citadel rules through the iron fist of the Black Guard. Factions squabble for survival.<br/>
-                      The Tatsu awaken once more.<br/><br/>
-
-                      The dragons may be gone...<br/><br/>
-
-                      But rebellion burns anew.                   
-                      
+                <div style="width: 90%;">
+                    <span class="containerHistory2" >
+                      <p class="history-line"><span class="history-inline">In the ancient dawn, three dragons—Yvran, Sorkai, and Vaer—lifted mankind from darkness.</span></p>
+                      <p class="history-line" style="margin-top: -1%;" ><span class="history-inline">They gifted wisdom, power, and energy. Civilizations thrived under their wings.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">But greed grew in mortal hearts. Betrayed, the dragons withdrew beyond the Veil, leaving humanity to its fate.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">From their bloodlines rose the Tatsu—humans born with the echo of dragons in their veins. Their power</span></p>
+                      <p class="history-line" style="margin-top: -1%;" ><span class="history-inline">brought fear... and fear bred destruction.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Years later, the world fractured. From the ashes soared the Citadel—a floating stronghold of the last elite.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Below, the city of Nohima shined briefly... before falling into darkness.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Now, the Citadel rules through the iron fist of the Black Guard. Factions squabble for survival.</span></p> 
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">The Tatsu awaken once more.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">The dragons may be gone...</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">But rebellion burns anew.</span></p>
                     </span>
+
+                  </div>
 
                     <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
                 
@@ -156,6 +157,7 @@
                             From the cold heights of Tobirama to the fractured city of Nohima.<br/><br/>
 
                             His journey begins.
+
 
                           </div>
 
@@ -331,11 +333,13 @@
     
     z-index: 0;
     
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 
 .background2 {
-    background-image: linear-gradient(rgba(217, 217, 217, 0.382), rgba(227, 227, 227, 0.36)), url('@/assets/images/blackNwhiteCity-transparent-background.png');
+    background-image: linear-gradient(rgba(217, 217, 217, 0.382), rgba(227, 227, 227, 0.36)), url('@/assets/images/cityV2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -344,11 +348,12 @@
 
 
     width: 100%;
-    height: 100dvh;
+    height: 130dvh;
     position: absolute;
 
 
     z-index: 0;
+    padding-top: 10%;
     
     
 }
@@ -377,8 +382,10 @@
     width: 550px; 
     height:400px; 
     left: 4%; 
-    top: 30px;
-    position: relative; 
+    top: 10dvh;
+    position: relative;
+    margin-bottom: 20%; 
+
 
     flex-direction: column; 
     text-align: justify ; 
@@ -393,17 +400,46 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+.history-line{
+  background: rgba(60,60,60,0.8); /* gray background */
+  color: #fff; /* white text */
+  line-height: 1.5;
+  width: fit-content; /* shrink to fit text */
+}
+
+.history-line2{
+  background: rgba(60,60,60,0.8); /* gray background */
+  color: #fff; /* white text */
+  line-height: 1.5;
+  width: fit-content; /* shrink to fit text */
+  text-align: end; /* align text to the end (right for LTR) */
+  margin-left: auto; /* push block to the right within its container */
+  display: block;
+}
+
+.history-inline{
+  display: inline-block; /* background only spans text width */
+  background: transparent; /* parent provides background box */
+  color: inherit;
+}
+
+.history-inline2{
+  display: inline-block; /* background only spans text width */
+  background: transparent; /* parent provides background box */
+  color: inherit;
+}
+
 .containerHistory3{
   width: 700px;
   max-width: 60%;
-  height: auto;
+  height: 400px;
   position: relative; /* static inside its parent */
   margin-left: auto; /* push to the right within parent */
   margin-right: 4%;
   top: 6dvh;
-  z-index: 6;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: right;
   align-items: flex-end;
 
@@ -434,12 +470,22 @@
 
     text-align: start;
     font-weight: normal;
+    width: 90%;
 
 }
 
-/* Mobile layout: stack the three history containers vertically and normalize titles */
+
+.background3, .dragon-img { display: none; }
+
+/* ==============================
+   📱 MOBILE VIEW (<= 600px)
+   ============================== */
 @media only screen and (max-width: 600px) {
-  .containerHistory, .containerHistory2, .containerHistory3 {
+
+  /* --- CONTENEDORES --- */
+  .containerHistory,
+  .containerHistory2,
+  .containerHistory3 {
     width: 100%;
     max-width: 100%;
     padding: 1rem 4%;
@@ -449,19 +495,18 @@
     top: 0;
     text-align: left;
     background: transparent;
-  }
-
-  /* Ensure containers don't create internal scroll and content is visible */
-  .containerHistory, .containerHistory2, .containerHistory3 {
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
     z-index: 2;
+    display: block;
   }
 
-  /* Lower the first container content so it doesn't overlap the title */
-  .containerHistory { padding-top: 5.2rem; margin-top: 0.6rem; }  
+  .containerHistory { padding-top: 5.2rem; margin-top: 0.6rem; }
+  .containerHistory2 { top: 60dvh; }
+  .containerHistory3 { top: 30dvh; }
 
+  /* --- TITULOS --- */
   .title, .title2, .title3 {
     font-size: 28px;
     line-height: 1.1;
@@ -469,175 +514,90 @@
     padding: 1rem 4%;
     margin: 0;
     display: block;
+    position: relative;
+    letter-spacing: -2px;
   }
+  .title2 { margin-left: -5%; padding-top: 0; }
 
-
-
-  .containerHistory .paragraph, .containerHistory2, .containerHistory3 > div {
+  /* --- PÁRRAFOS --- */
+  .containerHistory .paragraph,
+  .containerHistory2,
+  .containerHistory3 > div {
     font-size: 15px;
     line-height: 1.6;
     color: #111;
     margin-bottom: 1.25rem;
   }
-}
 
-.background3{
-  display: none;
-}
-
-.dragon-img{
-    display:none ;
-}
-
-
-@media only screen and (max-width: 600px) {
-
-  .navbar{
-
-  display: none;
-
-  }
-
-  .containerHistory2{
-    display: block;
-    top: 60dvh;
-  }
-
-  .containerHistory3{
-    top: 30dvh;
-  }
-
-  .moretales{
-    display: none;
-  }
-
-  .titles{
-    color: white;
+  .titles {
+    color: #fff;
     font-family: Bernoru;
     font-size: 22px;
-    margin: 0% 4%;
+    margin: 0 4%;
     line-height: 150%;
   }
 
-  .paragraphs{
+  .paragraphs {
     color: rgb(227, 227, 227);
     font-family: IMBPlexMono;
     font-weight: lighter;
     font-size: 12px;
     text-align: justify;
-    margin: 0% 4%;
+    margin: 0 4%;
   }
 
-
-.containerHistory{
-  display: block;
-}
-  .odd{
-
-      display: block;
-      color: rgb(255, 255, 255);
-      font-family: IMBPlexMono;
-      font-size: 0.6rem;
-      top: 75dvh;
-      left: 0;
-      z-index: 3;
-      text-align: center;
-      position: relative;
-      text-shadow: 2px 2px 2px black;
-
-
-  }
-
-  .background{
-
-    display: none;
-
-  }
-
-  .background1{
-
-  display: none;
-
-  }
-
-  .background2{
-
-    display: none;
-
-
-  }
-
-
-  .title{
-
-    position: relative;
-    font-size: 36px;
+  /* --- TEXTO DESTACADO --- */
+  .odd {
+    display: block;
+    color: #fff;
+    font-family: IMBPlexMono;
+    font-size: 0.6rem;
+    top: 75dvh;
+    left: 0;
+    z-index: 3;
     text-align: center;
-    letter-spacing: -2px;
-
-  }
-
-  .title2{
-
-    padding-top: 0%;
     position: relative;
-    font-size: 36px;
-    margin: 0% 0%;
-    text-align: center;
-    margin-left: -5%;
-
+    text-shadow: 2px 2px 2px black;
   }
 
-  .container{
-      display: flex;
-      justify-content: center;
-      align-items: last baseline;
-      position: relative;
-      top: 5%;
-      height: 100vh;
-      z-index: 1;
-  }
+  /* --- FONDOS Y BACKGROUNDS --- */
+  .background,
+  .background1,
+  .background2 { display: none; }
 
-
-  .background3{
-
+  .background3 {
     position: relative;
     height: 100dvh;
     width: 100%;
-
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-
   }
 
-
-  .dragon-img{
+  .dragon-img {
     display: block;
     width: 100%;
     height: 100%;
-
-    z-index: -1;
-
     position: absolute;
+    z-index: -1;
     filter: blur(1px);
-
   }
 
-  .dropupbttn{
+  /* --- NAVBAR Y BOTONES --- */
+  .navbar, .dropupbttn, .moretales { display: none; }
+  .navbar2 { display: block; }
 
-
-      display: none;
-
+  /* --- CONTENEDOR PRINCIPAL --- */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    position: relative;
+    top: 5%;
+    height: 100vh;
+    z-index: 1;
   }
-
-  .navbar2{
-
-      display: block;
-  }
-
-
-  }
+}
 
 </style>

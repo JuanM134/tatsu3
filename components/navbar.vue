@@ -94,7 +94,7 @@
 .navbar {
     position: absolute; 
     top: 0;          
-    left: 2%;         
+    left: 2dvw;         
     width: auto;    
     padding-top: 0;  
     z-index: 1000;   
@@ -159,7 +159,6 @@
 .navbar-collapse .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 8px;
 }
 
 /* push the home item to the far right while keeping it in document flow */

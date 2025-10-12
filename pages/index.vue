@@ -13,7 +13,7 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalimage2.mp4" autoplay loop muted>
+                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalImage3.mp4" autoplay loop muted>
                         Your browser does not support the video tag.
                     </video>          
                 </div>
@@ -59,22 +59,30 @@ async function home() {
 </script>
 
 <style scoped>
+
 .title-container {
-    width: 750px;
-    
+    /* size to title and act as positioning context for the video */
+    display: inline-block;
+    position: relative;
+    width: 65%;
+    line-height: 1;
 }
  
 .container-content {
     min-height: 80vh;
+    align-items: center;
     
 }
 
 .title {
     font-family: 'Bernoru';
     color: #1B1818;
-    font-size: 300px;
+    /* responsive font so title and video scale together */
+    font-size: clamp(80px, 18vw, 300px);
     font-weight: 900;
     letter-spacing: -22px;
+    position: relative;
+
 }
 
 .title-inverted {
@@ -90,15 +98,16 @@ async function home() {
 } 
 
 #myVideo {
-  position: absolute;
-  top: 0%;
-  left: 14.3rem;
-  bottom: 0;
-  width: 70%;
-  height: 100vh;
-  object-fit: contain;
-  mix-blend-mode: darken;
-  
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 130%;
+    object-fit: cover; /* cover the title box and crop as needed */
+    pointer-events: none;
+    mix-blend-mode: darken;
+   
 }
 
 .intro {
@@ -147,10 +156,18 @@ async function home() {
 
 @media only screen and (max-width: 600px) {
 
+    .intro{
+        overflow-y: hidden;
+    }
+
     .title{
 
     font-size: 8rem;
     letter-spacing: -13px;
+    width: 110%;
+
+    left: 50%;                
+    transform: translateX(-50%); 
 
     }
 
@@ -168,15 +185,13 @@ async function home() {
 
     #myVideo{
 
-    top: 4rem;
-    left: 8vw;
-
-    background-image: url('assets/images/finalimage2.png');
-    background-position: 2% ;
+    background-image: url('assets/images/home.png');
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-y: hidden;
 
-    width: 100%;
+    
+    width: 100dvw;
     }
 
     .enter-btn-flip {
@@ -194,7 +209,8 @@ async function home() {
     .container{
 
         overflow-x: hidden;
-        height: 100vh;
+        overflow-y: hidden;
+        height: 110vh;
     }
 
     .intro{

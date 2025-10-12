@@ -140,5 +140,6 @@
 .dropup-content a:hover #prueba {
     color: #a04040;
     transform: scale(1.2);
+    
 }
 </style>

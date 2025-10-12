@@ -1,200 +1,252 @@
 <template>
- 
-    <div class="background">
-        <navbar style="z-index: 4;" />
+  <div class="background">
+    <navbar style="z-index: 4;" />
+    <Dropupbttn class="dropupbttn" style="top: 88.5%; position: fixed; z-index: 8;" />  
+    <menubttn style="z-index: 4;" /> 
+    <navbar2 style="z-index: 4;" />
 
-        <Dropupbttn class="dropupbttn" style="top: 88.5%; position: fixed;" />  
-        <menubttn style="z-index: 4; "/> 
-        <navbar2 style="z-index: 4;" />
+    <!-- Contenedor scrollable del mapa -->
+    <div class="scroll-wrapper">
+      <div class="map-container" ref="mapContainer">
 
+        <picture>
+                <source srcset="@/assets/images/map3.jpeg" media="(min-width: 1024px)">
+                <source srcset="@/assets/images/map.jpg" media="(min-width: 768px)">
+                <source srcset="@/assets/images/map.jpg" media="(min-width: 377px)">
+                <img class="map" src="@/assets/images/map.jpg"> <!-- imagen principal -->
+            </picture>
 
-
-       <div class="container">
-
-
-           
-                <!--
-                                <img src="" style="width: 100%; height: 100%; object-fit: cover;
-                                 position: absolute; top: -10%; left: 0; z-index: 0;">   
-                        
-                -->
-            
+        <div
+          v-for="pin in pins"
+          :key="pin.id"
+          class="pin"
+          :style="{ top: pin.y + '%', left: pin.x + '%' }"
+        >
+          <img
+            class="pin-icon"
+            :src="getPinImage(pin.id)"
+            alt="Pin"
+            :class="{ rotated: activePin === pin.id }"
+            @click="toggleLabel(pin.id)"
+          />
+          <div class="pin-label" :class="{ visible: activePin === pin.id }">
+            {{ pin.name }}
+          </div>
         </div>
-
-        
-        
-
+      </div>
     </div>
-
+  </div>
 </template>
 
-
-<!-- JS -->
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import pinOff from '@/assets/images/icons/pinOfff.png'
+import pinOn from '@/assets/images/icons/pinOm.png'
 
+interface Pin {
+  id: number
+  name: string
+  x: number
+  y: number
+}
 
+/* Estado para detectar si es móvil */
+const isMobile = ref(false)
 
+/* Detectar tamaño de pantalla dinámicamente */
+function updateIsMobile() {
+  isMobile.value = window.innerWidth <= 600
+}
+
+onMounted(() => {
+  updateIsMobile()
+  window.addEventListener('resize', updateIsMobile)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateIsMobile)
+})
+
+/* PINS versión escritorio */
+const desktopPins = ref<Pin[]>([
+  { id: 1, name: 'YUREI MTN', x: 25, y: 67 },
+  { id: 2, name: 'KURIN', x: 68.5, y: 49 },
+  { id: 3, name: 'DRAGON HEADS', x: 39.5, y: 30 },
+  { id: 4, name: 'NOHIRAMA', x: 71.3, y: 55.5 },
+  { id: 5, name: 'CITY OF HOKAN', x: 71.3, y: 42.5 },
+  { id: 6, name: 'TOBIRAMA', x: 51.5, y: 41.5 },
+  { id: 7, name: 'CAPITAL OF UMI', x: 56, y: 94.5 },
+  { id: 8, name: 'FOREST OF HAI', x: 81.5, y: 23 },
+  { id: 9, name: 'YOUNG CASTLE', x: 73.5, y: 25 },
+])
+
+/* PINS versión móvil */
+const mobilePins = ref<Pin[]>([
+  { id: 1, name: 'YUREI MTN', x: 17, y: 67 },
+  { id: 2, name: 'KURIN', x: 76.5, y: 48 },
+  { id: 3, name: 'DRAGON HEADS', x: 37, y: 29 },
+  { id: 4, name: 'NOHIRAMA', x: 80, y: 56 },
+  { id: 5, name: 'CITY OF HOKAN', x: 80, y: 42 },
+  { id: 6, name: 'TOBIRAMA', x: 54, y: 42 },
+  { id: 7, name: 'CAPITAL OF UMI', x: 60, y: 95 },
+  { id: 8, name: 'FOREST OF HAI', x: 92, y: 23 },
+  { id: 9, name: 'YOUNG CASTLE', x: 81.5, y: 25 },
+])
+
+/* Selección automática */
+const pins = computed(() => (isMobile.value ? mobilePins.value : desktopPins.value))
+
+/* Lógica del pin */
+const activePin = ref<number | null>(null)
+function toggleLabel(id: number) {
+  activePin.value = activePin.value === id ? null : id
+}
+
+function getPinImage(id: number) {
+  return activePin.value === id ? pinOn : pinOff
+}
 </script>
 
 
-
-<!-- CSS -->
 <style scoped>
+/* ===== CONTENEDOR BASE ===== */
 .background {
-    
-    background-color: #DDD9DA;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: center;
-    background-image: url('@/assets/images/map3.jpeg');
-    background-size: cover;
+  background-color: #c4c4c4;
+  background-image: url('@/assets/images/sea.jpeg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
-    height: 100%;
-    position: fixed ;
-    bottom: 0;
-    
-    z-index: 0;
+  /* ✅ Overflow habilitado */
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.title {
-
-
-    color: #0A0101; 
-    font-size: 100px; 
-    font-family: Bernoru; 
-    font-weight: 900; 
-    line-height: 102.40px; 
-    top: 40%;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    
-   
-    
+.background::-webkit-scrollbar {
+  display: none;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    width: 100%;
-    position: relative;
-} 
-
-.center {
-    
-    width: 800px; 
-    height: 100px; 
-    left: 100px; 
-    top: 300px; 
-    position: absolute; 
-
-}
-
-#myDIV {
+/* ===== WRAPPER SCROLL (mapa) ===== */
+.scroll-wrapper {
+  position: relative;
   width: 100%;
-  padding: 50px 0;
+  height: 100%;
+  overflow: auto; /* scroll dentro del mapa también */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+/* ===== MAPA ===== */
+.map-container {
+  position: relative;
+  width: 1600px;
+  height: 900px;
+  flex-shrink: 0;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* ===== PINS ===== */
+.pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pin-icon {
+  width: 2.5vw;
+  min-width: 12px;
+  max-width: 25px;
+  transition: transform 0.4s ease;
+}
+
+.pin-icon.rotated {
+  transform: rotate(-85deg);
+}
+
+.pin-label {
+  background-color: rgb(78, 78, 78);
+  color: white;
+  width: 125px;
+  height: 14px;
+  font-family: Montserrat;
+  font-size: 0.55rem;
+  padding: 2px 10px 15px;
+  border-radius: 8px;
+  letter-spacing: 2.04px;
   text-align: center;
-  background-color: gray;
-  margin-top: 20px;
-  font-size:23px;
- 
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
-#aup{
-
-background-color: #1D1B1B;
-width: 30px;
-height: 30px;
-top: 30%;
-left: 67%;
-border: none;
-
-position: relative;
-z-index: 2;
+.pin-label.visible {
+  opacity: 1;
+  transform: translateX(10px);
+  pointer-events: auto;
 }
 
-.aup{
-
-position: relative;
-
-border: none;
-animation-name: example;
-animation-duration: 0.7s;
-animation-iteration-count: infinite;
-animation-timing-function: ease-in-out;
-
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .map-container {
+    width: 1100px;
+    height: 645px;
+  }
 }
 
-@keyframes example {
-  0%   {left:0px; top:0px;}
-  25%  {left:0px; top:1%;}
-  50%  {left:0px; top:3%;}
-  75%  {left:0px; top:1.05%;}
-  100% {color: pink; left:0%; top:0px;}
+@media (max-width: 768px) {
+  .map-container {
+    width: 1000px;
+    height: 562px;
+  }
+
+  .pin-icon {
+    width: 5vw;
+    
+  }
+
+  .pin-label {
+    font-size: 0.4rem;
+    padding: 3px 8px;
+  }
 }
 
-
-@media only screen and (max-width: 600px) and (max-height: 933px){
-
-    .navbar{
-
+@media (max-width: 600px) {
+  .navbar,
+  .dropupbttn {
     display: none;
+  }
 
-    }
-
-
-    .odd{
-
-        display: block;
-        color: rgb(255, 255, 255);
-        font-family: IMBPlexMono;
-        font-size: 0.6rem;
-        top: -111%;
-        z-index: 4;
-        text-align: center;
-        position: relative;
-        object-fit: contain;
-
-    }
-
-
-
-    .title{
-
-        position: absolute;
-        font-size: 3.5rem;
-        top: 45%;
-        text-align: center;
-        line-height: 0px;
-        width: 100%;
-        height: 100%;
-
-
-    }
-
-    .dropupbttn{
-
-
-        display: none;
-
-    }
-
-    .navbar2{
-
-        display: block;
-    }
-
-    .background{
-    display: flex;
+  .background {
     flex-direction: column;
-    }   
+  }
 
+  .map-container {
+    width: max-content;
+    height: 756px;
+
+    left: 70%;                /* ✅ centrado base */
+    transform: translateX(-0%); /* ✅ centrado exacto */
+  }
 }
-
-
 </style>

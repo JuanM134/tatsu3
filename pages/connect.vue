@@ -3,8 +3,8 @@
         <navbar style="z-index: 4;" />
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; "/>  
-        <menubttn style="z-index: 4;"/> 
-        <navbar2 style="z-index: 4;" />
+        <menubttn style="z-index: 6;"/> 
+        <navbar2 style="z-index: 6;" />
         
 
 

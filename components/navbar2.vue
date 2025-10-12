@@ -31,11 +31,11 @@
 
         display: flex;
         position: absolute; 
-        top: 3%;
+        top: 4%;
         left: 1rem;
         height: 2rem;
         width: 6rem;
-        z-index: 2;
+        z-index: 11;
 
         justify-content: center;
         align-items: center;
@@ -59,6 +59,7 @@
         margin: 0;
         display: block;
         line-height: 1;
+        font-weight:normal;
 
     }
 

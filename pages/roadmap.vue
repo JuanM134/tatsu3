@@ -3,13 +3,13 @@
     <div class="background">
         <navbar style="z-index: 4;" />
 
-        <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; "/>  
-        <menubttn style="z-index: 4;"/> 
-        <navbar2 style="z-index: 4;" />
+        <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;"/>  
+        <menubttn style="z-index: 6;"/> 
+        <navbar2 style="z-index: 6;" />
         
 
-        <div class="roadmap-content">
-            <p class="title">ADVANTAGES</p>
+        <div class="roadmap-content1">
+            <p class="title">UTILITY</p>
 
             <div class="description">
                 <ul class="features" ref="listRef">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="roadmap-content">
-            <p class="title">FUTURE</p>
+            <p class="title">ABOUT</p>
 
             <div class="description">
                 <ul class="features" ref="listRef2">
@@ -31,6 +31,9 @@
                 </ul>
             </div>
         </div>
+
+        
+        <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
 
     </div>
 
@@ -48,8 +51,15 @@ const features = ref([
 ])
 
 const futureFeatures = ref([
-    { id: 'f1', text: 'Opportunity of investment and ownership of restaurants in NYC.' },
-    { id: 'f2', text: 'Creation of a club house/coffee house for like minded people.' },
+    { id: 'f1', text: 'Collection of 200 images.' },
+    { id: 'f2', text: 'Unique 1/1 designs with no auto-generation.' },
+    { id: 'f3', text: 'Full body anime and manga art.' },
+    { id: 'f4', text: 'Characters with unique image angles, powers, names and story.' },
+    { id: 'f5', text: '  ' },
+    { id: 'f6', text: '  ' },
+    { id: 'f7', text: '  ' },
+
+
 ])
 
 const listRef = ref<HTMLElement | null>(null)
@@ -91,11 +101,12 @@ onBeforeUnmount(() => {
     
 
     width: 100%;
-    height: 100%;
-    position: fixed ;
-    bottom: 0;
+    min-height: 100vh;
+    position: relative; /* ✅ importante: no fixed */
     
-
+    overflow-x: hidden;
+    overflow-y: auto; /* ✅ scroll natural */
+    scroll-behavior: smooth;
     
     z-index: 0;
 }
@@ -126,7 +137,7 @@ onBeforeUnmount(() => {
     font-weight: 900;
     line-height: 1.02;
     margin: 0;
-    margin-top: 8dvh;
+    margin-top: 10dvh;
     text-align: left;
     width: 100%;
     position: static; /* flow normally above the list */
@@ -140,6 +151,19 @@ onBeforeUnmount(() => {
     width: 100%;
 }
 
+.roadmap-content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left align title and list */
+    gap: 20px;
+    padding-left: 48px; /* position content toward the left side */
+    box-sizing: border-box;
+    max-width: 1100px;
+    padding-top: 5dvh;
+    font-family: MontSerrat;
+
+}
+
 .roadmap-content {
     display: flex;
     flex-direction: column;
@@ -148,7 +172,13 @@ onBeforeUnmount(() => {
     padding-left: 48px; /* position content toward the left side */
     box-sizing: border-box;
     max-width: 1100px;
+    padding-top: 5dvh;
+    padding-bottom: 15dvh;
+    font-family: MontSerrat;
+    
+    
 }
+
 
 .features {
     list-style: none;
@@ -165,13 +195,29 @@ onBeforeUnmount(() => {
     transition: opacity 360ms ease, transform 360ms ease;
     margin: 12px 0;
     font-family: Montserrat;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-size: var(--roadmap-list-font-size);
+    letter-spacing: 1.04px;
 }
 
 .fade-item.in-view {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.odd {
+  display: grid;
+  color: rgb(1, 1, 1);
+  font-family: IMBPlexMono;
+  font-size: 0.6rem;
+  z-index: 4;
+  text-align: center;
+
+  position: absolute;
+  bottom: -15px;
+  left: 50%;                /* ✅ centrado base */
+  transform: translateX(-50%); /* ✅ centrado exacto */
 }
 
 
@@ -183,21 +229,27 @@ display: none;
 
 }
 
+.background{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
 .odd{
 
-    display: block;
-    color: rgb(255, 255, 255);
+    display: grid;
+    color: rgb(0, 0, 0);
     font-family: IMBPlexMono;
     font-size: 0.6rem;
-    top: -111%;
+    
     z-index: 4;
     text-align: center;
     position: relative;
     object-fit: contain;
+    bottom: 15px;
+    left: 50%;
 
 }
-
-
 
 .title{
         position: static;

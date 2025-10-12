@@ -1,5 +1,5 @@
 <template>
-        <button @click="showText1()" :class="['dropbtn', { active: isClicked }]" style="z-index: 4;">
+        <button @click="showText1()" :class="['dropbtn', { active: isClicked }]" style="z-index: 11;">
             <div class="line"></div>
             <div class="line2"></div>
         </button>
@@ -74,6 +74,7 @@
 .dropup{
 
 display: none;
+z-index: -1;
 
 }
 
@@ -91,7 +92,7 @@ display: none;
     height: 100vh;
     position: absolute;
     left: 0;
-    z-index: 3;
+    z-index: -1;
 
 }
 
@@ -107,7 +108,7 @@ display: none;
     left: 84%;
     top: 3%;
     border-radius: 10%;;
-    z-index: 5;
+    z-index: 11;
     background-repeat: no-repeat;
     background-position-x: center ;
     background-position-y: center;
@@ -137,7 +138,7 @@ display: none;
 
 .menu-container{
         position: relative;
-        top: -6%;
+        top: -2%;
         left: 0;
         width: 100%;
         height: 140dvh;
@@ -146,7 +147,7 @@ display: none;
         display: flex;
         justify-content: left;
         align-items: flex-start;  
-        z-index: 4;
+        z-index: 8;
         
 }
 
@@ -155,6 +156,7 @@ display: none;
     opacity: 0;
     transform: translateY(12px);
     animation: liFadeUp 420ms forwards cubic-bezier(.22,.9,.39,1);
+    z-index: 4;
 }
 .menu-open ul li:nth-child(1){ animation-delay: 80ms; }
 .menu-open ul li:nth-child(2){ animation-delay: 160ms; }
@@ -167,6 +169,10 @@ display: none;
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.dropup.menu-open{
+    z-index: 10;
+}   
 
 /* Footer paragraph - animate after list items */
 .menu-open ul p{
@@ -182,12 +188,12 @@ display: none;
     transform: translateY(0);
     animation: liFadeDown 320ms forwards cubic-bezier(.22,.9,.39,1);
 }
-.menu-closing ul li:nth-child(1){ animation-delay: 480ms; }
-.menu-closing ul li:nth-child(2){ animation-delay: 400ms; }
-.menu-closing ul li:nth-child(3){ animation-delay: 320ms; }
-.menu-closing ul li:nth-child(4){ animation-delay: 240ms; }
-.menu-closing ul li:nth-child(5){ animation-delay: 160ms; }
-.menu-closing ul li:nth-child(6){ animation-delay: 80ms; }
+.menu-closing ul li:nth-child(1){ animation-delay: 50ms; }
+.menu-closing ul li:nth-child(2){ animation-delay: 40ms; }
+.menu-closing ul li:nth-child(3){ animation-delay: 30ms; }
+.menu-closing ul li:nth-child(4){ animation-delay: 20ms; }
+.menu-closing ul li:nth-child(5){ animation-delay: 10ms; }
+.menu-closing ul li:nth-child(6){ animation-delay: 2ms; }
 
 .menu-closing ul p{
     opacity: 1;
