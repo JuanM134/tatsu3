@@ -168,7 +168,6 @@ function getPinImage(id: number) {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
 }
 
 .pin-icon {
@@ -190,6 +189,7 @@ function getPinImage(id: number) {
   font-family: Montserrat;
   font-size: 0.55rem;
   padding: 2px 10px 15px;
+  margin-left: -8px;
   border-radius: 8px;
   letter-spacing: 2.04px;
   text-align: center;
