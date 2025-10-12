@@ -29,7 +29,7 @@
 
                 <div class="arrow-row">
                     <a class="arrowr" href="#team-section"><ArrowR /></a>
-                    <a href="#team-section" class="party" @click="handleSmoothScroll"><p><strong>Party</strong></p></a>
+                    <a href="#team-section" class="party"><p><strong>Party</strong></p></a>
                 </div>
 
             </div>
@@ -172,17 +172,6 @@ import financeAltImg from '@/assets/images/team/finance_alt.png'
 
 import { onMounted, ref } from 'vue'
 
-const handleSmoothScroll = (event) => {
-  event.preventDefault()
-  const targetId = event.currentTarget.getAttribute('href')
-  const target = document.querySelector(targetId)
-  if (target) {
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
-}
 
 
 const showMarketingAlt = ref(false)

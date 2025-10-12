@@ -167,11 +167,7 @@
     
 <script setup lang="ts">
 
-useHead({
-  bodyAttrs: {
-    class: 'brand-bg-color hide-scroll'
-  }
-})
+
 
 let showFounderInfo = ref(false)
 let showMarketingInfo = ref(false)
