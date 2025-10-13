@@ -4,13 +4,11 @@
           <menubttn style="z-index: 6;overflow-y: hidden;"/> 
 
           <Dropupbttn class="dropupbttn"  style="z-index: 4; position: fixed; top: 88.5%;" />
+          <navbar2 style="z-index: 11; position: absolute; top: 3%;" /> 
 
             <section id="background" class="background">
 
               <navbar class="navbar" style="z-index: 4;" />
-                    
-                    
-                    <navbar2 style="z-index: 6; position: absolute; top: 3%;" /> 
 
 
                     <div class="title" >TALES OF TATSU</div>
@@ -103,15 +101,10 @@
 
       <section class="background3">
 
-            <navbar class="navbar" style="z-index: 4;" />
-                  <menubttn style="z-index: 7;overflow-y: hidden; position: absolute; "/> 
-                  <navbar2 style="z-index: 4; position: absolute; top: 3%;" /> 
-
-
             <div class="dragon-img">
               <img src="@/assets/images/dragon1.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 0%; image-rendering: optimizeSpeed; opacity: 70%;">
               <img src="@/assets/images/dragon2.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 120dvh;image-rendering: optimizeSpeed; opacity: 70%;">
-              <img src="@/assets/images/dragon3.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 210dvh;image-rendering: optimizeSpeed; opacity: 70%;">
+              <img src="@/assets/images/dragon3.png" style="width: 100%;height: 100%; object-position: center; position: fixed; top: 220dvh;image-rendering: optimizeSpeed; opacity: 70%; object-fit: cover;">
             </div>
 
                           <span class="containerHistory">
@@ -435,7 +428,7 @@
 .containerHistory3{
   width: 700px;
   max-width: 60%;
-  height: 400px;
+  height: 450px;
   position: relative; /* static inside its parent */
   margin-left: auto; /* push to the right within parent */
   margin-right: 4%;
@@ -516,7 +509,7 @@
     font-size: 28px;
     line-height: 1.1;
     text-align: center;
-    padding: 1rem 4%;
+    padding: 1.5rem 4%;
     margin: 0;
     display: block;
     position: relative;
@@ -528,8 +521,8 @@
   .containerHistory .paragraph,
   .containerHistory2,
   .containerHistory3 > div {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.4;
     color: #111;
     margin-bottom: 1.25rem;
   }
