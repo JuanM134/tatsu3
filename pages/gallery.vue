@@ -164,7 +164,7 @@ const imagesDesktop = ref<ImageItemDesktop[]>([
   { src: oni, srcAlt: oniAlt, alt: "3", number: 134 , scale: 1.2, rotate: '0deg', offsetX: '0%', offsetY: '-5%', width: '60%', brightness: 1 },
   { src: hippie, srcAlt: hippieAlt, alt: "4", number: 183 , scale: 1.2, rotate: '0deg', offsetX: '50%', offsetY: '0%', width: '60%', brightness: 1 },
   { src: cape, srcAlt: capeAlt, alt: "5", number: 33 , scale: 1.1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '50%', brightness: 1 },
-  { src: white, srcAlt: whiteAlt, alt: "6", number: 40 , scale: 1.1, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '50%', brightness: 1 },
+  { src: white, srcAlt: whiteAlt, alt: "6", number: 40 , scale: 1.2, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '50%', brightness: 1 },
   { src: coat, srcAlt: coatAlt, alt: "7", number: 56 , scale: 1, rotate: '0deg', offsetX: '60%', offsetY: '0%', width: '40%', brightness: 1 },
   { src: cyborg, srcAlt: cyborgAlt, alt: "8", number: 90 , scale: 1, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '55%', brightness: 1 },
   { src: ranger, srcAlt: rangerAlt, alt: "9", number: 116 , scale: 1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '60%', brightness: 1 },
