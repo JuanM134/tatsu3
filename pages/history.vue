@@ -351,7 +351,7 @@
 
 .background2 {
     background-image: linear-gradient(rgba(217, 217, 217, 0.382), rgba(227, 227, 227, 0.36)), url('@/assets/images/cityV2.png');
-    background-position: center;
+    background-position: top 95% center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #DDD9DA;
