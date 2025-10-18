@@ -4,13 +4,11 @@
           <menubttn style="z-index: 6;overflow-y: hidden;"/> 
 
           <Dropupbttn class="dropupbttn"  style="z-index: 4; position: fixed; top: 88.5%;" />
+          <navbar2 style="z-index: 11; position: absolute; top: 3%;" /> 
 
             <section id="background" class="background">
 
               <navbar class="navbar" style="z-index: 4;" />
-                    
-                    
-                    <navbar2 style="z-index: 6; position: absolute; top: 3%;" /> 
 
 
                     <div class="title" >TALES OF TATSU</div>
@@ -45,7 +43,8 @@
             </section> 
 
             <section>
-            <div class="background1" style="z-index: 4;text-align: end; background-color: #DDD9DA; align-self: flex-end; height: max-content;">
+              
+            <div class="background1" style="z-index: 4;text-align: end; background-color: #DDD9DA; align-self: flex-end; height: max-content; width: 100%;">
 
               <div class="title3" >TALE OF  KATSURO KENTA</div>
 
@@ -103,96 +102,108 @@
 
       <section class="background3">
 
-            <navbar class="navbar" style="z-index: 4;" />
-                  <menubttn style="z-index: 7;overflow-y: hidden; position: absolute; "/> 
-                  <navbar2 style="z-index: 4; position: absolute; top: 3%;" /> 
-
-
             <div class="dragon-img">
-              <img src="@/assets/images/dragon1.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 0%; image-rendering: optimizeSpeed; opacity: 70%;">
-              <img src="@/assets/images/dragon2.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 120dvh;image-rendering: optimizeSpeed; opacity: 70%;">
-              <img src="@/assets/images/dragon3.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 210dvh;image-rendering: optimizeSpeed; opacity: 70%;">
+              
+              
+              
             </div>
 
-                          <span class="containerHistory">
+                        <div>
 
-                          <span class="title" >TALES OF TATSU</span>
+                          <img class="dragon-img" src="@/assets/images/dragon1.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 0%; image-rendering: optimizeSpeed; opacity: 70%; filter: blur(3px);">
+
+                            <span class="containerHistory">
+
+                            <span class="title" >TALES OF TATSU</span>
                             
-                          <div class="paragraph">Born of dragons, shaped by time, their blood runs hot with Ryūsei—the energy of the world.
-                            Through swords and will, they bend elements and unique abilities to their command <br/><br/>
+                                <div class="paragraph">Born of dragons, shaped by time, their blood runs hot with Ryūsei—the energy of the world.
+                                  Through swords and will, they bend elements and unique abilities to their command <br/><br/>
 
-                            high in Tobirama, where the mountains touch the clouds and rivers remember the old songs
-                            The royal line remains.<br/><br/>
+                                  high in Tobirama, where the mountains touch the clouds and rivers remember the old songs
+                                  The royal line remains.<br/><br/>
 
-                            Homura, of fire.<br/><br/>
+                                  Homura, of fire.<br/><br/>
 
-                            Kazehana, of wind.<br/><br/>
+                                  Kazehana, of wind.<br/><br/>
 
-                            Mizuraku, of water.<br/><br/>
+                                  Mizuraku, of water.<br/><br/>
 
-                            Kemuri, of smoke.<br/><br/>
+                                  Kemuri, of smoke.<br/><br/>
 
-                            The rest, scattered thought the world, with thinned blood and twisted ideals<br/><br/>
+                                  The rest, scattered thought the world, with thinned blood and twisted ideals<br/><br/>
 
-                            Became something different
-                          </div>
+                                  Became something different
+                                </div>
 
-                        </span>
+                            </span>
 
+                        </div>
                         
+                        <div>
 
-                        <span class="containerHistory3">
+                          <img class="dragon-img" src="@/assets/images/dragon2.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 120dvh;image-rendering: optimizeSpeed; opacity: 70%; filter: blur(3px);">
 
-                          <span class="title3" >TALE OF  KATSURO KENTA</span>
-                            
-                          <div >Raised in the high sanctuaries of Tobirama, Katsuro Kenta is heir to House Kazehana, 
-                            the proudest and most revered of the dragonborn.<br/><br/>
+                            <span class="containerHistory3">
 
-                            His bloodline carries the prophecy of the White Dragon, the first to touch humankind.<br/><br/>
+                            <span class="title3" >TALE OF  KATSURO KENTA</span>
+                              
+                              <div >Raised in the high sanctuaries of Tobirama, Katsuro Kenta is heir to House Kazehana, 
+                                the proudest and most revered of the dragonborn.<br/><br/>
 
-                            While his people cling to discipline and legend, the world below falls deeper into chaos<br/><br/>
+                                His bloodline carries the prophecy of the White Dragon, the first to touch humankind.<br/><br/>
 
-                            Tired of waiting and silence, Katsuro makes a choice.<br/><br/>
+                                While his people cling to discipline and legend, the world below falls deeper into chaos<br/><br/>
 
-                            From the cold heights of Tobirama to the fractured city of Nohima.<br/><br/>
+                                Tired of waiting and silence, Katsuro makes a choice.<br/><br/>
 
-                            His journey begins.
+                                From the cold heights of Tobirama to the fractured city of Nohima.<br/><br/>
+
+                                His journey begins.
 
 
-                          </div>
+                              </div>
 
-                        </span>
+                            </span>
 
+                        </div>
+
+                        <div>
+
+                            <img class="dragon-img" src="@/assets/images/dragon3.png" style="width: 100%;height: 100%; object-position: center; position: absolute; top: 220dvh;image-rendering: optimizeSpeed; opacity: 70%; object-fit: cover; filter: blur(3px);">
+
+                              <span class="containerHistory2">
+
+                              <span class="title2">TALES OF NOHIMA</span>
+
+                              In the ancient dawn, three dragons—Yvran, Sorkai, and Vaer—lifted mankind from darkness. 
+                              They gifted wisdom, power, and energy.Civilizations thrived under their wings.<br/><br/>
+
+                              But greed grew in mortal hearts. Betrayed, the dragons withdrew beyond the Veil, leaving humanity to its fate.<br/><br/>
+
+                              From their bloodlines rose the Tatsu—humans born with the echo of dragons in their veins. Their power brought fear... and fear bred destruction.<br/><br/>
+
+                              Years later, the world fractured. From the ashes soared the Citadel—a floating stronghold of the last elite.<br/><br/>
+
+                              Below, the city of Nohima shined briefly... before falling into darkness.<br/><br/>
+
+                              Now, the Citadel rules through the iron fist of the Black Guard. Factions squabble for survival.<br/>
+                              The Tatsu awaken once more.<br/><br/>
+
+                              The dragons may be gone...<br/><br/>
+
+                              But rebellion burns anew.                   
+                              
+                            </span>
+
+
+
+                              <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+
+                        </div>
 
                 
                 
-                    <span class="containerHistory2">
 
-                      <span class="title2">TALES OF NOHIMA</span>
-
-                     In the ancient dawn, three dragons—Yvran, Sorkai, and Vaer—lifted mankind from darkness. 
-                      They gifted wisdom, power, and energy.Civilizations thrived under their wings.<br/><br/>
-
-                      But greed grew in mortal hearts. Betrayed, the dragons withdrew beyond the Veil, leaving humanity to its fate.<br/><br/>
-
-                      From their bloodlines rose the Tatsu—humans born with the echo of dragons in their veins. Their power brought fear... and fear bred destruction.<br/><br/>
-
-                      Years later, the world fractured. From the ashes soared the Citadel—a floating stronghold of the last elite.<br/><br/>
-
-                      Below, the city of Nohima shined briefly... before falling into darkness.<br/><br/>
-
-                      Now, the Citadel rules through the iron fist of the Black Guard. Factions squabble for survival.<br/>
-                      The Tatsu awaken once more.<br/><br/>
-
-                      The dragons may be gone...<br/><br/>
-
-                      But rebellion burns anew.                   
-                      
-                    </span>
-
-
-
-                      <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
 
                       
          
@@ -391,6 +402,7 @@
     text-align: justify ; 
     align-items: stretch; 
     background-clip: content-box;
+    font-family: IMBPlexMono;
 
 
     overflow-y: hidden;
@@ -405,6 +417,7 @@
   color: #fff; /* white text */
   line-height: 1.5;
   width: fit-content; /* shrink to fit text */
+  font-family: IMBPlexMono;
 }
 
 .history-line2{
@@ -413,11 +426,14 @@
   line-height: 1.5;
   width: fit-content; /* shrink to fit text */
   text-align: end; /* align text to the end (right for LTR) */
+  font-family: IMBPlexMono;
   margin-left: auto; /* push block to the right within its container */
   display: block;
+
 }
 
 .history-inline{
+  font-size: smaller;
   display: inline-block; /* background only spans text width */
   background: transparent; /* parent provides background box */
   color: inherit;
@@ -430,9 +446,9 @@
 }
 
 .containerHistory3{
-  width: 700px;
-  max-width: 60%;
-  height: 400px;
+  width: 100%;
+  max-width: 90%;
+  height: 450px;
   position: relative; /* static inside its parent */
   margin-left: auto; /* push to the right within parent */
   margin-right: 4%;
@@ -442,6 +458,7 @@
   flex-direction: column;
   text-align: right;
   align-items: flex-end;
+  font-family: IMBPlexMono;
 
   overflow-y: auto;
 
@@ -470,6 +487,7 @@
 
     text-align: start;
     font-weight: normal;
+    font-family: IMBPlexMono;
     width: 90%;
 
 }
@@ -511,7 +529,7 @@
     font-size: 28px;
     line-height: 1.1;
     text-align: center;
-    padding: 1rem 4%;
+    padding: 1.5rem 4%;
     margin: 0;
     display: block;
     position: relative;
@@ -523,8 +541,8 @@
   .containerHistory .paragraph,
   .containerHistory2,
   .containerHistory3 > div {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.4;
     color: #111;
     margin-bottom: 1.25rem;
   }
@@ -549,15 +567,15 @@
   /* --- TEXTO DESTACADO --- */
   .odd {
     display: block;
-    color: #fff;
+    color: #000000;
     font-family: IMBPlexMono;
     font-size: 0.6rem;
-    top: 75dvh;
+    top: 67dvh;
     left: 0;
     z-index: 3;
     text-align: center;
     position: relative;
-    text-shadow: 2px 2px 2px black;
+    
   }
 
   /* --- FONDOS Y BACKGROUNDS --- */

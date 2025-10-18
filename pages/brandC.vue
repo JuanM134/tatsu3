@@ -18,7 +18,7 @@
             <div class="brand-txt">
 
                 
-                <p><span style="color: black; font-size: 14px; font-family: IMBPlexMono; font-weight: 400; text-transform: uppercase; line-height: 18.90px; letter-spacing: 1.12px; background-color: #F47A7A;">Odd studios</span> draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of nyc; 
+                <p><span style="color: black; font-size: 14px; font-family: IMBPlexMono; font-weight: 400; text-transform: uppercase; line-height: 18.90px; letter-spacing: 1.12px; background: linear-gradient(to bottom, #DDD9DA 60%, #F47A7A 60%);">Odd studios</span> draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of nyc; 
                 celebrating the tapestry of diverse art manga styles through our designs.</p>
 
                 <p>But it is not just about recreating art; it's about redefining ownership with the use of blockchain. 
@@ -28,8 +28,12 @@
                 is both exceptional and exclusive.</p>
 
                 <div class="arrow-row">
-                    <a class="arrowr" href="#team-section"><ArrowR /></a>
-                    <a href="#team-section" class="party"><p><strong>Party</strong></p></a>
+                    <a class="arrowr" href="#team-section" @click.prevent="scrollToSection">
+                    <ArrowR />
+                    </a>
+                    <a href="#team-section" class="party" @click.prevent="scrollToSection">
+                    <p><strong>Party</strong></p>
+                    </a>
                 </div>
 
             </div>
@@ -54,7 +58,7 @@
                 <div v-if="showMarketingAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 284px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
                     <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@catu_you_are</div>
                     <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
                         Master of Science in Advertising (BU).<br/>Kickstarter Success.<br/>CEO of Biz Connect.
@@ -79,15 +83,15 @@
                     style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
                     ARTIST
                 </div>
-                <div v-if="showArtistAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
+                <div v-if="showArtistAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; ; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top:80px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 284px; height: 0px; left: 0px; top: 65px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: 75.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: 95px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
                         N/A.
                     </div>
-                    <div style="left: 11px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="left: 11px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">KIBBEN</div>
                         <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">ARTIST</div>
                     </div>
@@ -100,21 +104,21 @@
                     @mouseover="showProgrammerAlt = true" 
                     @mouseleave="showProgrammerAlt = false" 
                     style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Marketing Member"
+                    alt="Programmer Member"
                 />
                 <div v-if="!showProgrammerAlt" 
                     style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
                     PROGRAMMER
                 </div>
-                <div v-if="showProgrammerAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
+                <div v-if="showProgrammerAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 0px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: 700px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 284px; height: 0px; left: 0px; top: 685px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: 695.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: 715px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
                         N/A.
                     </div>
-                    <div style="left: 11px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="left: 11px; position: relative; top: 620px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">JM134</div>
                         <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">PROGRAMMER</div>
                     </div>
@@ -130,20 +134,83 @@
                     alt="Marketing Member"
                 />
                 <div v-if="!showFinanceAlt" 
-                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
                     FINANCE
                 </div>
-                <div v-if="showFinanceAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
+                <div v-if="showFinanceAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 294px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 284px; height: 0px; left: 110%; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
                         N/A.
                     </div>
-                    <div style="left: 11px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="left: 331px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">ALFON</div>
                         <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">FINANCE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member founder">
+                <img 
+                    :src="showFounderAlt ? founderImg : founderAltImg" 
+                    @mouseover="showFounderAlt = true" 
+                    @mouseleave="showFounderAlt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showFounderAlt" 
+                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    FOUNDER
+                </div>
+                <div v-if="showFounderAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 294px; height: 0px; left: 110%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: 252.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@gabodds_</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: 270px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                        Obsessed with anime. 
+                        Find me eating Okonomiyaki at KENKA NYC or on the 
+                        world wide web playing online video-
+                        games.<br/><br/>
+
+                        Favorite anime movie:
+
+                        AKIRA.
+                    </div>
+                    <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">GABODDS</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">FOUNDER</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member founder2">
+                <img 
+                    :src="showFounder2Alt ? founder2Img : founder2AltImg" 
+                    @mouseover="showFounder2Alt = true" 
+                    @mouseleave="showFounder2Alt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showFounder2Alt" 
+                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    DESGINER
+                </div>
+                <div v-if="showFounder2Alt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 414px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 284px; height: 0px; left: 110%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: 252.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@ N/A.</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: 270px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                        MFA in Interior Design(PRATT), designing in NYC since 2018 and watches 
+                        anime on her free time.<br/> <br/>
+                        Favorite animated movie: Spirited Away.
+                    </div>
+                    <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CRISTINA</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">DESIGNER</div>
                     </div>
                 </div>
             </div>
@@ -169,6 +236,11 @@ import programmerImg from '@/assets/images/team/programmer.png'
 import programmerAltImg from '@/assets/images/team/programmer_alt.png'
 import financeImg from '@/assets/images/team/finance.png'
 import financeAltImg from '@/assets/images/team/finance_alt.png'
+import founderImg from '@/assets/images/team/founder.png'
+import founderAltImg from '@/assets/images/team/founder_alt.png'
+import founder2Img from '@/assets/images/team/designer.png'
+import founder2AltImg from '@/assets/images/team/designer_alt.png'
+
 
 import { onMounted, ref } from 'vue'
 
@@ -178,6 +250,15 @@ const showMarketingAlt = ref(false)
 const showArtistAlt = ref(false)
 const showProgrammerAlt = ref(false)
 const showFinanceAlt = ref(false)
+const showFounderAlt = ref(false)
+const showFounder2Alt = ref(false)
+
+const scrollToSection = () => {
+  const section = document.querySelector('#team-section')
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 
     useHead({
@@ -187,6 +268,7 @@ const showFinanceAlt = ref(false)
     })
 
     let showFounderInfo = ref(false)
+    let showFounder2Info = ref(false)
     let showMarketingInfo = ref(false)
     let showStrategistInfo = ref(false)
     let showEngineerInfo = ref(false)
@@ -224,11 +306,13 @@ const showFinanceAlt = ref(false)
 
 html {
   scroll-behavior: smooth;
+  
 }
 
 
 .hide-scroll {
   overflow: visible;
+  
   
 }
 
@@ -280,7 +364,7 @@ html {
 
 .imageSitting {
     width: 40vw; /* Adjust based on desired size relative to container */
-    max-width: 700px; /* Limit max size */
+    max-width: 800px; /* Limit max size */
     height: auto;
     align-self: flex-start; /* Align image to the start (top-left) */
     object-fit: contain; /* Ensure image fits without cropping */
@@ -306,7 +390,7 @@ html {
     padding-top: 33%;
     justify-content: space-between; /* Push bottom button to the bottom */
     position: relative; /* For absolute positioning of bottom elements */
-    width: 400vw;
+    width: 100vw;
 }
 
 .brand-title {
@@ -364,12 +448,24 @@ html {
 }
 
 .team-info {
-    width: 441px; 
-    height: 656px; 
-    position: relative;
-    margin-top: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "marketing finance"
+    "artist founder"
+    "programmer founder2";
+  gap: 40px; /* espacio entre miembros */
+  position: relative;
+  margin-top: 1000px;
+  width: auto;
+  justify-items: left;
+  align-items: start;
 
+  margin-left: 1%;
 }
+
+
 
 .team-info .title {
     width: 441px; 
@@ -400,7 +496,12 @@ html {
 }
 
 .member {
-    mix-blend-mode: luminosity; 
+  mix-blend-mode: luminosity;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: mix-blend-mode 0.3s ease;
 }
 
 .member:hover {
@@ -420,85 +521,38 @@ html {
 }
 
 .founder {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 1px; 
-    top: 108px; 
-    position: absolute; 
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
+    grid-area: founder;
+}
+
+.founder {
+    grid-area: founder;
+}
+
+.founder2 {
+    grid-area: founder2;
 }
 
 .marketing {
-    width: 450px; 
-    height: 295px; 
-    padding-right: 15.50px; 
-    left: 3.6vw; 
-    top: 0; 
-    position: absolute; 
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 0.13px; 
-    display: inline-flex;
+
+
+    grid-area: marketing;
 }
 
 .artist {
-    width: 450px; 
-    height: 295px; 
-    padding-right: 15.50px; 
-    left: 3.6vw; 
-    top: 45%; 
-    position: absolute;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 0.13px; 
-    display: inline-flex;
+
+
+    grid-area: artist;
 }
 
 .programmer {
-    width: 450px; 
-    height: 295px; 
-    padding-right: 15.50px; 
-    left: 3.6vw; 
-    top: 90%; 
-    position: absolute;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 0.13px; 
-    display: inline-flex;
+
+     grid-area: programmer;
 }
 
 .finance {
-    width: 450px; 
-    height: 295px; 
-    padding-right: 15.50px; 
-    left: 47vw; 
-    top: 0; 
-    position: absolute;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 0.13px; 
-    display: inline-flex;
-}
 
-.developer {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 1px; 
-    top: 858px; 
-    position: absolute; 
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
+    grid-area: finance;
 }
-
 
 
 .def{
@@ -514,11 +568,16 @@ html {
 
 .odd{
 
-    display: none;
-
+    display: block;
+    color: rgb(0, 0, 0);
+    font-family: IMBPlexMono;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 2%;
 }
 
 .image{
+
     display: none;
 }
 

@@ -19,7 +19,7 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;  /* Opcional: bordes redondeados */
+  border-radius: 0px;  /* Opcional: bordes redondeados */
   overflow: hidden;    /* Para que la flecha no salga del cuadro */
 }
 

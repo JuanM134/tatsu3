@@ -3,7 +3,7 @@
     <navbar style="z-index: 4;" />
     <Dropupbttn class="dropupbttn" style="top: 88.5%; position: fixed; z-index: 8;" />  
     <menubttn style="z-index: 4;" /> 
-    <navbar2 style="z-index: 4;" />
+    <navbar2 style="z-index: 11;" />
 
     <!-- Contenedor scrollable del mapa -->
     <div class="scroll-wrapper">
@@ -168,7 +168,7 @@ function getPinImage(id: number) {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .pin-icon {
@@ -190,6 +190,7 @@ function getPinImage(id: number) {
   font-family: Montserrat;
   font-size: 0.55rem;
   padding: 2px 10px 15px;
+  margin-left: -15px;
   border-radius: 8px;
   letter-spacing: 2.04px;
   text-align: center;

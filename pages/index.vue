@@ -15,7 +15,10 @@
                     </h1>
                     <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalImage3.mp4" autoplay loop muted>
                         Your browser does not support the video tag.
-                    </video>          
+                    </video>         
+                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/fireWithSound.mp4" autoplay loop style="mix-blend-mode: screen; opacity: 1%;">
+                        Your browser does not support the video tag.
+                    </video>  
                 </div>
                   
                 <button @click="home"

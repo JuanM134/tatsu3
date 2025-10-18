@@ -6,25 +6,25 @@
             <navbar class="navbar"  style="z-index: 5;" />   
             <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
             <menubttn style="z-index: 6;"/> 
-            <navbar2 style="z-index: 6;" /> 
+            <navbar2 style="z-index: 11;" />
 
 
             <div class="container">
 
                 <div class="" style="z-index: 0;">
-                        <img class="home-image" src="@/assets/images/home.png" style="width: 100%; height: 100%; object-fit: contain;
-                         position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA;">  
+                        <img class="home-image" src="@/assets/images/home2.png" style="width: 100%; height: 100%; object-fit: contain;
+                         position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
                          
                     
-                    <video autoplay loop muted playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
-                    <source src="@/assets/videos/fireNew.mp4" type="video/mp4" /></video>
+                    <video autoplay loop playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
+                    <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" /></video>
 
                         <div class="video-wrap">
 
                             <img class="home-image-mobile" src="@/assets/images/homeMobile2.png" style="width: auto; height: 110dvh; object-fit: contain;
                             position: absolute; top: -5dvh; left: -25dvw; z-index: 0;"> 
-                            <video autoplay loop muted playsinline class="bg-video">
-                            <source src="@/assets/videos/fireNew.mp4" type="video/mp4" /></video>
+                            <video autoplay loop playsinline class="bg-video">
+                            <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" /></video>
                             
                         </div>
 

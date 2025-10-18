@@ -209,7 +209,7 @@ z-index: -1;
 
 ul{
 
-    width: 90%;
+    width: 97%;
     top:9rem;
     left: -3%;
     position: absolute;
@@ -217,11 +217,11 @@ ul{
 }
 
 li{
-    height: 2.5rem;
+    height: 3rem;
     border-color: #1B1818;
     list-style-type: none;
     border-bottom: 1px solid #484848;
-    padding-top: 0.5dvh;
+    padding-top: 1dvh;
 
     
 }

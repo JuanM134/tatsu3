@@ -1,201 +1,179 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light pt-4">
-        <div class="container">
-            <div class="navbar-collapse collapse" id="navbarCollapse">
-                <div class="me-auto"></div>
-                <div class="">
-                    <ul class="navbar-nav">
-                        <li class="nav-item" >
-                            <NuxtLink to="/history" class="nav-link" >
-                                <div class="tab justify-content-center">
-                                    <div >
-                                        TALES    
-                                    </div>                                        
-                                </div>
-                            </NuxtLink>
-                        </li>
-                        <li class="nav-item home-nav-item">
-                            <NuxtLink to="/world" class="nav-link">
-                                <div class="tab justify-content-center">
-                                    <div >
-                                        WORLD     
-                                    </div>                                        
-                                </div>
-                            </NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink to="/brandC" class="nav-link">
-                                <div class="tab justify-content-center">
-                                    <div >
-                                        BRAND     
-                                    </div>                                        
-                                </div>       
-                            </NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink to="/roadmap" class="nav-link">
-                                <div class="tab justify-content-center">
-                                    <div >
-                                        ROADMAP     
-                                    </div>                                        
-                                </div>
-                            </NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink to="/gallery" class="nav-link">
-                                <div class="tab justify-content-center">
-                                    <div >
-                                        GALLERY     
-                                    </div>                                        
-                                </div>        
-                            </NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink to="/connect" class="nav-link">
-                                <div class="tab justify-content-center">
-                                    <div >
-                                        CONNECT     
-                                    </div>                                        
-                                </div>
-                            </NuxtLink>
-                        </li>
-                        <li class="nav-item">
-                            <NuxtLink to="/home" class="nav-link">
-                                <div class="tab-1 justify-content-center home-button" style="box-shadow:1px 1px 1px 1px gray;">
-                                    <div class="icon-wrap" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                                        <!-- original front icon (keep inline style) -->
-                                        <font-awesome-icon class="icon-front" id="prueba" icon="fa-solid fa-house" size="2xl" style="color: #F47A7A; align-items: center; position: relative; padding-bottom: 15px;" />
-                                        <!-- hover-back icon: left arrow, hidden until hover -->
-                                        <font-awesome-icon class="icon-back" id="prueba-arrow" icon="fa-solid fa-arrow-left" size="2xl" style="color: #F47A7A; position: absolute;" />
-                                    </div>
-                                </div>
-                            </NuxtLink>
-                        </li>
-                    </ul>
+  <nav class="navbar navbar-expand navbar-light pt-3">
+    <div class="container-fluid"> <!-- ✅ Cambiado a container-fluid -->
+      <div class="navbar-collapse collapse" id="navbarCollapse">
+        <ul class="navbar-nav full-width">
+          <!-- Nav items alineados a la izquierda -->
+          <div class="left-items">
+            <li class="nav-item">
+              <NuxtLink to="/history" class="nav-link">
+                <div class="tab justify-content-center">
+                  <div>TALES</div>
                 </div>
+              </NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/world" class="nav-link">
+                <div class="tab justify-content-center">
+                  <div>WORLD</div>
+                </div>
+              </NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/brandC3" class="nav-link">
+                <div class="tab justify-content-center">
+                  <div>BRAND</div>
+                </div>
+              </NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/roadmap" class="nav-link">
+                <div class="tab justify-content-center">
+                  <div>ROADMAP</div>
+                </div>
+              </NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/gallery" class="nav-link">
+                <div class="tab justify-content-center">
+                  <div>GALLERY</div>
+                </div>
+              </NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/connect" class="nav-link">
+                <div class="tab justify-content-center">
+                  <div>CONNECT</div>
+                </div>
+              </NuxtLink>
+            </li>
+          </div>
 
-            </div>
-        </div>
-    </nav>
-
-
-
+          <!-- Botón HOME alineado a la derecha -->
+          <div class="right-item">
+            <li class="nav-item-2">
+              <NuxtLink to="/home" class="nav-link">
+                <div
+                  class="tab-1 justify-content-center home-button"
+                  style="box-shadow:1px 1px 1px 1px gray;"
+                >
+                  <div
+                    class="icon-wrap"
+                    style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"
+                  >
+                    <font-awesome-icon
+                      class="icon-front"
+                      icon="fa-solid fa-house"
+                      size="2xl"
+                      style="color: #F47A7A; align-items: center; position: relative; padding-bottom: 15px;"
+                    />
+                    <font-awesome-icon
+                      class="icon-back"
+                      icon="fa-solid fa-arrow-left"
+                      size="2xl"
+                      style="color: #F47A7A; position: absolute;"
+                    />
+                  </div>
+                </div>
+              </NuxtLink>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
 
-<script setup lang="ts">
-
-
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
-
-/* Ajustes para la barra de navegación principal */
 .navbar {
-    position: absolute; 
-    top: 0;          
-    left: 2dvw;         
-    width: auto;    
-    padding-top: 0;  
-    z-index: 1000;   
-    display: flex;   
-    flex-direction: column; 
-    align-items: flex-start; 
+  position: absolute; /* ✅ fixed para que quede arriba y abarque toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw; /* ✅ asegura ocupar todo el ancho visible */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent; /* puedes cambiar a un color si quieres */
+  padding: 0;
+  margin: 0;
 }
 
+/* Elimina márgenes heredados del container bootstrap */
+.container-fluid {
+  width: 100%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+/* Distribución principal */
+.full-width {
+  display: flex;
+  justify-content: space-between; /* izquierda y derecha separadas */
+  align-items: center;
+  width: 96%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.left-items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.right-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+/* Tabs principales */
 .tab {
-    justify-content: space-between; 
-    align-items: center;
-    display: inline-flex;
-    width: 135px;
-    height: 30px; 
-    padding-left: 20px; 
-    padding-right: 20px;
-    border-radius: 15px 15px 15px 15px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-    color: #000000;
-    font-family:  MontSerrat;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 2.04px;
-    font-size: 11px;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+  width: 135px;
+  height: 30px;
+  padding: 0 20px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: #000;
+  font-family: MontSerrat;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2.04px;
+  font-size: 11px;
 }
-
 
 .tab:hover {
+  background-color: #4e4e4e;
+  color: #fff;
+}
 
-    background-color: #4E4E4E;
-    color: #ffffff;
-
-    
-} 
-
+/* Botón de inicio */
 .tab-1 {
-
-    justify-content: space-between; 
-    align-items: flex-end;
-    display: inline-flex;
-    width: 50px;
-    height: 50px; 
-    padding-left: 20px; 
-    padding-right: 20px;
-    border-radius: 25px 25px 25px 25px;
-
-
-    background-color: #4E4E4E;
-    color: #ffffff;
-
-    color: #000000;
-    font-family:  MontSerrat;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 2.04px;
-    font-size: 11px;
-
+  justify-content: space-between;
+  align-items: flex-end;
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 25px;
+  background-color: #4e4e4e;
+  font-family: MontSerrat;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2.04px;
+  font-size: 11px;
 }
 
-/* arrange nav items in a single row and allow a right-side spacer for the home item */
-.navbar-collapse .navbar-nav {
-    display: flex;
-    align-items: center;
-}
-
-/* push the home item to the far right while keeping it in document flow */
-.home-nav-item {
-    margin-left: auto;
-}
-
-.brand {
-    background: #1B1818;
-    border: 1px #1B1818 solid;
-    border-radius: 8px;
-    position: relative;
-    left: -1rem;
-}
-
-.brand-text {
-
-    width: 180px; 
-    height: 70px; 
-    color: #F47A7A; 
-    font-size: 40px;
-    font-family: Bernoru;
-    text-align: center;
-    letter-spacing: -2px;
-    line-height: 52.40px;
-}
-
-
-
-@media only screen and (max-width: 430px) and (max-height: 800px){
-
-
-
-
-}
-
-/* icon swap preserving .tab-1 visuals */
+/* Iconos animados */
 .icon-wrap {
   position: relative;
   width: 100%;
@@ -204,14 +182,14 @@
 
 .icon-front,
 .icon-back {
-  transition: transform 260ms cubic-bezier(.2,.8,.2,1), opacity 260ms cubic-bezier(.2,.8,.2,1);
-  color: #F47A7A;
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  color: #f47a7a;
 }
 
 .icon-front {
-    opacity: 1;
-    /* center horizontally via flex; nudge down by 6px to sit slightly lower */
-    transform: translateY(6px) translateX(0) rotate(0deg);
+  opacity: 1;
+  transform: translateY(6px);
 }
 
 .icon-back {
@@ -222,43 +200,36 @@
   opacity: 0;
 }
 
-/* on hover or focus swap icons: show left arrow */
-.nav-link:hover .icon-front,
-.nav-link:focus .icon-front {
+.nav-link:hover .icon-front {
   opacity: 0;
-    /* preserve the downward nudge while sliding out */
-    transform: translateY(6px) translateX(10px) rotate(8deg);
+  transform: translateY(6px) translateX(10px) rotate(8deg);
 }
 
-.nav-link:hover .icon-back,
-.nav-link:focus .icon-back {
+.nav-link:hover .icon-back {
   opacity: 1;
   transform: translate(-50%, -50%) translateX(0) rotate(0deg);
 }
 
-/* preserve inline-style look: ensure positioning and padding apply */
-.icon-front {
-  padding-bottom: 15px;
-  position: relative;
-}
-
-.icon-back {
-  color: #F47A7A;
-}
-
-/* pin home button near right edge */
+/* HOME BUTTON */
 .home-button {
-    /* keep the button inline with the other nav items (static in the flow) */
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 6px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
-    .home-button {
-        margin: 0 4px;
-    }
+  .tab {
+    width: 90px;
+    font-size: 10px;
+    padding: 0 10px;
+  }
+
+  .tab-1 {
+    width: 40px;
+    height: 40px;
+    padding: 0 10px;
+  }
 }
 </style>

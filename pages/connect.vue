@@ -4,7 +4,7 @@
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; "/>  
         <menubttn style="z-index: 6;"/> 
-        <navbar2 style="z-index: 6;" />
+        <navbar2 style="z-index: 11;" />
         
 
 
@@ -44,7 +44,7 @@
     
     color: #0A0101; 
     font-size: 100px; 
-    font-family: Bernoru; 
+    font-family: 'Konkhmer Sleokchher', system-ui; 
     font-weight: 900; 
     line-height: 102.40px; 
     top: 40%;

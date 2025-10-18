@@ -378,8 +378,8 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   position:absolute; 
   inset:0; 
   width:100%; 
-  height:100%; 
-  object-fit: cover; 
+  height:118%; 
+  object-fit: contain; 
   transition: opacity 0.6s ease, transform 0.6s ease; 
   transform: scale(1.03); 
 }
@@ -400,6 +400,11 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
 
 /* ------------------ Media Queries ------------------ */
 @media (max-width:600px){ 
+
+    :deep(.dropup .menu-container) {
+    top: -13% !important; /* move menu up 2% relative to component default */
+  }
+
   .image-grid{
     display:grid; 
     grid-template-columns:1fr;
@@ -442,6 +447,11 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   }
 
 @media (min-width:601px) and (max-width:768px){ 
+
+    :deep(.dropup .menu-container) {
+    top: -13% !important; /* move menu up 2% relative to component default */
+  }
+
   .image-grid{
     grid-template-columns:repeat(2,1fr);
   }
@@ -449,6 +459,11 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
 }
 
 @media (min-width:769px){ 
+
+    :deep(.dropup .menu-container) {
+    top: -13% !important; /* move menu up 2% relative to component default */
+  }
+
   .image-grid{
     display:none;
   }

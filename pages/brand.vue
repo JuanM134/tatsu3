@@ -9,7 +9,7 @@
     
             <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; "/> 
             <menubttn style="z-index: 4;"/> 
-            <navbar2 style="z-index: 4;" />
+            <navbar2 style="z-index: 11;" />
     
 
             <div class="brand-info">
@@ -19,8 +19,8 @@
 
                     <span class="def"> 
                         draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of NYC; celebrating the tapestry of diverse art manga styles through our designs.<br/><br/>
-                        But it is not just about recreating art; it's about redefining ownership with the use of blockchain. The studio transcends the digital world to bestow physical ownership and tangible products derived from digital art. 
-                        <br/><br/>By transitioning them into the digital realm, we can ensure they are securely held, shared, and celebrated in a manner that is both exceptional and exclusive.             
+                        But it is not just about recreating art; it's about redefining ownership with the use of blockchain. <br/> The studio transcends the digital world to bestow physical ownership and tangible products derived from digital art. 
+                        <br/><br/>By transitioning them into the digital realm, we ecan ensure they are securely held, shared, and celebrated in a manner that is both exceptional and exclusive.             
                     </span>
 
                     <a class="arrowr"  href="#team-section" style="position: relative; z-index: 2; top: -5%; left: 32%;">
@@ -154,7 +154,7 @@
 
             <div >
                 <video autoplay loop muted class="video-container" >
-                    <source src="@/assets/videos/brand-video.mp4"  type="video/mp4" > 
+                    <source src="@/assets/videos/brandNew.mp4"  type="video/mp4" > 
                     Your browser does not support the video tag.
                 </video>
             </div>  

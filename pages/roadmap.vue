@@ -5,7 +5,7 @@
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;"/>  
         <menubttn style="z-index: 6;"/> 
-        <navbar2 style="z-index: 6;" />
+        <navbar2 style="z-index: 11;" />
         
 
         <div class="roadmap-content1">
@@ -45,7 +45,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const features = ref([
     { id: 1, text: 'Airdrop of a manga version of the same image for each holder.' },
-    { id: 2, text: 'Access to a raffle that selects a few holders and split a % of the profit.' },
+    { id: 2, text: 'Distribution of a profit % between a few holders.' },
     { id: 3, text: 'Exclusive access to manga chapters and future animations of different characters and fights.' },
     { id: 4, text: 'Exclusive access to “the gallery”, featuring anime collections with different artist.' },
 ])
