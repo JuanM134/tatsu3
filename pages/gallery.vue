@@ -39,6 +39,7 @@
               class="desktop-primary"
               :src="image.src"
               :alt="image.alt"
+              :style="imageStyle(image)"
               decoding="async"
             />
             <img
@@ -46,6 +47,7 @@
               class="desktop-alt"
               :src="image.srcAlt"
               :alt="image.alt + ' alt'"
+              :style="imageStyle(image)"
               decoding="async"
             />
           </div>
@@ -157,20 +159,20 @@ import samuraiAlt from '@/assets/images/characters/200_alt.png';
 
 // ------------------ Data ------------------
 const imagesDesktop = ref<ImageItemDesktop[]>([
-  { src: leo1, srcAlt: leo1Alt, alt: "Imagen Pepe", number: 20 },
-  { src: pepe, srcAlt: pepeAlt, alt: "Ilustración de personaje con espada y capa", number: 122 },
-  { src: oni, srcAlt: oniAlt, alt: "Personaje con cuernos y bastón", number: 134 },
-  { src: hippie, srcAlt: hippieAlt, alt: "Ilustración alternativa", number: 183 },
-  { src: cape, srcAlt: capeAlt, alt: "Personaje con espada y capa", number: 33 },
-  { src: white, srcAlt: whiteAlt, alt: "Personaje con capa blanca", number: 40 },
-  { src: coat, srcAlt: coatAlt, alt: "Personaje con abrigo", number: 56 },
-  { src: cyborg, srcAlt: cyborgAlt, alt: "Personaje ciborg", number: 90 },
-  { src: ranger, srcAlt: rangerAlt, alt: "Personaje guardabosques", number: 116 },
-  { src: ghostface, srcAlt: ghostfaceAlt, alt: "Personaje con máscara de fantasma", number: 142 },
-  { src: burned, srcAlt: burnedAlt, alt: "Personaje quemado", number: 161 },
-  { src: bones, srcAlt: bonesAlt, alt: "Personaje esqueleto", number: 164 },
-  { src: onigirl, srcAlt: onigirlAlt, alt: "Personaje Onigirl", number: 199 },
-  { src: samurai, srcAlt: samuraiAlt, alt: "Personaje samurái", number: 200 },
+  { src: leo1, srcAlt: leo1Alt, alt: "1", number: 20 , scale: 1.1, rotate: '0deg', offsetX: '40%', offsetY: '0%', width: '50%', brightness: 1 },
+  { src: pepe, srcAlt: pepeAlt, alt: "2", number: 122 , scale: 1.1, rotate: '0deg', offsetX: '-20%', offsetY: '0%', width: '70%', brightness: 1 },
+  { src: oni, srcAlt: oniAlt, alt: "3", number: 134 , scale: 1.2, rotate: '0deg', offsetX: '0%', offsetY: '-5%', width: '60%', brightness: 1 },
+  { src: hippie, srcAlt: hippieAlt, alt: "4", number: 183 , scale: 1.2, rotate: '0deg', offsetX: '50%', offsetY: '0%', width: '60%', brightness: 1 },
+  { src: cape, srcAlt: capeAlt, alt: "5", number: 33 , scale: 1.1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '50%', brightness: 1 },
+  { src: white, srcAlt: whiteAlt, alt: "6", number: 40 , scale: 1.1, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '50%', brightness: 1 },
+  { src: coat, srcAlt: coatAlt, alt: "7", number: 56 , scale: 1, rotate: '0deg', offsetX: '60%', offsetY: '0%', width: '40%', brightness: 1 },
+  { src: cyborg, srcAlt: cyborgAlt, alt: "8", number: 90 , scale: 1, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '55%', brightness: 1 },
+  { src: ranger, srcAlt: rangerAlt, alt: "9", number: 116 , scale: 1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '60%', brightness: 1 },
+  { src: ghostface, srcAlt: ghostfaceAlt, alt: "10", number: 142 , scale: 1.25, rotate: '0deg', offsetX: '41%', offsetY: '0%', width: '70%', brightness: 1 },
+  { src: burned, srcAlt: burnedAlt, alt: "11", number: 161 , scale: 1.2, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '60%', brightness: 1 },
+  { src: bones, srcAlt: bonesAlt, alt: "12", number: 164 , scale: 1, rotate: '0deg', offsetX: '40%', offsetY: '0%', width: '70%', brightness: 1 },
+  { src: onigirl, srcAlt: onigirlAlt, alt: "13", number: 199 , scale: 1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '60%', brightness: 1 },
+  { src: samurai, srcAlt: samuraiAlt, alt: "14", number: 200 , scale: 1.1, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '60%', brightness: 1 },
 ]);
 
 const imagesMobile = ref<ImageItemMobile[]>([
@@ -227,6 +229,29 @@ const nextDesktopCarousel = () => {
   currentDesktopIndex.value = (currentDesktopIndex.value + 1) % imagesDesktop.value.length;
   if (desktopInterval) { clearInterval(desktopInterval); startDesktopCarousel(); }
 };
+
+// 🔹 Generador dinámico de estilos
+const imageStyle = (image) => ({
+  transform: `
+    scale(${image.scale || 1}) 
+    rotate(${image.rotate || '0deg'}) 
+    translate(${image.offsetX || '0'}, ${image.offsetY || '0'})
+  `,
+  width: image.width || '100%',
+  height: image.height || '100%',
+  objectFit: image.objectFit || 'cover',
+  filter: `
+    brightness(${image.brightness || 1}) 
+    contrast(${image.contrast || 1}) 
+    blur(${image.blur || 0}) 
+    grayscale(${image.grayscale || 0})
+  `,
+  borderRadius: image.borderRadius || '0',
+  border: image.border || 'none',
+  boxShadow: image.boxShadow || 'none',
+  transition: `${image.transitionDuration || '0.8s'} ${image.transitionTiming || 'ease-in-out'}`,
+  zIndex: image.zIndex || 1,
+})
 
 // ------------------ Hover / Tap ------------------
 const hovered = ref<number | null>(null);
