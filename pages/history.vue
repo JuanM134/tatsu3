@@ -500,122 +500,70 @@
    ============================== */
 @media only screen and (max-width: 600px) {
 
-  /* --- CONTENEDORES --- */
-  .containerHistory,
-  .containerHistory2,
-  .containerHistory3 {
-    width: 100%;
-    max-width: 100%;
-    padding: 1rem 4%;
-    box-sizing: border-box;
-    position: relative;
-    left: 0;
-    top: 0;
-    text-align: left;
-    background: transparent;
-    height: auto !important;
-    max-height: none !important;
-    overflow: visible !important;
-    z-index: 2;
+.navbar, .navbar2 {
+    display: none;
+
+}
+
+.dropupbttn {
+    display: none;
+}
+
+.containerHistory3 {
+  height: max-content;
+}
+
+
+.background{
+  backdrop-filter: blur(8px); /* Apply the blur effect */
+  -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
+}
+
+.odd{
+  font-size: .6rem;
+  text-align: center;
+
+  left: 50%;                
+  transform: translateX(-50%); 
+}
+
+  .title{
     display: block;
-  }
-
-  .containerHistory { padding-top: 5.2rem; margin-top: 0.6rem; }
-  .containerHistory2 { top: 60dvh; }
-  .containerHistory3 { top: 30dvh; }
-
-  /* --- TITULOS --- */
-  .title, .title2, .title3 {
-    font-size: 28px;
-    line-height: 1.1;
-    text-align: center;
-    padding: 1.5rem 4%;
     margin: 0;
-    display: block;
+    padding-top: 30%;
+    padding-bottom: 7%;
     position: relative;
-    letter-spacing: -2px;
-  }
-  .title2 { margin-left: -5%; padding-top: 0; }
 
-  /* --- PÁRRAFOS --- */
-  .containerHistory .paragraph,
-  .containerHistory2,
-  .containerHistory3 > div {
-    font-size: 14px;
-    line-height: 1.4;
-    color: #111;
-    margin-bottom: 1.25rem;
   }
 
-  .titles {
-    color: #fff;
-    font-family: Bernoru;
-    font-size: 22px;
-    margin: 0 4%;
-    line-height: 150%;
-  }
-
-  .paragraphs {
-    color: rgb(227, 227, 227);
-    font-family: IMBPlexMono;
-    font-weight: lighter;
-    font-size: 12px;
-    text-align: justify;
-    margin: 0 4%;
-  }
-
-  /* --- TEXTO DESTACADO --- */
-  .odd {
+.title3{
     display: block;
-    color: #000000;
-    font-family: IMBPlexMono;
-    font-size: 0.6rem;
-    top: 67dvh;
-    left: 0;
-    z-index: 3;
-    text-align: center;
+    margin: 0;
+    padding-top: 30%;
+    padding-bottom: 2.5%;
     position: relative;
     
+
   }
 
-  /* --- FONDOS Y BACKGROUNDS --- */
-  .background,
-  .background1,
-  .background2 { display: none; }
 
-  .background3 {
-    position: relative;
-    height: 100dvh;
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .dragon-img {
+  .title2{
     display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    filter: blur(1px);
-  }
-
-  /* --- NAVBAR Y BOTONES --- */
-  .navbar, .dropupbttn, .moretales { display: none; }
-  .navbar2 { display: block; }
-
-  /* --- CONTENEDOR PRINCIPAL --- */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: last baseline;
+    margin: 0;
+    padding-top: 60%;
+    padding-bottom: -50%;
     position: relative;
-    top: 5%;
-    height: 100vh;
-    z-index: 1;
+
   }
+
+  .containerHistory2{
+    top: 5dvh;
+  }
+
 }
+
+
+
+
 
 </style>
