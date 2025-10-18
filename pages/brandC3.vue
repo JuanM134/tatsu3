@@ -401,7 +401,7 @@ html {
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     flex-grow: 1; /* Allow content area to grow */
-    padding-left: 3%; /* Adjust as needed for spacing */
+    padding-left: 1%; /* Adjust as needed for spacing */
     padding-right: 5%; /* Adjust as needed for spacing */
     padding-top: 19.5%;
     justify-content: space-between; /* Push bottom button to the bottom */
