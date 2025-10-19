@@ -546,11 +546,10 @@
 
   }
 
-
   .title2{
     display: block;
     margin: 0;
-    padding-top: 60%;
+    padding-top: 65%;
     padding-bottom: -50%;
     position: relative;
 
@@ -560,9 +559,9 @@
     top: 5dvh;
   }
 
- .background2{
-    height: 100%;
- }
+  .background2 {
+    height: 75%;
+  }
 
 }
 
