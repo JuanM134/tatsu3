@@ -1,6 +1,6 @@
 <template>
 
-        <div style="height: 200%; width: 100%; position: relative; ">
+        <div class="history-container"  style="height: 200%; width: 100%; position: relative; ">
           <menubttn style="z-index: 6;overflow-y: hidden;"/> 
 
           <Dropupbttn class="dropupbttn"  style="z-index: 4; position: fixed; top: 88.5%;" />
@@ -561,6 +561,10 @@
 
   .background2 {
     height: 80%;
+  }
+
+   .history-container {
+    overflow-x: hidden;
   }
 
 }
