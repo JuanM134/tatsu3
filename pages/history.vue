@@ -560,7 +560,7 @@
   }
 
   .background2 {
-    height: 75%;
+    height: 80%;
   }
 
 }
