@@ -560,6 +560,10 @@
     top: 5dvh;
   }
 
+ .background2{
+    height: 100%;
+ }
+
 }
 
 
