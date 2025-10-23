@@ -26,7 +26,7 @@
             <div class="brand-txt">
 
                 
-                <p><span style="color: black; font-size: 14px; font-family: IMBPlexMono; font-weight: 400; text-transform: uppercase; line-height: 18.90px; letter-spacing: 1.12px; background: linear-gradient(to bottom, #DDD9DA 60%, #F47A7A 60%);">Odd studios</span> draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of nyc; 
+                <p><span style="color: black; font-size: 1.1em; font-family: 'Kokoro', sans-serif  ; font-weight: 400; text-transform: uppercase; line-height: 18.90px; letter-spacing: 1.12px; background: linear-gradient(to bottom, #DDD9DA 60%, #F47A7A 60%);">Odd studios</span> draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of nyc; 
                 celebrating the tapestry of diverse art manga styles through our designs.</p>
 
                 <p>But it is not just about recreating art; it's about redefining ownership with the use of blockchain. 
@@ -52,6 +52,8 @@
 
     <div id="team-section" class="team-info">
 
+            <h2 class="title2">THE PARTY</h2>
+
             <div class="member marketing">
                 <img 
                     :src="showMarketingAlt ? marketingImg : marketingAltImg" 
@@ -67,14 +69,14 @@
                 <div v-if="showMarketingAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 284px; height: 0px; left: 0px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@catu_you_are</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <div style="width: 304px; height: 0px; left: -8px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@catu_you_are</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: -20px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
                         Master of Science in Advertising (BU).<br/>Kickstarter Success.<br/>CEO of Biz Connect.
                     </div>
                     <div style="left: 11px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CATU</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">MARKETING</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px; font-family: 'Roboto', sans-serif;">MARKETING</div>
                     </div>
                 </div>
             </div>
@@ -95,14 +97,14 @@
                 <div v-if="showArtistAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; ; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 10.78px; top:80px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 284px; height: 0px; left: 0px; top: 65px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: 75.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: 95px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <div style="width: 304px; height: 0px; left: -8px; top: 65px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: 75.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;  font-family: 'Roboto', sans-serif;">@</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: 95px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
                         N/A.
                     </div>
                     <div style="left: 11px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">KIBBEN</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">ARTIST</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">ARTIST</div>
                     </div>
                 </div>
             </div>
@@ -122,14 +124,14 @@
                 <div v-if="showProgrammerAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 0px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: 700px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 284px; height: 0px; left: 0px; top: 685px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: 695.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: 715px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <div style="width: 304px; height: 0px; left: -8px; top: 685px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: 695.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;  font-family: 'Roboto', sans-serif;">@</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: 715px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
                         N/A.
                     </div>
                     <div style="left: 11px; position: relative; top: 620px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">JM134</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">PROGRAMMER</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">PROGRAMMER</div>
                     </div>
                 </div>
             </div>
@@ -149,9 +151,9 @@
                 <div v-if="showFinanceAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 335px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 284px; height: 0px; left: 110%; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 118%; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@</div>
-                    <div style="width: 256px; height: 20px; left: 114%; top: -30px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <div style="width: 304px; height: 0px; left: 106%; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: -20px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
                         N/A.
                     </div>
                     <div style="left: 331px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
@@ -176,21 +178,21 @@
                 <div v-if="showFounderAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 294px; height: 0px; left: 110%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 118%; top: 252.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@gabodds_</div>
-                    <div style="width: 256px; height: 20px; left: 114%; top: 270px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                     <div style="width: 304px; height: 0px; left: 106%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: 251.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@gabodds_</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: 280px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
                         Obsessed with anime. 
                         Find me eating Okonomiyaki at KENKA NYC or on the 
                         world wide web playing online video-
                         games.<br/><br/>
 
-                        Favorite anime movie:
+                        Favorite anime movie: <br/><br/><br/>
 
                         AKIRA.
                     </div>
                     <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">GABODDS</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">FOUNDER</div>
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: 'Bernoru', sans-serif; font-weight: 900; line-height: 51.20px;">GABODDS</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px; ">FOUNDER</div>
                     </div>
                 </div>
             </div>
@@ -210,16 +212,19 @@
                 <div v-if="showFounder2Alt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 414px; position: absolute">
                     <!-- Contenido info del miembro aquí -->
                     <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 284px; height: 0px; left: 110%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 118%; top: 252.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;">@ N/A.</div>
-                    <div style="width: 256px; height: 20px; left: 114%; top: 270px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;">
+                    <div style="width: 304px; height: 0px; left: 106%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: 251.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@ N/A.</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: 280px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
                         MFA in Interior Design(PRATT), designing in NYC since 2018 and watches 
-                        anime on her free time.<br/> <br/>
-                        Favorite animated movie: Spirited Away.
+                        anime on her free time.<br/> <br/><br/>
+
+                        Favorite animated movie: <br/> <br/> <br/>
+                        
+                        Spirited Away.
                     </div>
                     <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                         <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CRISTINA</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">DESIGNER</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">DESIGNER</div>
                     </div>
                 </div>
             </div>
@@ -354,6 +359,7 @@ html {
 }
 
 .brand-info {
+
     width: 510px; 
     height: 60.3rem; 
     left: 38px; 
@@ -371,14 +377,17 @@ html {
     /* Hide scrollbar but keep functionality */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
 }
 
 .imageSitting {
+
     display: none;
     
 }
 
 .imageSitting2 {
+
     display: none;
     
 }
@@ -386,9 +395,9 @@ html {
 .video-container{
 
     position: absolute;
-    width: 60%;
+    width: 70%;
     height: 100%;
-    left: 40%;
+    left: 30%;
     top: 0%;
     
     mix-blend-mode: darken;
@@ -403,7 +412,7 @@ html {
     flex-grow: 1; /* Allow content area to grow */
     padding-left: 1%; /* Adjust as needed for spacing */
     padding-right: 5%; /* Adjust as needed for spacing */
-    padding-top: 19.5%;
+    padding-top: 15%;
     justify-content: space-between; /* Push bottom button to the bottom */
     position: relative; /* For absolute positioning of bottom elements */
     width: 100vw;
@@ -419,21 +428,29 @@ html {
     margin-top: 1.5vw; /* Push title down, adjust based on image overlap */
     margin-left: 3vw; /* Push title right, adjust based on image overlap */
     white-space: nowrap; /* Prevent "ODD" and "STUDIOS" from breaking */
+    max-width: 45vw; /* Limit width of text for readability */
     line-height: 0.8; /* Reduce line height */
     z-index: 2; /* Ensure title is above the image */
     word-spacing: .2em;
+
+    background-color: #ddd9dac4;
 }
 
 .brand-txt{
     margin-top: 1vw; /* Space between title and text blocks */
     margin-left: 3vw; /* Align text blocks with title */
-    max-width: 700px; /* Limit width of text for readability */
-    font-size: 0.9em;
+    max-width: 45vw; /* Limit width of text for readability */
+    font-size: 1.1em;
+    font-weight: 500;
     line-height: 1.6;
     z-index: 2;
-    font-family: IMBPlexMono;
+    font-family: 'Kokoro', sans-serif;
     overflow-wrap: break-word;
+    color: #000;
+
+    background-color: #ddd9dac4;
 }
+
 
 
   /* Hide scrollbar but keep functionality for Chrome, Safari and Opera */
@@ -501,14 +518,14 @@ html {
     width: 441px; 
     height: 100px; 
     left: 0px; 
-    top: 0px; 
+    top: -120px; 
     position: absolute; 
     color: #0A0101; 
     font-size: 64px; 
     font-family: Bernoru; 
     font-weight: 900; 
     line-height: 102.40px; 
-    letter-spacing: -3px;
+    letter-spacing: -1.5px;
 }
 
 .member {
@@ -845,6 +862,19 @@ html {
 
 }
 
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
 
 
