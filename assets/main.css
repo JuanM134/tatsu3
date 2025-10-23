@@ -55,3 +55,12 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-VariableFont_wdth,wght.ttf') format('opentype');
+  /* src: local('Bernoru-BlackMedium'), url('/fonts/Bernoru-BlackMedium.otf') format('opentype'); */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

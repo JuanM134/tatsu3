@@ -1,5 +1,4 @@
 <template>
-  
     <div class="background">
         <navbar style="z-index: 4;" />
 
@@ -7,37 +6,46 @@
         <menubttn style="z-index: 6;"/> 
         <navbar2 style="z-index: 11;" />
         
+        <!-- Sección UTILITY con estructura semántica mejorada -->
+        <section class="roadmap-section" aria-labelledby="utility-title">
+            <div class="roadmap-content1">
+                <h1 id="utility-title" class="title">UTILITY</h1>
 
-        <div class="roadmap-content1">
-            <p class="title">UTILITY</p>
-
-            <div class="description">
-                <ul class="features" ref="listRef">
-                    <li v-for="(f, i) in features" :key="f.id" class="fade-item" :style="{ transitionDelay: `${i * 160}ms` }">
-                        {{ f.text }}
-                    </li>
-                </ul>
+                <div class="description">
+                    <ul class="features" ref="listRef" aria-label="Características de utilidad">
+                        <li v-for="(f, i) in features" :key="f.id" class="fade-item" 
+                            :style="{ transitionDelay: `${i * 160}ms` }"
+                            :aria-label="f.text">
+                            {{ f.text }}
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="roadmap-content">
-            <p class="title">ABOUT</p>
+        <!-- Sección ABOUT con estructura semántica mejorada -->
+        <section class="roadmap-section" aria-labelledby="about-title">
+            <div class="roadmap-content">
+                <h2 id="about-title" class="title">ABOUT</h2>
 
-            <div class="description">
-                <ul class="features" ref="listRef2">
-                    <li v-for="(f, i) in futureFeatures" :key="f.id" class="fade-item" :style="{ transitionDelay: `${i * 160}ms` }">
-                        {{ f.text }}
-                    </li>
-                </ul>
+                <div class="description">
+                    <ul class="features" ref="listRef2" aria-label="Características sobre la colección">
+                        <li v-for="(f, i) in futureFeatures" :key="f.id" class="fade-item" 
+                            :style="{ transitionDelay: `${i * 160}ms` }"
+                            :aria-label="f.text">
+                            {{ f.text }}
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </section>
 
         
-        <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+        <footer class="footer">
+            <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+        </footer>
 
     </div>
-
-
 </template>
 
 <script setup lang="ts">
@@ -47,7 +55,7 @@ const features = ref([
     { id: 1, text: 'Airdrop of a manga version of the same image for each holder.' },
     { id: 2, text: 'Distribution of a profit % between a few holders.' },
     { id: 3, text: 'Exclusive access to manga chapters and future animations of different characters and fights.' },
-    { id: 4, text: 'Exclusive access to “the gallery”, featuring anime collections with different artist.' },
+    { id: 4, text: 'Exclusive access to "the gallery", featuring anime collections with different artist.' },
 ])
 
 const futureFeatures = ref([
@@ -58,8 +66,6 @@ const futureFeatures = ref([
     { id: 'f5', text: '  ' },
     { id: 'f6', text: '  ' },
     { id: 'f7', text: '  ' },
-
-
 ])
 
 const listRef = ref<HTMLElement | null>(null)
@@ -88,10 +94,6 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-
-
-
-
 .background {
     background-color: #DDD9DA;
     background-repeat: no-repeat;
@@ -99,13 +101,12 @@ onBeforeUnmount(() => {
     background-size: cover;
     background-position: center;
     
-
     width: 100%;
     min-height: 100vh;
-    position: relative; /* ✅ importante: no fixed */
+    position: relative;
     
     overflow-x: hidden;
-    overflow-y: auto; /* ✅ scroll natural */
+    overflow-y: auto;
     scroll-behavior: smooth;
     
     z-index: 0;
@@ -130,22 +131,29 @@ onBeforeUnmount(() => {
     --roadmap-title-mobile-min: calc(var(--roadmap-list-font-size) * 1.4);
 }
 
+/* Mejor estructura para las secciones */
+.roadmap-section {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .title {
     /* responsive title using CSS variables (adjust via .background) */
     font-size: clamp(var(--roadmap-title-min), var(--roadmap-title-fluid), var(--roadmap-title-max));
-    font-family: Bernoru, serif;
+    font-family: 'Konkhmer Sleokchher', sans-serif;
     font-weight: 900;
     line-height: 1.02;
     margin: 0;
     margin-top: 10dvh;
     text-align: left;
     width: 100%;
-    position: static; /* flow normally above the list */
+    position: static;
     color: #111;
 }
 
 .description {
-    margin-top: 2dvh; /* reduced so title and list don't overlap */
+    margin-top: 2dvh;
     display: flex;
     justify-content: flex-start;
     width: 100%;
@@ -154,31 +162,27 @@ onBeforeUnmount(() => {
 .roadmap-content1 {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* left align title and list */
+    align-items: flex-start;
     gap: 20px;
-    padding-left: 48px; /* position content toward the left side */
+    padding-left: 48px;
     box-sizing: border-box;
     max-width: 1100px;
     padding-top: 5dvh;
     font-family: MontSerrat;
-
 }
 
 .roadmap-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* left align title and list */
+    align-items: flex-start;
     gap: 20px;
-    padding-left: 48px; /* position content toward the left side */
+    padding-left: 48px;
     box-sizing: border-box;
     max-width: 1100px;
     padding-top: 5dvh;
     padding-bottom: 15dvh;
-    font-family: MontSerrat;
-    
-    
+     font-family: 'Roboto';
 }
-
 
 .features {
     list-style: none;
@@ -186,7 +190,6 @@ onBeforeUnmount(() => {
     margin: 0;
     max-width: 900px;
     width: 90%;
-    
 }
 
 .fade-item {
@@ -194,7 +197,7 @@ onBeforeUnmount(() => {
     transform: translateY(10px);
     transition: opacity 360ms ease, transform 360ms ease;
     margin: 12px 0;
-    font-family: Montserrat;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 1.5px;
     font-size: var(--roadmap-list-font-size);
     letter-spacing: 1.04px;
@@ -205,55 +208,51 @@ onBeforeUnmount(() => {
     transform: translateY(0);
 }
 
+/* Mejor estructura para el footer */
+.footer {
+    position: relative;
+    width: 100%;
+}
 
 .odd {
-  display: grid;
-  color: rgb(1, 1, 1);
-  font-family: IMBPlexMono;
-  font-size: 0.6rem;
-  z-index: 4;
-  text-align: center;
-
-  position: absolute;
-  bottom: -15px;
-  left: 50%;                /* ✅ centrado base */
-  transform: translateX(-50%); /* ✅ centrado exacto */
-}
-
-
-@media only screen and (max-width: 600px) and (max-height: 933px){
-
-.navbar{
-
-display: none;
-
-}
-
-.background{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-}
-
-.odd{
-
     display: grid;
-    color: rgb(0, 0, 0);
+    color: rgb(1, 1, 1);
     font-family: IMBPlexMono;
     font-size: 0.6rem;
-    
     z-index: 4;
     text-align: center;
-    position: relative;
-    object-fit: contain;
-    bottom: 15px;
+    position: absolute;
+    bottom: -15px;
     left: 50%;
-
+    transform: translateX(-50%);
 }
 
-.title{
+@media only screen and (max-width: 600px) and (max-height: 933px) {
+    .navbar {
+        display: none;
+    }
+
+    .background {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .odd {
+        display: grid;
+        color: rgb(0, 0, 0);
+        font-family: IMBPlexMono;
+        font-size: 0.6rem;
+        z-index: 4;
+        text-align: center;
+        position: relative;
+        object-fit: contain;
+        bottom: 15px;
+        left: 50%;
+    }
+
+    .title {
         position: static;
-        /* mobile sizing via variables */
         font-size: clamp(var(--roadmap-title-mobile-min), var(--roadmap-title-mobile-fluid), var(--roadmap-title-mobile-max));
         text-align: left;
         line-height: 1.05;
@@ -261,24 +260,29 @@ display: none;
         height: auto;
     }   
 
-.dropupbttn{
+    .dropupbttn {
+        display: none;
+    }
 
+    .navbar2 {
+        display: block;
+    }
 
-    display: none;
+    .background {
+        display: flex;
+        flex-direction: column;
+    }
 
+    /* Ajustes responsive para las secciones */
+    .roadmap-section {
+        justify-content: center;
+    }
+    
+    .roadmap-content1,
+    .roadmap-content {
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+    }
 }
-
-.navbar2{
-
-    display: block;
-}
-
-.background{
-    display: flex;
-    flex-direction: column;
-}
-
-}
-
-
 </style>
