@@ -285,4 +285,8 @@ onBeforeUnmount(() => {
         width: 100%;
     }
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> bce263a545ad74874f36dda37db1d8c2a0212ab3

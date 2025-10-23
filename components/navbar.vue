@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand navbar-light pt-3">
-    <div class="container-fluid"> <!-- ✅ Cambiado a container-fluid -->
+    <div class="container-fluid"> <!--Cambiado a container-fluid -->
       <div class="navbar-collapse collapse" id="navbarCollapse">
         <ul class="navbar-nav full-width">
           <!-- Nav items alineados a la izquierda -->
