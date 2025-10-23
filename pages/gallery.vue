@@ -159,11 +159,11 @@ import samuraiAlt from '@/assets/images/characters/200_alt.png';
 
 // ------------------ Data ------------------
 const imagesDesktop = ref<ImageItemDesktop[]>([
-  { src: leo1, srcAlt: leo1Alt, alt: "1", number: 20 , scale: 1.2, rotate: '0deg', offsetX: '40%', offsetY: '3%', width: '50%', brightness: 1 },
-  { src: pepe, srcAlt: pepeAlt, alt: "2", number: 122 , scale: 1.1, rotate: '0deg', offsetX: '-20%', offsetY: '0%', width: '70%', brightness: 1 },
-  { src: oni, srcAlt: oniAlt, alt: "3", number: 134 , scale: 1.2, rotate: '0deg', offsetX: '0%', offsetY: '-5%', width: '60%', brightness: 1 },
+  { src: leo1, srcAlt: leo1Alt, alt: "1", number: 20 , scale: 1.05, rotate: '0deg', offsetX: '30%', offsetY: '3%', width: '60%', brightness: 1 },
+  { src: pepe, srcAlt: pepeAlt, alt: "2", number: 122 , scale: 1.1, rotate: '0deg', offsetX: '-20%', offsetY: '0%', width: '75%', brightness: 1 },
+  { src: oni, srcAlt: oniAlt, alt: "3", number: 134 , scale: 1.2, rotate: '0deg', offsetX: '0%', offsetY: '-5%', width: '65%', brightness: 1 },
   { src: hippie, srcAlt: hippieAlt, alt: "4", number: 183 , scale: 1.25, rotate: '0deg', offsetX: '50%', offsetY: '0%', width: '60%', brightness: 1 },
-  { src: cape, srcAlt: capeAlt, alt: "5", number: 33 , scale: 1.1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '50%', brightness: 1 },
+  { src: cape, srcAlt: capeAlt, alt: "5", number: 33 , scale: 1.1, rotate: '0deg', offsetX: '0%', offsetY: '0%', width: '55%', brightness: 1 },
   { src: white, srcAlt: whiteAlt, alt: "6", number: 40 , scale: 1.2, rotate: '0deg', offsetX: '70%', offsetY: '0%', width: '50%', brightness: 1 },
   { src: coat, srcAlt: coatAlt, alt: "7", number: 56 , scale: 1.2, rotate: '0deg', offsetX: '60%', offsetY: '0%', width: '40%', brightness: 1 },
   { src: cyborg, srcAlt: cyborgAlt, alt: "8", number: 90 , scale: 1, rotate: '0deg', offsetX: '70%', offsetY: '3%', width: '52%', brightness: 1 },
@@ -390,7 +390,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   pointer-events:none; 
   z-index:1; 
   opacity:0; 
-  transition:opacity 0.3s ease; 
+  transition: opacity 0.3s ease; 
 }
 
 .desktop-slide.active { 
@@ -405,7 +405,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   width:100%; 
   height:118%; 
   object-fit: contain; 
-  transition: opacity 0.6s ease, transform 0.6s ease; 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
   transform: scale(1.03); 
 }
 .desktop-primary { 
@@ -420,6 +420,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
 }
 .desktop-slide.active:hover .desktop-alt { 
   opacity:1; 
+  transition-duration: 0.3ms;
   transform:scale(1); 
 }
 
