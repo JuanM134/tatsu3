@@ -1,617 +1,232 @@
 <template>
 
-    <div class="background">
-        <navbar class="navbar" style="z-index: 4; " />  
+  <div class="background">
+    <navbar class="navbar" style="z-index: 4;" />  
+    <Dropupbttn class="dropupbttn" style="z-index: 5; top: 88.5%; position: fixed;"/> 
+    <menubttn style="z-index: 6;"/> 
+    <navbar2 style="z-index: 6;" />
+    <home class="dropupbttn" style="z-index: 5; position: fixed;"/> 
 
-        <Dropupbttn class="dropupbttn" style="z-index: 5; top: 88.5%; position: fixed;"/> 
-        <menubttn style="z-index: 6;"/> 
-        <navbar2 style="z-index: 6;" />
- 
-        <div style="background-color: #DDD9DA;">
-            <video autoplay loop muted class="video-container" >
-                    <source src="@/assets/videos/brandNew.mp4"  type="video/mp4" > 
-                    Your browser does not support the video tag.
-            </video>
-        </div>
-                
+    <img class="imageSitting" src="@/assets/images/sitting.png" alt="">
 
-        <img class="imageSitting"  src="@/assets/images/sitting.png" alt="">
+    <!-- 🧩 GRID PRINCIPAL -->
+    <div class="main-grid">
+      <!-- Columna Izquierda -->
+      <div class="content">
+        <h1 class="brand-title">ODD STUDIOS</h1>
 
+        <div class="brand-txt">
+          <p>
+            <span style="color: black; font-size: 15px; font-family: 'Kokoro', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 18.90px; letter-spacing: 1.12px; background: linear-gradient(to bottom, #DDD9DA 60%, #F47A7A 60%);">
+              Odd studios</span>
+             draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of NYC; celebrating the tapestry of diverse art manga styles through our designs.
+          </p>
 
-        <div class="content">
+          <p>
+            But it is not just about recreating art; it's about redefining ownership with the use of blockchain. 
+            The studio transcends the digital world to bestow physical ownership and tangible products derived from digital art.
+          </p>    
 
-            <h1 class="brand-title"> ODD STUDIOS</h1>
-
-
-            <div class="brand-txt">
-
-                
-                <p><span style="color: black; font-size: 1.1em; font-family: 'Kokoro', sans-serif  ; font-weight: 400; text-transform: uppercase; line-height: 18.90px; letter-spacing: 1.12px; background: linear-gradient(to bottom, #DDD9DA 60%, #F47A7A 60%);">Odd studios</span> draws inspiration from the vibrant world of retro anime and the eclectic fashion styles from the streets of nyc; 
-                celebrating the tapestry of diverse art manga styles through our designs.</p>
-
-                <p>But it is not just about recreating art; it's about redefining ownership with the use of blockchain. 
-                The studio transcends the digital world  to bestow physical ownership and tangible products derived from digital art.</p>    
-
-                <p>By transitioning them into the digital realm, we can ensure they are securely held, shared, and celebrated in a manner that 
-                is both exceptional and exclusive.</p>
-
-                <div class="arrow-row">
-                    <a class="arrowr" href="#team-section" @click.prevent="scrollToSection">
-                    <ArrowR />
-                    </a>
-                    <a href="#team-section" class="party" @click.prevent="scrollToSection">
-                    <p><strong>Party</strong></p>
-                    </a>
-                </div>
-
-            </div>
-
-        <img class="imageSitting2" src="@/assets/images/sitting.png" alt="">
- 
-
-
-    <div id="team-section" class="team-info">
-
-            <h2 class="title2">THE PARTY</h2>
-
-            <div class="member marketing">
-                <img 
-                    :src="showMarketingAlt ? marketingImg : marketingAltImg" 
-                    @mouseover="showMarketingAlt = true" 
-                    @mouseleave="showMarketingAlt = false" 
-                    style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Marketing Member"
-                />
-                <div v-if="!showMarketingAlt" 
-                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
-                    MARKETING
-                </div>
-                <div v-if="showMarketingAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
-                    <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 304px; height: 0px; left: -8px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@catu_you_are</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: -20px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
-                        Master of Science in Advertising (BU).<br/>Kickstarter Success.<br/>CEO of Biz Connect.
-                    </div>
-                    <div style="left: 11px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CATU</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px; font-family: 'Roboto', sans-serif;">MARKETING</div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="member artist">
-                <img 
-                    :src="showArtistAlt ? artistImg : artistAltImg" 
-                    @mouseover="showArtistAlt = true" 
-                    @mouseleave="showArtistAlt = false" 
-                    style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Marketing Member"
-                />
-                <div v-if="!showArtistAlt" 
-                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
-                    ARTIST
-                </div>
-                <div v-if="showArtistAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; ; position: absolute">
-                    <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top:80px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 304px; height: 0px; left: -8px; top: 65px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: 75.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;  font-family: 'Roboto', sans-serif;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: 95px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
-                        N/A.
-                    </div>
-                    <div style="left: 11px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">KIBBEN</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">ARTIST</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="member programmer">
-                <img 
-                    :src="showProgrammerAlt ? programmerImg : programmerAltImg" 
-                    @mouseover="showProgrammerAlt = true" 
-                    @mouseleave="showProgrammerAlt = false" 
-                    style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Programmer Member"
-                />
-                <div v-if="!showProgrammerAlt" 
-                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
-                    PROGRAMMER
-                </div>
-                <div v-if="showProgrammerAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 0px; position: absolute">
-                    <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: 700px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 304px; height: 0px; left: -8px; top: 685px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 24px; top: 695.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;  font-family: 'Roboto', sans-serif;">@</div>
-                    <div style="width: 256px; height: 20px; left: 11px; top: 715px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
-                        N/A.
-                    </div>
-                    <div style="left: 11px; position: relative; top: 620px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">JM134</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">PROGRAMMER</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="member finance">
-                <img 
-                    :src="showFinanceAlt ? financeImg : financeAltImg" 
-                    @mouseover="showFinanceAlt = true" 
-                    @mouseleave="showFinanceAlt = false" 
-                    style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Marketing Member"
-                />
-                <div v-if="!showFinanceAlt" 
-                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
-                    FINANCE
-                </div>
-                <div v-if="showFinanceAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
-                    <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 304px; height: 0px; left: 106%; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 118%; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@</div>
-                    <div style="width: 256px; height: 20px; left: 114%; top: -20px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
-                        N/A.
-                    </div>
-                    <div style="left: 331px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">ALFON</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">FINANCE</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="member founder">
-                <img 
-                    :src="showFounderAlt ? founderImg : founderAltImg" 
-                    @mouseover="showFounderAlt = true" 
-                    @mouseleave="showFounderAlt = false" 
-                    style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Marketing Member"
-                />
-                <div v-if="!showFounderAlt" 
-                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
-                    FOUNDER
-                </div>
-                <div v-if="showFounderAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
-                    <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                     <div style="width: 304px; height: 0px; left: 106%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 118%; top: 251.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@gabodds_</div>
-                    <div style="width: 256px; height: 20px; left: 114%; top: 280px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
-                        Obsessed with anime. 
-                        Find me eating Okonomiyaki at KENKA NYC or on the 
-                        world wide web playing online video-
-                        games.<br/><br/>
-
-                        Favorite anime movie: <br/><br/><br/>
-
-                        AKIRA.
-                    </div>
-                    <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: 'Bernoru', sans-serif; font-weight: 900; line-height: 51.20px;">GABODDS</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px; ">FOUNDER</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="member founder2">
-                <img 
-                    :src="showFounder2Alt ? founder2Img : founder2AltImg" 
-                    @mouseover="showFounder2Alt = true" 
-                    @mouseleave="showFounder2Alt = false" 
-                    style="width: auto; height: 250px; border: 1px black solid" 
-                    alt="Marketing Member"
-                />
-                <div v-if="!showFounder2Alt" 
-                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
-                    DESGINER
-                </div>
-                <div v-if="showFounder2Alt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 414px; position: absolute">
-                    <!-- Contenido info del miembro aquí -->
-                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
-                    <div style="width: 304px; height: 0px; left: 106%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
-                    <div style="width: 120px; height: 20px; left: 118%; top: 251.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@ N/A.</div>
-                    <div style="width: 256px; height: 20px; left: 114%; top: 280px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
-                        MFA in Interior Design(PRATT), designing in NYC since 2018 and watches 
-                        anime on her free time.<br/> <br/><br/>
-
-                        Favorite animated movie: <br/> <br/> <br/>
-                        
-                        Spirited Away.
-                    </div>
-                    <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CRISTINA</div>
-                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">DESIGNER</div>
-                    </div>
-                </div>
-            </div>
+          <p>
+            By transitioning them into the digital realm, we can ensure they are securely held, shared, and celebrated in a manner that 
+            is both exceptional and exclusive.
+          </p>
 
         </div>
 
-        <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+      </div>
 
+      <!-- Columna Derecha -->
+      <section id="team-section" class="team-section">
+        <div class="team-title">
+          <h2>MEET THE PARTY</h2>
+        </div>
+
+        <div class="team-grid">
+          <!-- MARKETING -->
+          <div class="member marketing" @mouseenter="show.marketing = true" @mouseleave="show.marketing = false">
+            <div class="image-wrapper">
+              <img :src="show.marketing ? marketingColor : marketingGray" alt="Marketing Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.marketing }">
+                <div class="text-container">
+                  <div class="member-name">CATU</div>
+                  <div class="member-role">MARKETING</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ARTIST -->
+          <div class="member artist" @mouseenter="show.artist = true" @mouseleave="show.artist = false">
+            <div class="image-wrapper">
+              <img :src="show.artist ? artistColor : artistGray" alt="Artist Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.artist }">
+                <div class="text-container">
+                  <div class="member-name">KIBBEN</div>
+                  <div class="member-role">ARTIST</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROGRAMMER -->
+          <div class="member programmer" @mouseenter="show.programmer = true" @mouseleave="show.programmer = false">
+            <div class="image-wrapper">
+              <img :src="show.programmer ? programmerColor : programmerGray" alt="Programmer Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.programmer }">
+                <div class="text-container">
+                  <div class="member-name">JM134</div>
+                  <div class="member-role">PROGRAMMER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FINANCE -->
+          <div class="member finance" @mouseenter="show.finance = true" @mouseleave="show.finance = false">
+            <div class="image-wrapper">
+              <img :src="show.finance ? financeColor : financeGray" alt="Finance Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.finance }">
+                <div class="text-container">
+                  <div class="member-name">ALFON</div>
+                  <div class="member-role">FINANCE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOUNDER -->
+          <div class="member founder" @mouseenter="show.founder = true" @mouseleave="show.founder = false">
+            <div class="image-wrapper">
+              <img :src="show.founder ? founderColor : founderGray" alt="Founder Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.founder }">
+                <div class="text-container">
+                  <div class="member-name">GABODDS</div>
+                  <div class="member-role">FOUNDER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOUNDER2 / DESIGNER -->
+          <div class="member founder2" @mouseenter="show.founder2 = true" @mouseleave="show.founder2 = false">
+            <div class="image-wrapper">
+              <img :src="show.founder2 ? founder2Color : founder2Gray" alt="Designer Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.founder2 }">
+                <div class="text-container">
+                  <div class="member-name">CRISTINA</div>
+                  <div class="member-role">DESIGNER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-</div>
-        
-
+  </div>
 </template>
-    
+
 <script setup lang="ts">
+import { reactive } from 'vue'
 
-// Importa las imágenes para que Vite/Webpack las procese
-import marketingImg from '@/assets/images/team/marketing.png'
-import marketingAltImg from '@/assets/images/team/marketing_alt.png'
-import artistImg from '@/assets/images/team/artist.png'
-import artistAltImg from '@/assets/images/team/artist_alt.png'
-import programmerImg from '@/assets/images/team/programmer.png'
-import programmerAltImg from '@/assets/images/team/programmer_alt.png'
-import financeImg from '@/assets/images/team/finance.png'
-import financeAltImg from '@/assets/images/team/finance_alt.png'
-import founderImg from '@/assets/images/team/founder.png'
-import founderAltImg from '@/assets/images/team/founder_alt.png'
-import founder2Img from '@/assets/images/team/designer.png'
-import founder2AltImg from '@/assets/images/team/designer_alt.png'
+// imágenes color / gris
+import marketingColor from '@/assets/images/team/marketing.png'
+import marketingGray from '@/assets/images/team/marketing_alt.png'
 
+import artistColor from '@/assets/images/team/artist.png'
+import artistGray from '@/assets/images/team/artist_alt.png'
 
-import { onMounted, ref } from 'vue'
+import programmerColor from '@/assets/images/team/programmer.png'
+import programmerGray from '@/assets/images/team/programmer_alt.png'
 
+import financeColor from '@/assets/images/team/finance.png'
+import financeGray from '@/assets/images/team/finance_alt.png'
 
+import founderColor from '@/assets/images/team/founder.png'
+import founderGray from '@/assets/images/team/founder_alt.png'
 
-const showMarketingAlt = ref(false)
-const showArtistAlt = ref(false)
-const showProgrammerAlt = ref(false)
-const showFinanceAlt = ref(false)
-const showFounderAlt = ref(false)
-const showFounder2Alt = ref(false)
+import founder2Color from '@/assets/images/team/designer.png'
+import founder2Gray from '@/assets/images/team/designer_alt.png'
 
+// estado hover para cada tarjeta
+const show = reactive({
+  marketing: false,
+  artist: false,
+  programmer: false,
+  finance: false,
+  founder: false,
+  founder2: false
+})
+
+// scroll suave al team-section
 const scrollToSection = () => {
   const section = document.querySelector('#team-section')
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' })
-  }
+  section?.scrollIntoView({ behavior: 'smooth' })
 }
-
-
-    useHead({
-    bodyAttrs: {
-        class: 'brand-bg-color hide-scroll'
-    }
-    })
-
-    let showFounderInfo = ref(false)
-    let showFounder2Info = ref(false)
-    let showMarketingInfo = ref(false)
-    let showStrategistInfo = ref(false)
-    let showEngineerInfo = ref(false)
-    let showDesignerInfo = ref(false)
-    let showProgrammerInfo = ref(false)
-
-    function showHide(member: string) {
-        switch (member) {
-            case 'founder':
-                showFounderInfo.value = !showFounderInfo.value
-                break;
-            case 'marketing':
-                showMarketingInfo.value = !showMarketingInfo.value
-                break;
-            case 'strategist':
-                showStrategistInfo.value = !showStrategistInfo.value
-                break;
-            case 'developer':
-                showEngineerInfo.value = !showEngineerInfo.value
-                break;
-            case 'designer':
-                showDesignerInfo.value = !showDesignerInfo.value
-                break;
-            case 'programmer':
-                showProgrammerInfo.value = !showProgrammerInfo.value
-                break;
-            default:
-                break;
-        }
-    }
-
 </script>
-    
+
 <style scoped>
-
-html {
-  scroll-behavior: smooth;
-  
-}
-
-
-.hide-scroll {
-  overflow: visible;
-  
-  
-}
-
 .background {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-
-    background: #DDD9DA;
-
-    width: 100%;
-    height: 100vh;
-    position: fixed ;
-    bottom: 0;
-
-    overflow-y: auto;
-
-    /* Hide scrollbar but keep functionality */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  background: #DDD9DA;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
-
-.brand {
-    width: 100%; 
-    height: 100%; 
-    position: relative; 
-    background: #DDD9DA;
-    z-index: 1;
-}
-
-.brand-info {
-
-    width: 510px; 
-    height: 60.3rem; 
-    left: 38px; 
-    top: 190px; 
-    position: absolute; 
-    
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    display: flex;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    /* Hide scrollbar but keep functionality */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-
-}
-
-.imageSitting {
-
-    display: none;
-    
-}
-
-.imageSitting2 {
-
-    display: none;
-    
-}
-
-.video-container{
-
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    left: 30%;
-    top: 0%;
-    
-    mix-blend-mode: darken;
-    object-position: right;
-    z-index: -1;
-    
-}
-
-.content{
-    display: flex;
-    flex-direction: column; /* Stack image and text vertically */
-    flex-grow: 1; /* Allow content area to grow */
-    padding-left: 1%; /* Adjust as needed for spacing */
-    padding-right: 5%; /* Adjust as needed for spacing */
-    padding-top: 15%;
-    justify-content: space-between; /* Push bottom button to the bottom */
-    position: relative; /* For absolute positioning of bottom elements */
-    width: 100vw;
-}
-
-.brand-title {
-    font-family: Bernoru;
-    font-size: 7.5vw; /* Responsive font size */
-    font-weight: 500;
-    color: #222;
-    text-transform: uppercase;
-    letter-spacing: -0.05em; /* Adjust letter spacing for tight look */
-    margin-top: 1.5vw; /* Push title down, adjust based on image overlap */
-    margin-left: 3vw; /* Push title right, adjust based on image overlap */
-    white-space: nowrap; /* Prevent "ODD" and "STUDIOS" from breaking */
-    max-width: 45vw; /* Limit width of text for readability */
-    line-height: 0.8; /* Reduce line height */
-    z-index: 2; /* Ensure title is above the image */
-    word-spacing: .2em;
-
-    background-color: #ddd9dac4;
-}
-
-.brand-txt{
-    margin-top: 1vw; /* Space between title and text blocks */
-    margin-left: 3vw; /* Align text blocks with title */
-    max-width: 45vw; /* Limit width of text for readability */
-    font-size: 1.1em;
-    font-weight: 500;
-    line-height: 1.6;
-    z-index: 2;
-    font-family: 'Kokoro', sans-serif;
-    overflow-wrap: break-word;
-    color: #000;
-
-    background-color: #ddd9dac4;
-}
-
-
-
-  /* Hide scrollbar but keep functionality for Chrome, Safari and Opera */
-.brand-info::-webkit-scrollbar {
+.background::-webkit-scrollbar {
   display: none;
 }
 
-.brand-info .title {
-    width: 441px;
-    height: 100px; 
-    color: #0A0101; 
-    font-size: 64px; 
-    font-family: Bernoru; 
-    font-weight: 900; 
-    line-height: 102.40px;
-
-}
-
-.brand-info .description {
-    width: 441px;
-}
-
-.team-link {
-    width: 25px !important;
-    display: inline-block;
-    background-color: black;
-    color: #F47A7A !important;
-}
-
-.team-info {
+/* --- GRID PRINCIPAL --- */
+.main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-    "marketing finance"
-    "artist founder"
-    "programmer founder2";
-  gap: 40px; /* espacio entre miembros */
-  position: relative;
-  margin-top: 1000px;
-  width: auto;
-  justify-items: left;
+  grid-template-columns: 1fr 1fr; /* dos columnas */
   align-items: start;
-
-  margin-left: 1%;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 1% 3%;
+  box-sizing: border-box;
 }
 
-
-
-.team-info .title {
-    width: 441px; 
-    height: 100px; 
-    left: 0px; 
-    top: 0px; 
-    position: absolute; 
-    color: #0A0101; 
-    font-size: 64px; 
-    font-family: Bernoru; 
-    font-weight: 900; 
-    line-height: 102.40px; 
-    letter-spacing: -3px;
-}
-
-.team-info .title2 {
-    width: 441px; 
-    height: 100px; 
-    left: 0px; 
-    top: -120px; 
-    position: absolute; 
-    color: #0A0101; 
-    font-size: 64px; 
-    font-family: Bernoru; 
-    font-weight: 900; 
-    line-height: 102.40px; 
-    letter-spacing: -1.5px;
-}
-
-.member {
-  mix-blend-mode: luminosity;
+.content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
-  transition: mix-blend-mode 0.3s ease;
+  padding-right: 1.5rem;
+  padding-top: 50dvh;
 }
 
-.member:hover {
-    mix-blend-mode: unset; 
-}
-
-.strategist {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 2px; 
-    top: 609px; 
-    position: absolute; 
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
-}
-
-.founder {
-    grid-area: founder;
-}
-
-.founder {
-    grid-area: founder;
-}
-
-.founder2 {
-    grid-area: founder2;
-}
-
-.marketing {
-
-
-    grid-area: marketing;
-}
-
-.artist {
-
-
-    grid-area: artist;
-}
-
-.programmer {
-
-     grid-area: programmer;
-}
-
-.finance {
-
-    grid-area: finance;
-}
-
-
-.def{
-    color: black;
-    font-size: 14.5px; 
-    font-family: IMBPlexMono; 
-    font-weight: 400; 
-    line-height: 18.90px; 
-    letter-spacing: 0.1px; 
-    word-wrap: break-word; 
-    text-align: justify; 
-}
-
-.odd{
-
-    display: block;
-    color: rgb(0, 0, 0);
-    font-family: IMBPlexMono;
-    font-size: 0.7rem;
-    text-align: center;
-    margin-top: 2%;
-}
-
-.image{
-
+.imageSitting {
     display: none;
+}
+
+.brand-title {
+  font-family: Bernoru;
+  font-size: 128px;
+  font-weight: 900;
+  color: #222;
+  text-transform: uppercase;
+  line-height: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.brand-txt {
+  font-family: 'Kokoro', sans-serif;
+  font-weight: 100;
+  color: #000;
+  line-height: 1.6;
+  font-size: 15px;
+  letter-spacing: 8%;
+}
+
+.arrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
 }
 
 .party {
@@ -619,262 +234,119 @@ html {
   text-decoration: none;
   font-size: 20px;
   font-family: Bernoru;
-  margin: 0;             /* Elimina márgenes del <p> */
 }
 
-.party p {
-  margin: 0;             /* Asegura que no haya espacio extra */
+/* --- TEAM SECTION --- */
+.team-section {
+  display: flex;
+  flex-direction: column;
+  
 }
 
-/* Row that holds the party label and the arrow icon */
-.arrow-row{
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    position: relative;
-    z-index: 2;
+.team-title h2 {
+  color: #0A0101;
+  font-family: 'Bernoru', sans-serif;
+  font-size: 24px;
+  padding-top: 8%;
+  padding-left: 6.5%;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  align-items: start;
+}
+
+.team-grid {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 90px;
+  row-gap: 20px;
+  justify-items: center;
+  grid-template-areas: 
+  "marketing finance" 
+  "artist founder" 
+  "programmer founder2";
+}
+
+.founder { grid-area: founder; } 
+.founder2 { grid-area: founder2; } 
+.marketing { grid-area: marketing; } 
+.artist { grid-area: artist; } 
+.programmer { grid-area: programmer; }
+ .finance { grid-area: finance; }
+
+.member {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 15vw;
+  height: 25vh;
+  overflow: hidden;
+  border: 1px solid #222;
+  background: #111;
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.member-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.member-info.hidden {
+  opacity: 0;
+}
+
+.member-name {
+  font-size: 30px;
+  font-family: 'Bernoru', sans-serif;
+  font-weight: 900;
+}
+
+.member-role {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  letter-spacing: 2.5px;
+  margin-top: 6px;
+  color: rgba(255,255,255,0.95);
+}
+
+.odd {
+    display: grid;
+    color: rgb(1, 1, 1);
+    font-family: IMBPlexMono;
+    font-size: 0.6rem;
+    z-index: 4;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .team-section {
     width: 100%;
-    justify-content: flex-end; /* align row to the right */
+  }
 }
-
-.arrowr{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.party{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: Bernoru;
-    margin: 0;
-}
-
-
-@media only screen and (max-width: 600px) {
-
-    .background{
-        height: 100%;
-        overflow-y: hidden;
-
-    }
-    
-    .brand{
-        width: 100%;
-        height: 100%;
-        overflow-y: auto;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    .brand-info{
-        overflow-y: hidden;
-    }
-
-    .brand-info .description {
-        width: 90%;
-        margin: 0% 5%;
-        margin-top: 5%;
-        overflow-wrap: break-word;
-        align-content: center;
-        display: block;
-
-    
-
-    }
-    
-    .brand-title{
-         font-size: 10.5vw;
-         text-align: center;
-         word-spacing: normal;
-    }
-    
-
-
-    .def{
-        color: black;
-        font-size: 0.8rem;
-        font-family: IMBPlexMono; 
-        font-weight: 0; 
-        line-height: 0; 
-        letter-spacing: 0.1px; 
-        word-wrap: normal ; 
-        text-align: justify; 
-        width: 80%;
-        text-align: center;
-        padding-top: 5dvh;
-
-    }
-
-    .brand-info .title {
-
-        width: 100%;
-        height: 80px;
-        text-align: center;
-        font-size: 2.1rem;
-        font-weight: 1;
-        text-shadow: 3px 3px 3px #747474;
-
-    }
-
-
-    
-    .brand-info{
-        
-        width: 100%;
-        height: 100%; 
-        font-weight: lighter; 
-        top: 8%;
-        left: 0%;
-        
-
-    }
-
-    .odd{
-
-        display: block;
-        color: rgb(0, 0, 0);
-        font-family: IMBPlexMono;
-        font-size: 0.6rem;
-        bottom: 1.5dvh;
-        margin: 2% 30%;
-        text-align: center;
-        position: absolute;
-        object-fit: contain;
-
-    }
-
-    .image{
-        display: block;
-        align-self: center;
-        margin: 5% 10%;
-        width: 21rem;
-        height: 21rem;
-        filter: drop-shadow(0 0 5px black);
-        position: absolute;
-        top: 70%;
-    }
-
-    .imageSitting{
-        display: none;
-    }
-    
-    .imageSitting2{
-        z-index: 0;
-        position: absolute;
-        display: block;
-        height: 67vh;
-        width: auto;
-        filter: blur(2px); 
-        margin-left: -47%;
-        margin-top: 65%;
-        opacity: 0.4;
-    }
-
-    .content{
-        width: 100%;
-        height: 100%;
-        padding-top: 10%;
-        overflow: hidden;
-    }
-
-    .brand-txt{
-        font-size: small;
-        padding-top: 2dvh;
-    }
-
-    .navbar{
-
-        display: none;
-
-    }
-
-
-    .dropupbttn{
-
-        display: none;
-
-    }
-
-    .navbar2{
-
-        display: block;
-    }
-
-    .video-container{
-        display: none;
-    }
-
-    .arrowr{
-        display: none;
-    }
-
-    .theteam{
-        display: none;
-    }
-
-    .member {
-        display: none;
-    }
-
-    .member:hover {
-        display: none;
-    }
-
-    .strategist {
-        display: none;
-    }
-
-    .founder {
-        display: none;
-    }
-
-    .marketing {
-        display: none;
-    }
-
-    .designer {
-        display: none;
-    }
-
-    .developer {
-        display: none;
-    }
-
-    .programmer {
-        display: none;
-    }
-
-    .title2{
-        display: none;
-    }
-
-    .party{
-        display: none;
-    }
-
-
-}
-
-
-
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
