@@ -1,9 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+   plugins: ['~/plugins/fontawesome'],
   devtools: { enabled: true },
   app: {
     head: {
-      charset: 'utf-16',
+      charset: 'utf-8',
       viewport: 'width=500, initial-scale=1',
       title: 'Tatsu',
       meta: [
@@ -32,8 +33,6 @@ export default defineNuxtConfig({
         // Roboto Regular
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap' },
 
-        { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Kokoro&display=swap" },
-
     ],
 
     }
@@ -48,5 +47,14 @@ export default defineNuxtConfig({
     'bootstrap/dist/css/bootstrap.min.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
     '@/assets/main.css'
-  ]
+  ],
+    build: {
+    transpile: [
+      '@fortawesome/vue-fontawesome',
+      '@fortawesome/fontawesome-svg-core',
+      '@fortawesome/free-brands-svg-icons',
+      '@fortawesome/free-solid-svg-icons',
+      '@fortawesome/free-regular-svg-icons'
+    ]
+  }
 })
