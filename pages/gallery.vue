@@ -2,6 +2,7 @@
   <div class="background">
     <navbar style="z-index: 4;" />
     <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%;" />
+    <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
 
     <div class="container">
       <menubttn style="position: absolute; z-index: 8;" />
@@ -90,6 +91,23 @@ interface ImageItemDesktop {
   srcAlt: string;
   alt: string;
   number: number;
+  scale?: number;
+  rotate?: string;
+  offsetX?: string;
+  offsetY?: string;
+  width?: string;
+  height?: string;
+  objectFit?: string;
+  brightness?: number;
+  contrast?: number;
+  blur?: number;
+  grayscale?: number;
+  borderRadius?: string;
+  border?: string;
+  boxShadow?: string;
+  transitionDuration?: string;
+  transitionTiming?: string;
+  zIndex?: number;   
 }
 
 interface ImageItemMobile {
@@ -159,7 +177,7 @@ import samuraiAlt from '@/assets/images/characters/200_alt.png';
 
 // ------------------ Data ------------------
 const imagesDesktop = ref<ImageItemDesktop[]>([
-  { src: leo1, srcAlt: leo1Alt, alt: "1", number: 20 , scale: 1.05, rotate: '0deg', offsetX: '30%', offsetY: '3%', width: '60%', brightness: 1 },
+  { src: leo1, srcAlt: leo1Alt, alt: "1", number: 20 , scale: 1.07, rotate: '0deg', offsetX: '30%', offsetY: '3%', width: '60%', brightness: 1 },
   { src: pepe, srcAlt: pepeAlt, alt: "2", number: 122 , scale: 1.1, rotate: '0deg', offsetX: '-20%', offsetY: '0%', width: '75%', brightness: 1 },
   { src: oni, srcAlt: oniAlt, alt: "3", number: 134 , scale: 1.2, rotate: '0deg', offsetX: '0%', offsetY: '-5%', width: '65%', brightness: 1 },
   { src: hippie, srcAlt: hippieAlt, alt: "4", number: 183 , scale: 1.25, rotate: '0deg', offsetX: '50%', offsetY: '0%', width: '60%', brightness: 1 },
@@ -212,13 +230,13 @@ const mobileCarouselImages = computed(() => imagesMobile.value);
 const startMobileCarousel = () => {
   mobileInterval = setInterval(() => {
     currentMobileIndex.value = (currentMobileIndex.value + 1) % mobileCarouselImages.value.length;
-  }, 5000);
+  }, 3000);
 };
 
 const startDesktopCarousel = () => {
   desktopInterval = setInterval(() => {
     currentDesktopIndex.value = (currentDesktopIndex.value + 1) % imagesDesktop.value.length;
-  }, 6000);
+  }, 2000);
 };
 
 const nextMobileCarousel = () => {
@@ -231,27 +249,29 @@ const nextDesktopCarousel = () => {
 };
 
 // 🔹 Generador dinámico de estilos
-const imageStyle = (image) => ({
+import type { CSSProperties } from 'vue';
+
+const imageStyle = (image: ImageItemDesktop): CSSProperties => ({
   transform: `
-    scale(${image.scale || 1}) 
-    rotate(${image.rotate || '0deg'}) 
-    translate(${image.offsetX || '0'}, ${image.offsetY || '0'})
+    scale(${image.scale ?? 1}) 
+    rotate(${image.rotate ?? '0deg'}) 
+    translate(${image.offsetX ?? '0'}, ${image.offsetY ?? '0'})
   `,
-  width: image.width || '100%',
-  height: image.height || '100%',
-  objectFit: image.objectFit || 'cover',
+  width: image.width ?? '100%',
+  height: image.height ?? '100%',
+  objectFit: (image.objectFit as CSSProperties['objectFit']) ?? 'cover',
   filter: `
-    brightness(${image.brightness || 1}) 
-    contrast(${image.contrast || 1}) 
-    blur(${image.blur || 0}) 
-    grayscale(${image.grayscale || 0})
+    brightness(${image.brightness ?? 1}) 
+    contrast(${image.contrast ?? 1}) 
+    blur(${image.blur ?? 0}) 
+    grayscale(${image.grayscale ?? 0})
   `,
-  borderRadius: image.borderRadius || '0',
-  border: image.border || 'none',
-  boxShadow: image.boxShadow || 'none',
-  transition: `${image.transitionDuration || '0.8s'} ${image.transitionTiming || 'ease-in-out'}`,
-  zIndex: image.zIndex || 1,
-})
+  borderRadius: image.borderRadius ?? '0',
+  border: image.border ?? 'none',
+  boxShadow: image.boxShadow ?? 'none',
+  transition: `${image.transitionDuration ?? '0.2s'} ${image.transitionTiming ?? 'ease-in-out'}`,
+  zIndex: image.zIndex ?? 1,
+});
 
 // ------------------ Hover / Tap ------------------
 const hovered = ref<number | null>(null);
@@ -309,7 +329,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
 .card {
   background-color: transparent;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.15s ease-in-out;
   cursor: pointer;
 }
 .card:hover { 
@@ -362,7 +382,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   width:100%; 
   height:100%; 
   object-fit: cover; 
-  transition: opacity 1s, transform 0.6s; 
+  transition: opacity 0.5s, transform 0.6s; 
   transform: scale(1.02);
 }
 
@@ -390,7 +410,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   pointer-events:none; 
   z-index:1; 
   opacity:0; 
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.2s ease; 
 }
 
 .desktop-slide.active { 
@@ -405,7 +425,7 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   width:100%; 
   height:118%; 
   object-fit: contain; 
-  transition: opacity 0.3s ease, transform 0.3s ease; 
+  transition: opacity 0.2s ease, transform 0.2s ease; 
   transform: scale(1.03); 
 }
 .desktop-primary { 
@@ -416,12 +436,11 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
 }
 .desktop-slide.active:hover .desktop-primary { 
   opacity:0; 
-  transform:scale(1); 
+  transform: scale(1.03);
 }
 .desktop-slide.active:hover .desktop-alt { 
   opacity:1; 
-  transition-duration: 0.3ms;
-  transform:scale(1); 
+  transform: scale(1); 
 }
 
 /* ------------------ Media Queries ------------------ */
