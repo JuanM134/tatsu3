@@ -2,6 +2,7 @@
   <div class="background">
     <navbar style="z-index: 4;" />
     <Dropupbttn class="dropupbttn" style="top: 88.5%; position: fixed; z-index: 8;" />  
+    <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
     <menubttn style="z-index: 4;" /> 
     <navbar2 style="z-index: 11;" />
 
