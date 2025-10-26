@@ -49,35 +49,6 @@
             </li>
           </div>
 
-          <!-- Botón HOME alineado a la derecha -->
-          <div class="right-item">
-            <li class="nav-item-2">
-              <NuxtLink to="/home" class="nav-link">
-                <div
-                  class="tab-1 justify-content-center home-button"
-                  style="box-shadow:1px 1px 1px 1px gray;"
-                >
-                  <div
-                    class="icon-wrap"
-                    style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"
-                  >
-                    <font-awesome-icon
-                      class="icon-front"
-                      icon="fa-solid fa-house"
-                      size="2xl"
-                      style="color: #F47A7A; align-items: center; position: relative; padding-bottom: 15px;"
-                    />
-                    <font-awesome-icon
-                      class="icon-back"
-                      icon="fa-solid fa-arrow-left"
-                      size="2xl"
-                      style="color: #F47A7A; position: absolute;"
-                    />
-                  </div>
-                </div>
-              </NuxtLink>
-            </li>
-          </div>
         </ul>
       </div>
     </div>
