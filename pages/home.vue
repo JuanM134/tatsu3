@@ -5,6 +5,7 @@
         <div class="background"> 
             <navbar class="navbar"  style="z-index: 5;" />   
             <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
+            <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
             <menubttn style="z-index: 6;"/> 
             <navbar2 style="z-index: 11;" />
 
@@ -144,7 +145,7 @@ x
     display: block;
     color: rgb(255, 255, 255);
     font-family: IMBPlexMono;
-    font-size: 0.6rem;
+    font-size: 11px;
     bottom: 0;
     z-index: 4;
     text-align: center;
