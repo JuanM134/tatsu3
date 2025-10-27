@@ -7,9 +7,9 @@
     <navbar2 style="z-index: 6;" />
     <home class="dropupbttn" style="z-index: 5; position: fixed;"/> 
 
-    <img class="imageSitting" src="@/assets/images/sitting.png" alt="">
+    
 
-    <!-- 🧩 GRID PRINCIPAL -->
+    <!--  GRID PRINCIPAL -->
     <div class="main-grid">
       <!-- Columna Izquierda -->
       <div class="content">
@@ -32,7 +32,12 @@
             is both exceptional and exclusive.
           </p>
 
+          <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+
         </div>
+        
+        <img class="imageSitting" src="@/assets/images/sitting.png" alt="">
+        
 
       </div>
 
@@ -210,7 +215,8 @@ const scrollToSection = () => {
   color: #222;
   text-transform: uppercase;
   line-height: 0.8;
-  margin-bottom: 1.5rem;
+  margin-top: -2rem;
+  margin-bottom: 4rem;
 }
 
 .brand-txt {
@@ -220,6 +226,11 @@ const scrollToSection = () => {
   line-height: 1.6;
   font-size: 15px;
   letter-spacing: 8%;
+}
+
+.odd{
+    display: none;
+
 }
 
 .arrow-row {
@@ -325,28 +336,94 @@ const scrollToSection = () => {
   color: rgba(255,255,255,0.95);
 }
 
-.odd {
-    display: grid;
-    color: rgb(1, 1, 1);
-    font-family: IMBPlexMono;
-    font-size: 0.6rem;
-    z-index: 4;
-    text-align: center;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+
   .main-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
 
   .team-section {
-    width: 100%;
+    display: none;
+  }
+
+      .imageSitting{
+        z-index: 0;
+        position: absolute;
+        display: block;
+        height: 67vh;
+        width: auto;
+        filter: blur(2px); 
+        margin-left: -47%;
+        margin-top: 65%;
+        opacity: 0.4;
+    }
+
+        .brand-title {
+
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 100;
+        text-shadow: 3px 3px 3px #747474;
+        padding-top: 10vh;
+
+    }
+
+    .brand-txt {
+        font-family: 'Kokoro', sans-serif;
+        font-weight: 100;
+        color: #000;
+        line-height: 1.6;
+        font-size: 12px;
+        letter-spacing: 8%;
+        z-index: 2;
+        text-align: justify;
+        padding-top: 5vh;
+    }
+
+    .odd{
+
+        display: block;
+        color: rgb(0, 0, 0);
+        font-family: IMBPlexMono;
+        font-size: 0.6rem;
+        bottom: 1.5dvh;
+        text-align: center;
+        position: absolute;
+        object-fit: contain;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    .content{
+        width: 100%;
+        height: 100%;
+        padding-top: 10%;
+        overflow: hidden;
+    }
+
+  .navbar{
+
+    display: none;
+
+  }
+
+
+  .dropupbttn{
+
+    display: none;
+
+  }
+
+  .navbar2{
+
+    display: block;
   }
 }
 </style>
