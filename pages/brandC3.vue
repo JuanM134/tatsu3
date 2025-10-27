@@ -174,7 +174,7 @@ const scrollToSection = () => {
 .background {
   background: #DDD9DA;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   -ms-overflow-style: none;
@@ -188,11 +188,11 @@ const scrollToSection = () => {
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* dos columnas */
-  align-items: start;
+  align-items: stretch;
   gap: 2rem;
   width: 100%;
   height: 100%;
-  padding: 1% 3%;
+  padding: 0% 3%;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -200,7 +200,7 @@ const scrollToSection = () => {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end; /* anclar al fondo */
   padding-right: 1.5rem;
   padding-top: 50dvh;
 }
