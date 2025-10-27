@@ -41,8 +41,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import pinOff from '@/assets/images/icons/pinOfff.png'
-import pinOn from '@/assets/images/icons/pinOm.png'
+import pinOff from '@/assets/images/icons/pinOffff.png'
+import pinOn from '@/assets/images/icons/pinOnn.png'
 
 interface Pin {
   id: number
@@ -174,8 +174,8 @@ function getPinImage(id: number) {
 
 .pin-icon {
   width: 2.5vw;
-  min-width: 12px;
-  max-width: 25px;
+  min-width: 10px;
+  max-width: 15px;
   transition: transform 0.4s ease;
 }
 
@@ -184,8 +184,8 @@ function getPinImage(id: number) {
 }
 
 .pin-label {
-  background-color: rgb(78, 78, 78);
-  color: white;
+  background-color: #F47A7A;
+  color: #1B1818;
   width: 125px;
   height: 14px;
   font-family: Montserrat;
