@@ -4,7 +4,7 @@
           <menubttn style="z-index: 6;overflow-y: hidden;"/> 
 
           <Dropupbttn class="dropupbttn"  style="z-index: 4; position: fixed; top: 88.5%;" />
-          <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
+          <home class="dropupbttn" style="z-index: 5;  position: absolute;"/> 
           <navbar2 style="z-index: 11; position: absolute; top: 3%;" /> 
 
             <section id="background" class="background">
