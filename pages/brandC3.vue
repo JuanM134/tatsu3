@@ -176,7 +176,7 @@ const scrollToSection = () => {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -194,6 +194,7 @@ const scrollToSection = () => {
   height: 100%;
   padding: 1% 3%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .content {
@@ -210,12 +211,12 @@ const scrollToSection = () => {
 
 .brand-title {
   font-family: Bernoru;
-  font-size: 128px;
+  font-size: clamp(1rem, 6rem + 1vw, 128px);
   font-weight: 900;
   color: #222;
   text-transform: uppercase;
   line-height: 0.8;
-  margin-top: -2rem;
+  margin-top: -3rem;
   margin-bottom: 4rem;
 }
 
