@@ -143,9 +143,9 @@ onBeforeUnmount(() => {
 .video-container{
 
     position: absolute;
-    width: 70%;
+    width: 90%;
     height: 100%;
-    left: 30%;
+    left: 13%;
     top: 0%;
     
     mix-blend-mode: darken;
