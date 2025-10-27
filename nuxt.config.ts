@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+   compatibilityDate: '2025-10-26',
    plugins: ['~/plugins/fontawesome'],
   devtools: { enabled: true },
   app: {
