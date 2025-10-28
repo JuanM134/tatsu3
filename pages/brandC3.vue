@@ -375,11 +375,11 @@ const scrollToSection = () => {
 
     .brand-txt {
         font-family: 'Kokoro', sans-serif;
-        font-weight: 100;
+        font-weight: 400;
         color: #000;
         line-height: 1.6;
         font-size: 12px;
-        letter-spacing: 8%;
+        padding-left: 3%;
         z-index: 2;
         text-align: justify;
         padding-top: 5vh;
@@ -391,7 +391,7 @@ const scrollToSection = () => {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        bottom: 1.5dvh;
+        bottom: 1.2dvh;
         text-align: center;
         position: absolute;
         object-fit: contain;
@@ -403,7 +403,7 @@ const scrollToSection = () => {
 
     .content{
         width: 100%;
-        height: 100%;
+        height: 100vh;
         padding-top: 10%;
         overflow: hidden;
     }
