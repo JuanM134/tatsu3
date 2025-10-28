@@ -45,7 +45,7 @@
     
     color: #0A0101; 
     font-size: 100px; 
-    font-family: 'Konkhmer Sleokchher', system-ui; 
+    font-family: Bernoru; 
     font-weight: 900; 
     line-height: 102.40px; 
     top: 40%;
