@@ -435,12 +435,12 @@
 }
 
 .history-inline{
-  font-size: 12px;
+  font-size: 15px;
 
 }
 
 .history-inline2{
-  font-size: 12px;
+  font-size: 15px;
 
 }
 
