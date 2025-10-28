@@ -143,9 +143,9 @@ onBeforeUnmount(() => {
 .video-container{
 
     position: absolute;
-    width: 90%;
+    width: 70%;
     height: 100%;
-    left: 13%;
+    left: 30%;
     top: 0%;
     
     mix-blend-mode: darken;
@@ -158,7 +158,7 @@ onBeforeUnmount(() => {
     /* responsive title using CSS variables (adjust via .background) */
     font-size: 64px; /* fallback */
     font-size: clamp(var(--roadmap-title-min), var(--roadmap-title-fluid), var(--roadmap-title-max));
-    font-family: 'Bernoru', sans-serif;
+    font-family: Bernoru; 
     font-weight: 900;
     line-height: 1.02;
     margin: 0;
@@ -186,7 +186,7 @@ onBeforeUnmount(() => {
     box-sizing: border-box;
     max-width: 1100px;
     padding-top: 5dvh;
-    font-family: MontSerrat;
+    font-family: 'Kokoro', sans-serif;
 }
 
 .roadmap-content {
@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
     transform: translateY(10px);
     transition: opacity 360ms ease, transform 360ms ease;
     margin: 12px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Kokoro', sans-serif;
     letter-spacing: 1.5px;
     font-size: 15px;
     letter-spacing: 1.04px;
@@ -265,6 +265,7 @@ onBeforeUnmount(() => {
         text-align: center;
         position: relative;
         object-fit: contain;
+        padding-top: 7vh;
     }
 
     .title {
@@ -275,6 +276,10 @@ onBeforeUnmount(() => {
         width: 100%;
         height: auto;
     }   
+
+    .fade-item{
+        font-size: 12px;
+    }
 
     .dropupbttn {
         display: none;
