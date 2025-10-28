@@ -338,7 +338,7 @@ const scrollToSection = () => {
 
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 600px) and (max-height: 933px){
 
   .background{
         height: 100%;
@@ -347,7 +347,9 @@ const scrollToSection = () => {
   }
 
   .main-grid {
-    display: block;
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     height: 100vh;
   }
@@ -403,7 +405,7 @@ const scrollToSection = () => {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        bottom: 2dvh;
+        bottom: 3dvh;
         text-align: center;
         position: absolute;
         object-fit: contain;
