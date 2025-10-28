@@ -254,6 +254,7 @@ onBeforeUnmount(() => {
         display: flex;
         flex-direction: column;
         width: 100vw;
+        overflow: hidden;
     }
 
     .odd {
@@ -265,7 +266,6 @@ onBeforeUnmount(() => {
         text-align: center;
         position: relative;
         object-fit: contain;
-        padding-top: 7vh;
     }
 
     .title {
