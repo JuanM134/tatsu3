@@ -340,11 +340,23 @@ const scrollToSection = () => {
 /* Responsive */
 @media (max-width: 600px) {
 
+  .background{
+        height: 100%;
+        overflow-y: hidden;
+
+  }
+
   .main-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: block;
+    width: 100%;
     height: 100vh;
   }
+      .content{
+        width: 100%;
+        height: 100vh;
+        padding-top: 5%;
+        overflow: hidden;
+    }
 
   .team-section {
     display: none;
@@ -358,7 +370,7 @@ const scrollToSection = () => {
         width: auto;
         filter: blur(2px); 
         margin-left: -47%;
-        margin-top: 60%;
+        margin-top: 55%;
         opacity: 0.4;
     }
 
@@ -368,8 +380,7 @@ const scrollToSection = () => {
         height: 80px;
         text-align: center;
         font-size: 32px;
-        font-weight: 100;
-        text-shadow: 3px 3px 3px #747474;
+        font-weight: 900;
         padding-top: 12vh;
 
     }
@@ -383,7 +394,7 @@ const scrollToSection = () => {
         padding-left: 3%;
         z-index: 2;
         text-align: justify;
-        padding-top: 1.5vh;
+        padding-top: .5vh;
     }
 
     .odd{
@@ -400,13 +411,6 @@ const scrollToSection = () => {
         left: 50%;
         transform: translateX(-50%);
 
-    }
-
-    .content{
-        width: 100%;
-        height: 100vh;
-        padding-top: 5%;
-        overflow: hidden;
     }
 
   .navbar{
