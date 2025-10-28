@@ -8,7 +8,7 @@
         <ul>
           <li><a href="/history">TALES</a></li>
           <li><a href="/world">WORLD</a></li>
-          <li><a href="/brandC">BRAND</a></li>
+          <li><a href="/brandC3">BRAND</a></li>
           <li><a href="/roadmap">ROADMAP</a></li>
           <li><a href="/gallery">GALLERY</a></li>
           <li><a href="/connect">CONNECT</a></li>
