@@ -343,6 +343,7 @@ const scrollToSection = () => {
   .main-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
+    height: 100vh;
   }
 
   .team-section {
