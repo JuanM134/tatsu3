@@ -383,7 +383,7 @@ const scrollToSection = () => {
         padding-left: 3%;
         z-index: 2;
         text-align: justify;
-        padding-top: 3vh;
+        padding-top: 1.5vh;
     }
 
     .odd{
@@ -392,7 +392,7 @@ const scrollToSection = () => {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        bottom: 1.2dvh;
+        bottom: 1dvh;
         text-align: center;
         position: absolute;
         object-fit: contain;
