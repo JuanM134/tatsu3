@@ -369,7 +369,7 @@ const scrollToSection = () => {
         font-size: 32px;
         font-weight: 100;
         text-shadow: 3px 3px 3px #747474;
-        padding-top: 10vh;
+        padding-top: 12vh;
 
     }
 
@@ -378,11 +378,11 @@ const scrollToSection = () => {
         font-weight: 400;
         color: #000;
         line-height: 1.6;
-        font-size: 12px;
+        font-size: 15px;
         padding-left: 3%;
         z-index: 2;
         text-align: justify;
-        padding-top: 5vh;
+        padding-top: 3vh;
     }
 
     .odd{
@@ -404,7 +404,7 @@ const scrollToSection = () => {
     .content{
         width: 100%;
         height: 100vh;
-        padding-top: 10%;
+        padding-top: 5%;
         overflow: hidden;
     }
 
