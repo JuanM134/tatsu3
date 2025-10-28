@@ -45,7 +45,7 @@
 
             <section>
               
-            <div class="background1" style="z-index: 4;text-align: end; background-color: #DDD9DA; align-self: flex-end; height: max-content; width: 100%;">
+            <div class="background1">
 
               <div class="title3" >TALE OF  KATSURO KENTA</div>
 
@@ -222,7 +222,8 @@
 
 .background {
   
-    background-image:  linear-gradient(rgba(255, 255, 255, 0.382), rgba(220, 220, 220, 0.36)), url('@/assets/images/dragonV2.png');
+    background-image:  linear-gradient(rgba(255, 255, 255, 0.382), rgba(220, 220, 220, 0.36)),
+  linear-gradient(rgba(117, 63, 87, 0.45), rgba(117, 63, 87, 0.45)), url('@/assets/images/dragonV2.png');
     background-size: cover;
     background-position: center;
     background-position-y: 90%;
@@ -240,9 +241,20 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+.background1{
+  z-index: 4;
+  text-align: end; 
+  background-color:  #DDD9DA;
+  align-self: flex-end; 
+  height: max-content; 
+  width: 100%;
+  background-image:  linear-gradient( rgba(220, 220, 220, 0.36), rgba(255, 255, 255, 0.382)),
+  linear-gradient(rgba(117, 63, 87, 0.45), rgba(117, 63, 87, 0.45));
+}
 
 .background2 {
-    background-image: linear-gradient(rgba(217, 217, 217, 0.382), rgba(227, 227, 227, 0.36)), url('@/assets/images/cityV2.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.382), rgba(220, 220, 220, 0.36)),
+  linear-gradient(rgba(117, 63, 87, 0.45), rgba(117, 63, 87, 0.45)),url('@/assets/images/cityV2.png');
     background-position: top 95% center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -422,7 +434,15 @@
   -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
 }
 
+.history-inline{
+  font-size: 12px;
 
+}
+
+.history-inline2{
+  font-size: 12px;
+
+}
 
 .background2 {
   height: 75%;
