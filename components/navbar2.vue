@@ -52,7 +52,7 @@
 
     .brand-text {
         font-size:15px;
-        font-family:  IMBPlexMono;
+        font-family: 'Kokoro', sans-serif;
         letter-spacing: 1px;
         text-justify: space-between;
         position: static;
