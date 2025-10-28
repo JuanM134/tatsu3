@@ -200,9 +200,8 @@ const scrollToSection = () => {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* anclar al fondo */
   padding-right: 1.5rem;
-  padding-top: 50dvh;
+  padding-top: 35dvh;
 }
 
 .imageSitting {
@@ -262,7 +261,7 @@ const scrollToSection = () => {
   padding-top: 8%;
   padding-left: 6.5%;
   margin-bottom: 10px;
-  letter-spacing: 3px;
+  letter-spacing: -4%;
   align-items: start;
 }
 
