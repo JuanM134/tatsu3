@@ -342,7 +342,7 @@ const scrollToSection = () => {
 
   .main-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem;
     height: 100vh;
   }
 
@@ -358,7 +358,7 @@ const scrollToSection = () => {
         width: auto;
         filter: blur(2px); 
         margin-left: -47%;
-        margin-top: 65%;
+        margin-top: 60%;
         opacity: 0.4;
     }
 
