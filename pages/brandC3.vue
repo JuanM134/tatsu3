@@ -403,7 +403,7 @@ const scrollToSection = () => {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        bottom: 1dvh;
+        bottom: 2dvh;
         text-align: center;
         position: absolute;
         object-fit: contain;
