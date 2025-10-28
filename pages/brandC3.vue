@@ -371,10 +371,11 @@ const scrollToSection = () => {
 
   .imageSitting {
     position: absolute;
-    bottom: 10%;
-    left: 50%;
+    display: block;
+    bottom: 2.5%;
+    left: 30%;
     transform: translateX(-50%);
-    height: 60vh;
+    height: 67vh;
     opacity: 0.35;
     filter: blur(2px);
     z-index: 0;
@@ -409,7 +410,7 @@ const scrollToSection = () => {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        bottom: 3dvh;
+        bottom: 1.5dvh;
         text-align: center;
         position: absolute;
         object-fit: contain;
