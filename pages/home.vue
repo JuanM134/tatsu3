@@ -17,7 +17,7 @@
                          position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
                          
                     
-                    <video autoplay loop playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
+                    <video autoplay mute loop playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
                     <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" /></video>
 
                         <div class="video-wrap">
