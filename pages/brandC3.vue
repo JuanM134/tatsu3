@@ -340,11 +340,16 @@ const scrollToSection = () => {
 /* Responsive */
 @media (max-width: 600px) and (max-height: 933px){
 
-  .background{
-        height: 100%;
-        overflow-y: hidden;
-
+  .background {
+    width: 100%;
+    height: 100dvh; /* Usa d = dynamic para móviles */
+    overflow: hidden; /* evita scroll */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* separa texto y copyright */
+    position: relative;
   }
+
 
   .main-grid {
     display: flex;
@@ -364,17 +369,16 @@ const scrollToSection = () => {
     display: none;
   }
 
-      .imageSitting{
-        z-index: 0;
-        position: absolute;
-        display: block;
-        height: 67vh;
-        width: auto;
-        filter: blur(2px); 
-        margin-left: -47%;
-        margin-top: 55%;
-        opacity: 0.4;
-    }
+  .imageSitting {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60vh;
+    opacity: 0.35;
+    filter: blur(2px);
+    z-index: 0;
+  }
 
         .brand-title {
 
@@ -405,7 +409,7 @@ const scrollToSection = () => {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        bottom: 5dvh;
+        bottom: 3dvh;
         text-align: center;
         position: absolute;
         object-fit: contain;
