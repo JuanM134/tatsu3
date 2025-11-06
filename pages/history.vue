@@ -76,7 +76,7 @@
             <section id="background2" class="background2">
 
                 
-                <div class="title2">TALE OF NOHIRAMA</div>
+                <div class="title2">TALE OF NOHIARAMA</div>
                 
 
                 <div style="width: 90%;">
@@ -397,7 +397,6 @@
 
     text-align: start;
     font-weight: normal;
-    font-family: IMBPlexMono;
     width: 90%;
 
 }
@@ -425,6 +424,7 @@
 
 .containerHistory3 {
   height: max-content;
+  top: 2dvh;
 }
 
 
@@ -434,13 +434,17 @@
   -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
 }
 
+.background1{
+  height: 150%;
+}
+
 .history-inline{
-  font-size: 15px;
+  font-size: 12px;
 
 }
 
 .history-inline2{
-  font-size: 15px;
+  font-size: 12px;
 
 }
 
@@ -468,7 +472,7 @@
 .title3{
     display: block;
     margin: 0;
-    padding-top: 30%;
+    padding-top: 15%;
     padding-bottom: 2.5%;
     position: relative;
   
@@ -478,8 +482,6 @@
   .title2{
     display: block;
     margin: 0;
-    padding-top: 65%;
-    padding-bottom: -50%;
     position: relative;
 
   }
