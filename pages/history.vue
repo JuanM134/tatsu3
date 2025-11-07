@@ -435,7 +435,7 @@
 }
 
 .background1{
-  height: 150%;
+  height: 600px;
 }
 
 .history-inline{
@@ -483,6 +483,7 @@
     display: block;
     margin: 0;
     position: relative;
+    padding-top: 3dvh;
 
   }
 
