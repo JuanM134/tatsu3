@@ -42,6 +42,8 @@
               :alt="image.alt"
               :style="imageStyle(image)"
               decoding="async"
+              @contextmenu.prevent
+              @dragstart.prevent
             />
             <img
               v-if="image.srcAlt"
@@ -50,6 +52,8 @@
               :alt="image.alt + ' alt'"
               :style="imageStyle(image)"
               decoding="async"
+              @contextmenu.prevent
+              @dragstart.prevent
             />
           </div>
         </div>
@@ -281,7 +285,12 @@ function handleMobileClick(idx: number) { tapped.value = tapped.value.map((_, i)
 function handleDesktopClick(idx: number) { /* opcional */ }
 
 // ------------------ Mounted ------------------
-onMounted(() => { startMobileCarousel(); startDesktopCarousel(); });
+onMounted(() => { 
+  startMobileCarousel(); 
+  startDesktopCarousel();
+  document.addEventListener('contextmenu', e => e.preventDefault()) 
+});
+
 onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (desktopInterval) clearInterval(desktopInterval); });
 </script>
 
@@ -355,6 +364,14 @@ onBeforeUnmount(() => { if (mobileInterval) clearInterval(mobileInterval); if (d
   font-weight:500;
   font-family: MontSerrat;
   margin-bottom:0.5rem;
+}
+
+/* Deshabilitar selección global de imágenes */
+img {
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* ------------------ Carousel Mobile ------------------ */
