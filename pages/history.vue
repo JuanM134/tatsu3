@@ -76,7 +76,7 @@
             <section id="background2" class="background2">
 
                 
-                <div class="title2">TALE OF NOHIARAMA</div>
+                <div class="title2">TALE OF NOHIRAMA</div>
                 
 
                 <div style="width: 90%;">
