@@ -13,12 +13,9 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalImage3.mp4" autoplay loop muted>
+                    <video v-show="isDarkMode" ref="videoRef" id="myVideo" :src="currentVideo" autoplay loop muted>
                         Your browser does not support the video tag.
                     </video>         
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/fireWithSound.mp4" autoplay loop style="mix-blend-mode: screen; opacity: 1%;">
-                        Your browser does not support the video tag.
-                    </video>  
                 </div>
                   
                 <button @click="home"
@@ -37,10 +34,27 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import kenta from '@/assets/videos/kenta.mp4'
+import roy from '@/assets/videos/roy.mp4'
+import agatha from '@/assets/videos/agatha.mp4'
+import mesmer from '@/assets/videos/mesmer_1.mp4'
+import sora from '@/assets/videos/sora.mp4'
 
 const isActive = ref(false)
 const isDarkMode = ref(false)
 const router = useRouter()
+
+const videos = [kenta, roy, agatha, mesmer, sora]
+const currentVideo = videos[Math.floor(Math.random() * videos.length)]
+const videoRef = ref<HTMLVideoElement | null>(null)
+
+import { onMounted } from 'vue'
+
+onMounted(() => {
+    if (videoRef.value) {
+        videoRef.value.playbackRate = 0.7; // Adjust speed here (0.5 is half speed)
+    }
+})
 
 function titleMouseOver() {
     isDarkMode.value = true
@@ -102,11 +116,11 @@ async function home() {
 
 #myVideo {
     position: absolute;
-    top: 70%;
+    top: 120%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 130%;
-    height: 130%;
+    height: 142%;
     object-fit: cover; /* cover the title box and crop as needed */
     pointer-events: none;
     mix-blend-mode: darken;
