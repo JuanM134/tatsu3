@@ -77,7 +77,7 @@ const desktopPins = ref<Pin[]>([
   { id: 6, name: 'TOBIRAMA', x: 51.5, y: 41.5 },
   { id: 7, name: 'CAPITAL OF UMI', x: 56, y: 94.5 },
   { id: 8, name: 'FOREST OF HAI', x: 81.5, y: 23 },
-  { id: 9, name: 'YOUNG CASTLE', x: 73.5, y: 25 },
+  { id: 9, name: 'YOGAN CASTLE', x: 73.5, y: 25 },
 ])
 
 /* PINS versión móvil */
@@ -90,7 +90,7 @@ const mobilePins = ref<Pin[]>([
   { id: 6, name: 'TOBIRAMA', x: 54, y: 42 },
   { id: 7, name: 'CAPITAL OF UMI', x: 60, y: 95 },
   { id: 8, name: 'FOREST OF HAI', x: 92, y: 23 },
-  { id: 9, name: 'YOUNG CASTLE', x: 81.5, y: 25 },
+  { id: 9, name: 'YOGAN CASTLE', x: 81.5, y: 25 },
 ])
 
 /* Selección automática */
