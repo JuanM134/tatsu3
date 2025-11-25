@@ -13,8 +13,13 @@
             <div class="container">
 
                 <div class="" style="z-index: 0;">
-                        <img class="home-image" src="@/assets/images/home2.png" style="width: 100%; height: 100%; object-fit: contain;
-                         position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
+
+                    <p class="hero-text">TATSU — <br>
+                    BECOME THE <br>
+                    DRAGON WITHIN</p>
+                    
+                        <img class="home-image" src="@/assets/images/home4.png" style="width: 100%; height: 100%; object-fit: contain; object-position: right;
+                         position: absolute; top: 0; right: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
                          
                     
                     <video autoplay loop playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
@@ -145,7 +150,7 @@ x
 .odd{
 
     display: block;
-    color: rgb(255, 255, 255);
+    color: #1D1B1B;
     font-family: IMBPlexMono;
     font-size: 11px;
     bottom: 0;
@@ -158,6 +163,18 @@ x
 
 
 
+
+.hero-text {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #4E4E4E;
+    z-index: 10;
+    line-height: 1.2;
+}
 
 @media only screen and (max-width: 630px){
 
