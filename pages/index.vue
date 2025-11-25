@@ -13,7 +13,7 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" ref="videoRef" id="myVideo" :src="currentVideo" autoplay loop muted>
+                    <video v-show="isDarkMode" ref="videoRef" id="myVideo" :src="currentVideo.src" :style="{ top: currentVideo.top }" autoplay loop muted>
                         Your browser does not support the video tag.
                     </video>         
                 </div>
@@ -44,7 +44,13 @@ const isActive = ref(false)
 const isDarkMode = ref(false)
 const router = useRouter()
 
-const videos = [kenta, roy, agatha, mesmer, sora]
+const videos = [
+    { src: kenta, top: '120%' },
+    { src: roy, top: '120%' },
+    { src: agatha, top: '120%' },
+    { src: mesmer, top: '170%' },
+    { src: sora, top: '120%' }
+]
 const currentVideo = videos[Math.floor(Math.random() * videos.length)]
 const videoRef = ref<HTMLVideoElement | null>(null)
 
@@ -116,11 +122,11 @@ async function home() {
 
 #myVideo {
     position: absolute;
-    top: 120%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 130%;
-    height: 142%;
+    width: auto;
+    height: 195%;
     object-fit: cover; /* cover the title box and crop as needed */
     pointer-events: none;
     mix-blend-mode: darken;
