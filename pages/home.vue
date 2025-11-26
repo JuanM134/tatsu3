@@ -27,8 +27,8 @@
 
                         <div class="video-wrap">
 
-                            <img class="home-image-mobile" src="@/assets/images/homeMobile2.png" style="width: auto; height: 110dvh; object-fit: contain;
-                            position: absolute; top: -5dvh; left: -25dvw; z-index: 0;"> 
+                            <img class="home-image-mobile" src="@/assets/images/home4.png" style="width: auto; height: 80dvh; object-fit: contain;
+                            position: absolute; top: 5dvh; left: -5dvw; z-index: 0;"> 
 
                             <video autoplay muted loop playsinline class="bg-video">
                                 <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" />
@@ -112,7 +112,9 @@ x
     inset: 0; 
     z-index: 0; 
     overflow: hidden; 
-    display: none;}
+    display: none;
+    background-color: #DDD9DA;
+}
 
 .bg-video{ width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; pointer-events: none; mix-blend-mode: lighten; }
 
@@ -190,7 +192,7 @@ x
     .odd{
 
         display: block;
-        color: rgb(255, 255, 255);
+        color: #1D1B1B;
         font-family: IMBPlexMono;
         font-size: 0.6rem;
         z-index: 5;
@@ -211,6 +213,11 @@ x
         background-color: #DDD9DA;
         display: block;
 
+    }
+
+    .hero-text {
+        font-size: 36px;
+        margin-bottom: 5vh; 
     }
 
     .background{
