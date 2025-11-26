@@ -203,8 +203,11 @@ async function home() {
 @media only screen and (max-width: 600px) {
 
     .intro{
-        overflow-y: hidden;
+        overflow: hidden;
+        height: 100vh;
+        touch-action: none;
     }
+
 
     .title{
 
