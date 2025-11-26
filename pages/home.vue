@@ -199,10 +199,10 @@ x
         text-align: center;
         position: absolute;
         object-fit: contain;
-        bottom: 3dvh;
-        
+        bottom: 1.5dvh;
 
     }
+
     .home-image{
 
         display: none;
@@ -217,7 +217,7 @@ x
 
     .hero-text {
         font-size: 36px;
-        margin-bottom: 5vh; 
+        margin-top: 5vh; 
     }
 
     .background{
