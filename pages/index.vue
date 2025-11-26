@@ -46,8 +46,8 @@ const router = useRouter()
 
 const videos = [
     { src: kenta, top: '120%' },
-    { src: roy, top: '120%' },
-    { src: agatha, top: '120%' },
+    { src: roy, top: '100%' },
+    { src: agatha, top: '100%' },
     { src: mesmer, top: '170%' },
     { src: sora, top: '120%' }
 ]
