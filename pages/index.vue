@@ -13,7 +13,16 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" ref="videoRef" id="myVideo" :src="currentVideo.src" :style="{ top: currentVideo.top }" autoplay loop muted>
+                    <video 
+                        v-if="currentVideo"
+                        v-show="isDarkMode" 
+                        ref="videoRef" 
+                        id="myVideo" 
+                        :key="currentVideo.src"
+                        :src="currentVideo.src" 
+                        :style="{ top: currentVideo.offsetY }" 
+                        autoplay loop muted
+                    >
                         Your browser does not support the video tag.
                     </video>         
                 </div>
@@ -32,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import kenta from '@/assets/videos/kenta.mp4'
 import roy from '@/assets/videos/roy.mp4'
@@ -40,25 +49,39 @@ import agatha from '@/assets/videos/agatha.mp4'
 import mesmer from '@/assets/videos/mesmer_1.mp4'
 import sora from '@/assets/videos/sora.mp4'
 
+interface VideoItem {
+  src: string;
+  number: number;
+  offsetX?: string;
+  offsetY?: string;
+  width?: string;
+  height?: string;
+  zIndex?: number;
+  speed?: number;   
+}
+
+const myVideo = ref<VideoItem[]>([
+  { src: kenta, number: 20 , offsetY: '110%', speed: 0.5 },
+  { src: roy, number: 20 , offsetY: '110%', speed: 0.5 },
+  { src: agatha, number: 20 , offsetY: '120%', speed: 0.5 },
+  { src: mesmer, number: 20 , offsetY: '130%', speed: 0.5 },
+  { src: sora, number: 20 , offsetY: '110%', speed: 0.5 },
+]);
+
 const isActive = ref(false)
 const isDarkMode = ref(false)
 const router = useRouter()
 
-const videos = [
-    { src: kenta, top: '120%' },
-    { src: roy, top: '100%' },
-    { src: agatha, top: '100%' },
-    { src: mesmer, top: '170%' },
-    { src: sora, top: '120%' }
-]
-const currentVideo = videos[Math.floor(Math.random() * videos.length)]
+const currentVideo = ref<VideoItem | null>(null)
 const videoRef = ref<HTMLVideoElement | null>(null)
 
-import { onMounted } from 'vue'
-
 onMounted(() => {
-    if (videoRef.value) {
-        videoRef.value.playbackRate = 0.7; // Adjust speed here (0.5 is half speed)
+    // Select random video on mount to avoid hydration mismatch and ensure freshness
+    currentVideo.value = myVideo.value[Math.floor(Math.random() * myVideo.value.length)]
+    
+    if (videoRef.value && currentVideo.value) {
+        // Use the specific speed for the video, or default to 0.5 if not defined
+        videoRef.value.playbackRate = currentVideo.value.speed ?? 0.5; 
     }
 })
 
