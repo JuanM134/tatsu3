@@ -18,7 +18,18 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
 
+const { startLoading, stopLoading } = useLoading()
+const { waitForFonts } = useAssetLoading()
+
+onMounted(async () => {
+  startLoading()
+  await waitForFonts()
+  stopLoading()
+})
 </script>
 
 <style scoped>
