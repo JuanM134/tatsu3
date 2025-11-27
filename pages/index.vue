@@ -2,7 +2,7 @@
     <!-- <video src="@/assets/images/fire-sound.mp4" controls>
         Your browser does not support the video tag.
     </video>      -->
-    <div :class="{ 'intro': isDarkMode}">  
+    <div class="page-wrapper" :class="{ 'intro': isDarkMode}">  
         <div class="container min-vh-100">
             <div class="d-flex flex-column justify-content-center align-items-center container-content">
                 <!-- <img 
@@ -132,6 +132,12 @@ async function home() {
 
 <style scoped>
 
+.page-wrapper {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
 .title-container {
     /* size to title and act as positioning context for the video */
     display: inline-block;
@@ -184,6 +190,12 @@ async function home() {
 
 .intro {
     background-color: black !important;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .enter-btn {
