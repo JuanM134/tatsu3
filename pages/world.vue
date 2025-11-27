@@ -11,8 +11,7 @@
       <div class="map-container" ref="mapContainer">
 
         <picture>
-                <source srcset="@/assets/images/map3.jpeg" media="(min-width: 1024px)">
-                <source srcset="@/assets/images/map.jpg" media="(min-width: 768px)">
+                <source srcset="@/assets/images/map3.jpeg" media="(min-width: 677px)">
                 <source srcset="@/assets/images/map.jpg" media="(min-width: 377px)">
                 <img class="map" src="@/assets/images/map.jpg"> <!-- imagen principal -->
             </picture>
@@ -40,7 +39,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+import mapImg from '@/assets/images/map.jpg'
+
 import pinOff from '@/assets/images/icons/pinOffff.png'
 import pinOn from '@/assets/images/icons/pinOnn.png'
 
@@ -59,7 +62,19 @@ function updateIsMobile() {
   isMobile.value = window.innerWidth <= 600
 }
 
-onMounted(() => {
+const { startLoading, stopLoading } = useLoading()
+
+onMounted(async () => {
+  startLoading()
+  
+  const { waitForImages, waitForFonts } = useAssetLoading()
+  await Promise.all([
+    waitForImages([mapImg]),
+    waitForFonts()
+  ])
+  
+  stopLoading()
+
   updateIsMobile()
   window.addEventListener('resize', updateIsMobile)
 })
@@ -77,7 +92,7 @@ const desktopPins = ref<Pin[]>([
   { id: 6, name: 'TOBIRAMA', x: 51.5, y: 41.5 },
   { id: 7, name: 'CAPITAL OF UMI', x: 56, y: 94.5 },
   { id: 8, name: 'FOREST OF HAI', x: 81.5, y: 23 },
-  { id: 9, name: 'YOGAN CASTLE', x: 73.5, y: 25 },
+  { id: 9, name: 'YOUNG CASTLE', x: 73.5, y: 25 },
 ])
 
 /* PINS versión móvil */
@@ -90,7 +105,7 @@ const mobilePins = ref<Pin[]>([
   { id: 6, name: 'TOBIRAMA', x: 54, y: 42 },
   { id: 7, name: 'CAPITAL OF UMI', x: 60, y: 95 },
   { id: 8, name: 'FOREST OF HAI', x: 92, y: 23 },
-  { id: 9, name: 'YOGAN CASTLE', x: 81.5, y: 25 },
+  { id: 9, name: 'YOUNG CASTLE', x: 81.5, y: 25 },
 ])
 
 /* Selección automática */
