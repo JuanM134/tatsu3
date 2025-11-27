@@ -76,7 +76,7 @@
             <section id="background2" class="background2">
 
                 
-                <div class="title2">TALE OF NOHIRAMA</div>
+                <div class="title2">TALE OF NOHIARAMA</div>
                 
 
                 <div style="width: 90%;">
@@ -105,10 +105,24 @@
 </template>
 
 
-<script >
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+import dragonV2 from '@/assets/images/dragonV2.png'
+import cityV2 from '@/assets/images/cityV2.png'
 
+const { startLoading, stopLoading } = useLoading()
+const { waitForImages, waitForFonts } = useAssetLoading()
 
-
+onMounted(async () => {
+  startLoading()
+  await Promise.all([
+    waitForImages([dragonV2, cityV2]),
+    waitForFonts()
+  ])
+  stopLoading()
+})
 </script>
 
 
@@ -483,7 +497,7 @@
     display: block;
     margin: 0;
     position: relative;
-    padding-top: 3dvh;
+    padding-top: 2dvh;
 
   }
 
