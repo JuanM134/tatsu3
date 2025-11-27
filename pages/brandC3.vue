@@ -132,7 +132,10 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, onMounted } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+
 
 // imágenes color / gris
 import marketingColor from '@/assets/images/team/marketing.png'
@@ -168,6 +171,29 @@ const scrollToSection = () => {
   const section = document.querySelector('#team-section')
   section?.scrollIntoView({ behavior: 'smooth' })
 }
+
+const { startLoading, stopLoading } = useLoading()
+const { waitForImages, waitForFonts } = useAssetLoading()
+
+onMounted(async () => {
+  startLoading()
+  
+  const imagesToLoad = [
+    marketingColor, marketingGray,
+    artistColor, artistGray,
+    programmerColor, programmerGray,
+    financeColor, financeGray,
+    founderColor, founderGray,
+    founder2Color, founder2Gray
+  ]
+
+  await Promise.all([
+    waitForImages(imagesToLoad),
+    waitForFonts()
+  ])
+
+  stopLoading()
+})
 </script>
 
 <style scoped>
