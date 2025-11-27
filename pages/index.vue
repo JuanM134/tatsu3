@@ -41,8 +41,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+
+
 import kenta from '@/assets/videos/kenta.mp4'
 import roy from '@/assets/videos/roy.mp4'
 import agatha from '@/assets/videos/agatha.mp4'
@@ -71,17 +75,39 @@ const myVideo = ref<VideoItem[]>([
 const isActive = ref(false)
 const isDarkMode = ref(false)
 const router = useRouter()
+const { startLoading, stopLoading } = useLoading()
+const { waitForVideo, waitForFonts } = useAssetLoading()
 
 const currentVideo = ref<VideoItem | null>(null)
 const videoRef = ref<HTMLVideoElement | null>(null)
 
-onMounted(() => {
-    // Select random video on mount to avoid hydration mismatch and ensure freshness
-    currentVideo.value = myVideo.value[Math.floor(Math.random() * myVideo.value.length)]
+onMounted(async () => {
+    startLoading()
     
-    if (videoRef.value && currentVideo.value) {
-        // Use the specific speed for the video, or default to 0.5 if not defined
-        videoRef.value.playbackRate = currentVideo.value.speed ?? 0.5; 
+    try {
+        // Select random video on mount
+        currentVideo.value = myVideo.value[Math.floor(Math.random() * myVideo.value.length)]
+        
+        // Wait for DOM to update
+        await nextTick()
+
+        // Wait for video and fonts with timeout protection
+        await Promise.all([
+            waitForVideo(videoRef.value),
+            waitForFonts()
+        ])
+        
+        // Set playback rate if video ref exists
+        if (videoRef.value && currentVideo.value) {
+            videoRef.value.playbackRate = currentVideo.value.speed ?? 0.5; 
+        }
+    } catch (error) {
+        console.error('Error loading assets:', error)
+    } finally {
+        // Always stop loading after a small delay
+        setTimeout(() => {
+            stopLoading()
+        }, 500)
     }
 })
 
@@ -186,7 +212,7 @@ async function home() {
 .enter-btn-text {
     color: #0A0101;
     font-size: 11px; 
-    font-family: 'Montserrat', sans-serif;
+    font-family: Kokoro;
     font-weight:400; 
     letter-spacing: 2.04px;
     word-wrap: break-word;
@@ -207,7 +233,6 @@ async function home() {
         height: 100vh;
         touch-action: none;
     }
-
 
     .title{
 
