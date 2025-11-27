@@ -20,7 +20,7 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap' },
 
         // Kokoro (sí existe en Google Fonts)
-       // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kokoro&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kokoro&display=swap' },
 
         // Konkhmer Sleokchher
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap' },
