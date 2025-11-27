@@ -4,6 +4,7 @@
   <!-- <navbar style="z-index: 1;" /> -->
 
   <div id="main-container">
+    <Loader />
     <NuxtPage />
   </div>
 </template>
