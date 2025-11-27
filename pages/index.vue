@@ -186,7 +186,7 @@ async function home() {
 .enter-btn-text {
     color: #0A0101;
     font-size: 11px; 
-    font-family: Kokoro;
+    font-family: 'Montserrat', sans-serif;
     font-weight:400; 
     letter-spacing: 2.04px;
     word-wrap: break-word;
