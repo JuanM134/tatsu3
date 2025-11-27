@@ -88,6 +88,9 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+
 
 // ------------------ Interfaces ------------------
 interface ImageItemDesktop {
@@ -285,7 +288,24 @@ function handleMobileClick(idx: number) { tapped.value = tapped.value.map((_, i)
 function handleDesktopClick(idx: number) { /* opcional */ }
 
 // ------------------ Mounted ------------------
-onMounted(() => { 
+// ------------------ Mounted ------------------
+const { startLoading, stopLoading } = useLoading()
+const { waitForImages, waitForFonts } = useAssetLoading()
+
+onMounted(async () => {
+  startLoading()
+  
+  // Preload initial images for carousel (first few)
+  const initialDesktop = imagesDesktop.value.slice(0, 3).map(i => i.src)
+  const initialMobile = imagesMobile.value.slice(0, 3).map(i => i.srcM)
+  
+  await Promise.all([
+    waitForImages([...initialDesktop, ...initialMobile]),
+    waitForFonts()
+  ])
+  
+  stopLoading()
+
   startMobileCarousel(); 
   startDesktopCarousel();
   document.addEventListener('contextmenu', e => e.preventDefault()) 
