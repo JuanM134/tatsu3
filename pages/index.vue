@@ -270,6 +270,13 @@ async function home() {
     
     }
 
+    .title-container {
+        width: 100% !important;  /* Expande contenedor base */
+        position: relative;
+
+    }
+
+
     #myVideo{
 
     background-image: url('assets/images/home.png');
