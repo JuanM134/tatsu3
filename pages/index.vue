@@ -61,15 +61,16 @@ interface VideoItem {
   width?: string;
   height?: string;
   zIndex?: number;
-  speed?: number;   
+  speed?: number;
+  scale?: number;   
 }
 
 const myVideo = ref<VideoItem[]>([
-  { src: kenta, number: 20 , offsetY: '110%', speed: 0.5 },
-  { src: roy, number: 20 , offsetY: '110%', speed: 0.5 },
-  { src: agatha, number: 20 , offsetY: '120%', speed: 0.5 },
-  { src: mesmer, number: 20 , offsetY: '130%', speed: 0.5 },
-  { src: sora, number: 20 , offsetY: '110%', speed: 0.5 },
+  { src: kenta, number: 20 , offsetY: '110%', speed: 0.8 },
+  { src: roy, number: 20 , offsetY: '105%', speed: 0.8 },
+  { src: agatha, number: 20 , offsetY: '110%', speed: 0.8,},
+  { src: mesmer, number: 20 , offsetY: '123%', speed: 0.8 },
+  { src: sora, number: 20 , offsetY: '100%', speed: 0.8, height: '95%'},
 ]);
 
 const isActive = ref(false)
@@ -181,7 +182,7 @@ async function home() {
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
-    height: 195%;
+    height: 185%;
     object-fit: cover; /* cover the title box and crop as needed */
     pointer-events: none;
     mix-blend-mode: darken;
