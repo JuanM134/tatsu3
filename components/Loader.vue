@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade">
     <div v-if="isLoading" class="loader-overlay">
-      <div class="loader-text">TATSU</div>
+      <div class="loader-text">LOADING</div>
     </div>
   </Transition>
 </template>
@@ -29,7 +29,7 @@ const { isLoading } = useLoading()
 .loader-text {
   font-family: 'Bernoru';
   font-weight: 900;
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: #fff;
   letter-spacing: -0.1rem;
   animation: pulse 1.5s ease-in-out infinite;
