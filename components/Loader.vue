@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade">
     <div v-if="isLoading" class="loader-overlay">
-      <div class="loader-text">Awakening the dragon... <span class="progress-text">{{ progress }}%</span></div>
+      <div class="loader-text">Awakening the dragon . . .<span class="progress-text">{{ progress }}%</span></div>
     </div>
   </Transition>
 </template>
@@ -61,3 +61,4 @@ const { isLoading, progress } = useLoading()
   opacity: 0;
 }
 </style>
+
