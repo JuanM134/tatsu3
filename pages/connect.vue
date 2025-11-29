@@ -96,8 +96,8 @@ display: none;
 .title{
 
     position: absolute;
-    font-size: 3.5rem;
-    top: 45%;
+    font-size: 2rem;
+    top: 50%;
     text-align: center;
     line-height: 0px;
     width: 100%;
