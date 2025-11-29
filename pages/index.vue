@@ -69,7 +69,7 @@ const myVideo = ref<VideoItem[]>([
   { src: kenta, number: 20 , offsetY: '110%', speed: 0.8 },
   { src: roy, number: 20 , offsetY: '105%', speed: 0.8 },
   { src: agatha, number: 20 , offsetY: '110%', speed: 0.8,},
-  { src: mesmer, number: 20 , offsetY: '123%', speed: 0.8 },
+  { src: mesmer, number: 20 , offsetY: '118%', speed: 0.8 },
   { src: sora, number: 20 , offsetY: '100%', speed: 0.8, height: '95%'},
 ]);
 
