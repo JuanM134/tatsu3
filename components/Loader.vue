@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade">
     <div v-if="isLoading" class="loader-overlay">
-      <div class="loader-text">LOADING</div>
+      <div class="loader-text">Awakening the dragon... <span class="progress-text">{{ progress }}%</span></div>
     </div>
   </Transition>
 </template>
@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { useLoading } from '@/composables/useLoading'
 
-const { isLoading } = useLoading()
+const { isLoading, progress } = useLoading()
 </script>
 
 <style scoped>
@@ -19,7 +19,7 @@ const { isLoading } = useLoading()
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: #DDD9DA;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,11 +27,21 @@ const { isLoading } = useLoading()
 }
 
 .loader-text {
-  font-family: 'Bernoru';
-  font-weight: 900;
-  font-size: 2.5rem;
-  color: #fff;
-  letter-spacing: -0.1rem;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #1B1818;
+  letter-spacing: 14%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.progress-text {
+  margin-left: 10px;
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 1.2em;
+  color: #1B1818;
+  letter-spacing: 14%;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
