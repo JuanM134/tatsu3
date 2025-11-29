@@ -56,7 +56,7 @@ onMounted(async () => {
     
     color: #0A0101; 
     font-size: 100px; 
-    font-family: Bernoru; 
+    font-family: 'MontSerrat'; 
     font-weight: 900; 
     line-height: 102.40px; 
     top: 40%;
