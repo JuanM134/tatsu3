@@ -280,6 +280,13 @@ async function home() {
     
     }
 
+    .enter-btn-flip {
+            
+        border: 0px #ffffff solid !important;
+        background:  #ffffff;
+            
+    }
+
     .title-container {
         width: 100% !important;  /* Expande contenedor base */
         position: relative;
