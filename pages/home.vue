@@ -199,7 +199,7 @@ x
         text-align: center;
         position: absolute;
         object-fit: contain;
-        bottom: 1.5dvh;
+        bottom: 1dvh;
 
     }
 
@@ -212,11 +212,12 @@ x
     .home-image-mobile{
         background-color: #DDD9DA;
         display: block;
+        left: 5dvw !important;
 
     }
 
     .hero-text {
-        font-size: 36px;
+        font-size: 28px;
         margin-top: 5vh; 
     }
 
