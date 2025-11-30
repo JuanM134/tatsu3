@@ -220,7 +220,7 @@ li{
     height: 3rem;
     border-color: #1B1818;
     list-style-type: none;
-    border-bottom: 1px solid #484848;
+    border-bottom: 1px solid #0E030330;
     padding-top: 1dvh;
 
     
