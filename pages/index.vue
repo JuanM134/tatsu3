@@ -154,6 +154,7 @@ async function home() {
 }
 
 .title {
+
     font-family: 'Bernoru';
     color: #1B1818;
     /* responsive font so title and video scale together */
@@ -161,6 +162,7 @@ async function home() {
     font-weight: 900;
     letter-spacing: -22px;
     position: relative;
+
 
 }
 
@@ -247,6 +249,13 @@ async function home() {
         touch-action: none;
     }
 
+    .page-wrapper {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        touch-action: none;
+    }
+
     .title{
 
     font-size: 8rem;
@@ -255,6 +264,7 @@ async function home() {
 
     left: 50%;                
     transform: translateX(-50%); 
+    top: 50%;
 
     }
 
@@ -279,7 +289,6 @@ async function home() {
 
     #myVideo{
 
-    background-image: url('assets/images/home.png');
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: hidden;
@@ -311,6 +320,7 @@ async function home() {
         display: flex;
         flex-direction: column;
     }
+
 
 }
 
