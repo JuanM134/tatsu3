@@ -7,7 +7,7 @@
                         <div class="menu-container" v-if="ocultar || closing">
         <ul>
           <li><a href="/connect">TALES</a></li>
-          <li><a href="/connect">WORLD</a></li>
+          <li><a href="/world">WORLD</a></li>
           <li><a href="/connect">BRAND</a></li>
           <li><a href="/connect">ROADMAP</a></li>
           <li><a href="/connect">GALLERY</a></li>
