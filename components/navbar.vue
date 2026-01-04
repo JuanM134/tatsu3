@@ -20,7 +20,7 @@
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/world" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>BRAND</div>
                 </div>
