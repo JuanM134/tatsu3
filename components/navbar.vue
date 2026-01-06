@@ -6,7 +6,7 @@
           <!-- Nav items alineados a la izquierda -->
           <div class="left-items">
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/history" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>TALES</div>
                 </div>
@@ -20,21 +20,21 @@
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/brandC3" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>BRAND</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/roadmap" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>ROADMAP</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/gallery" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>GALLERY</div>
                 </div>
