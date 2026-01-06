@@ -54,7 +54,7 @@
               <img :src="show.marketing ? marketingColor : marketingGray" alt="Marketing Member" class="member-img" />
               <div class="member-info" :class="{ hidden: show.marketing }">
                 <div class="text-container">
-                  <div class="member-name">CATU</div>
+                  <div class="member-name">SMART</div>
                   <div class="member-role">MARKETING</div>
                 </div>
               </div>
