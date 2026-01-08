@@ -47,35 +47,22 @@
           <h2>MEET THE PARTY</h2>
         </div>
 
-        <div class="team-grid">
+       <div class="team-grid">
           <!-- MARKETING -->
-          <div class="member marketing" @mouseenter="show.marketing = true" @mouseleave="show.marketing = false">
+          <div class="member marketing" @mouseenter="show.founder = true" @mouseleave="show.founder = false">
             <div class="image-wrapper">
-              <img :src="show.marketing ? marketingColor : marketingGray" alt="Marketing Member" class="member-img" />
-              <div class="member-info" :class="{ hidden: show.marketing }">
+              <img :src="show.founder ? founderColor : founderGray" alt="Marketing Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.founder}">
                 <div class="text-container">
-                  <div class="member-name">SMART</div>
-                  <div class="member-role">MARKETING</div>
+                  <div class="member-name">GABODDS</div>
+                  <div class="member-role">FOUNDER</div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- ARTIST -->
-          <div class="member artist" @mouseenter="show.artist = true" @mouseleave="show.artist = false">
-            <div class="image-wrapper">
-              <img :src="show.artist ? artistColor : artistGray" alt="Artist Member" class="member-img" />
-              <div class="member-info" :class="{ hidden: show.artist }">
-                <div class="text-container">
-                  <div class="member-name">KIBBEN</div>
-                  <div class="member-role">ARTIST</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PROGRAMMER -->
-          <div class="member programmer" @mouseenter="show.programmer = true" @mouseleave="show.programmer = false">
+          <div class="member artist" @mouseenter="show.programmer = true" @mouseleave="show.programmer = false">
             <div class="image-wrapper">
               <img :src="show.programmer ? programmerColor : programmerGray" alt="Programmer Member" class="member-img" />
               <div class="member-info" :class="{ hidden: show.programmer }">
@@ -87,8 +74,8 @@
             </div>
           </div>
 
-          <!-- FINANCE -->
-          <div class="member finance" @mouseenter="show.finance = true" @mouseleave="show.finance = false">
+          <!-- PROGRAMMER -->
+          <div class="member programmer" @mouseenter="show.finance = true" @mouseleave="show.finance = false">
             <div class="image-wrapper">
               <img :src="show.finance ? financeColor : financeGray" alt="Finance Member" class="member-img" />
               <div class="member-info" :class="{ hidden: show.finance }">
@@ -100,14 +87,27 @@
             </div>
           </div>
 
-          <!-- FOUNDER -->
-          <div class="member founder" @mouseenter="show.founder = true" @mouseleave="show.founder = false">
+          <!-- FINANCE -->
+          <div class="member finance" @mouseenter="show.marketing = true" @mouseleave="show.marketing = false"">
             <div class="image-wrapper">
-              <img :src="show.founder ? founderColor : founderGray" alt="Founder Member" class="member-img" />
-              <div class="member-info" :class="{ hidden: show.founder }">
+              <img :src="show.marketing ? marketingColor : marketingGray" alt="Artist Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.marketing }">
                 <div class="text-container">
-                  <div class="member-name">GABODDS</div>
-                  <div class="member-role">FOUNDER</div>
+                  <div class="member-name">SMART</div>
+                  <div class="member-role">MARKETING</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOUNDER -->
+          <div class="member founder" @mouseenter="show.artist = true" @mouseleave="show.artist = false">
+            <div class="image-wrapper">
+              <img :src="show.artist ? artistColor : artistGray" alt="Founder Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.artist }">
+                <div class="text-container">
+                  <div class="member-name">KIBBEN</div>
+                  <div class="member-role">ARTIST</div>
                 </div>
               </div>
             </div>
