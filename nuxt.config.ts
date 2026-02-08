@@ -1,9 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-10-26',
+  plugins: ['~/plugins/fontawesome'],
   devtools: { enabled: true },
+  
+
   app: {
     head: {
-      charset: 'utf-16',
+      charset: 'utf-8',
       viewport: 'width=500, initial-scale=1',
       title: 'Tatsu',
       meta: [
@@ -17,9 +21,6 @@ export default defineNuxtConfig({
         // IBM Plex Mono
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap' },
 
-        // Kokoro (sí existe en Google Fonts)
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kokoro&display=swap' },
-
         // Konkhmer Sleokchher
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap' },
 
@@ -32,21 +33,42 @@ export default defineNuxtConfig({
         // Roboto Regular
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap' },
 
-        { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Kokoro&display=swap" },
-
     ],
 
     }
   },
+
   components: [
     {
       path: '~/components/',
       pathPrefix: false, // auto-import components based only on its name
     },
   ],
+
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
     '@/assets/main.css'
+  ],
+
+  build: {
+  transpile: [
+    '@fortawesome/vue-fontawesome',
+    '@fortawesome/fontawesome-svg-core',
+    '@fortawesome/free-brands-svg-icons',
+    '@fortawesome/free-solid-svg-icons',
+    '@fortawesome/free-regular-svg-icons'
   ]
+},
+
+modules: [
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/supabase'
+  ],
+
+  // Las configuraciones de cada módulo van fuera del array 'modules'
+  supabase: {
+    redirect: false,
+    
+  }
 })

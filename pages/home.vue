@@ -5,6 +5,7 @@
         <div class="background"> 
             <navbar class="navbar"  style="z-index: 5;" />   
             <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
+            <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
             <menubttn style="z-index: 6;"/> 
             <navbar2 style="z-index: 11;" />
 
@@ -12,8 +13,13 @@
             <div class="container">
 
                 <div class="" style="z-index: 0;">
-                        <img class="home-image" src="@/assets/images/home2.png" style="width: 100%; height: 100%; object-fit: contain;
-                         position: absolute; top: 0; left: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
+
+                    <p class="hero-text">TATSU — <br>
+                    BECOME THE <br>
+                    DRAGON WITHIN</p>
+                    
+                        <img class="home-image" src="@/assets/images/home4.png" style="width: 100%; height: 100%; object-fit: contain; object-position: right;
+                         position: absolute; top: 0; right: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
                          
                     
                     <video autoplay loop playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
@@ -21,10 +27,12 @@
 
                         <div class="video-wrap">
 
-                            <img class="home-image-mobile" src="@/assets/images/homeMobile2.png" style="width: auto; height: 110dvh; object-fit: contain;
-                            position: absolute; top: -5dvh; left: -25dvw; z-index: 0;"> 
-                            <video autoplay loop playsinline class="bg-video">
-                            <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" /></video>
+                            <img class="home-image-mobile" src="@/assets/images/home4.png" style="width: auto; height: 80dvh; object-fit: contain;
+                            position: absolute; top: 5dvh; left: -5dvw; z-index: 0;"> 
+
+                            <video autoplay muted loop playsinline class="bg-video">
+                                <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" />
+                            </video>
                             
                         </div>
 
@@ -104,9 +112,20 @@ x
     inset: 0; 
     z-index: 0; 
     overflow: hidden; 
-    display: none;}
+    display: none;
+    background-color: #DDD9DA;
+}
 
-.bg-video{ width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; pointer-events: none; mix-blend-mode: lighten; }
+.bg-video{ 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    pointer-events: none; 
+    mix-blend-mode: lighten; 
+}
 
 #myVideo {
   width: 100%;
@@ -142,9 +161,9 @@ x
 .odd{
 
     display: block;
-    color: rgb(255, 255, 255);
+    color: #1D1B1B;
     font-family: IMBPlexMono;
-    font-size: 0.6rem;
+    font-size: 11px;
     bottom: 0;
     z-index: 4;
     text-align: center;
@@ -155,6 +174,18 @@ x
 
 
 
+
+.hero-text {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #4E4E4E;
+    z-index: 10;
+    line-height: 1.2;
+}
 
 @media only screen and (max-width: 630px){
 
@@ -170,17 +201,17 @@ x
     .odd{
 
         display: block;
-        color: rgb(255, 255, 255);
+        color: #1D1B1B;
         font-family: IMBPlexMono;
         font-size: 0.6rem;
         z-index: 5;
         text-align: center;
         position: absolute;
         object-fit: contain;
-        bottom: 3dvh;
-        
+        bottom: 1dvh;
 
     }
+
     .home-image{
 
         display: none;
@@ -190,7 +221,13 @@ x
     .home-image-mobile{
         background-color: #DDD9DA;
         display: block;
+        left: 5dvw !important;
 
+    }
+
+    .hero-text {
+        font-size: 28px;
+        margin-top: 5vh; 
     }
 
     .background{

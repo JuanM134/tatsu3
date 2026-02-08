@@ -3,6 +3,7 @@
         <navbar style="z-index: 4;" />
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; "/>  
+        <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
         <menubttn style="z-index: 6;"/> 
         <navbar2 style="z-index: 11;" />
         
@@ -17,7 +18,18 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
 
+const { startLoading, stopLoading } = useLoading()
+const { waitForFonts } = useAssetLoading()
+
+onMounted(async () => {
+  startLoading()
+  await waitForFonts()
+  stopLoading()
+})
 </script>
 
 <style scoped>
@@ -44,7 +56,7 @@
     
     color: #0A0101; 
     font-size: 100px; 
-    font-family: 'Konkhmer Sleokchher', system-ui; 
+    font-family: 'MontSerrat'; 
     font-weight: 900; 
     line-height: 102.40px; 
     top: 40%;
@@ -84,8 +96,8 @@ display: none;
 .title{
 
     position: absolute;
-    font-size: 3.5rem;
-    top: 45%;
+    font-size: 2rem;
+    top: 50%;
     text-align: center;
     line-height: 0px;
     width: 100%;

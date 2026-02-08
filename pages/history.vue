@@ -4,6 +4,7 @@
           <menubttn style="z-index: 6;overflow-y: hidden;"/> 
 
           <Dropupbttn class="dropupbttn"  style="z-index: 4; position: fixed; top: 88.5%;" />
+          <home class="dropupbttn" style="z-index: 5;  position: absolute;"/> 
           <navbar2 style="z-index: 11; position: absolute; top: 3%;" /> 
 
             <section id="background" class="background">
@@ -16,11 +17,11 @@
                         <span class="containerHistory">
                             
                           <div class="paragraph">
-                            <p class="history-line"><span class="history-inline">Born of dragons, shaped by time, their blood runs hot with Ryūsei—the energy of the world.</span></p>
+                            <p class="history-line"><span class="history-inline">Born of dragons, shaped by time, their blood runs hot with Ryūsei, the energy of the world.</span></p>
 
                             <p class="history-line" style="margin-top: -0.7%;" ><span class="history-inline">Through swords and will, they bend elements and unique abilities to their command.</span></p>
 
-                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">high in Tobirama, where the mountains touch the clouds and rivers remember the old songs</span></p>
+                            <p class="history-line" style="margin-top: 2%;"><span class="history-inline">High in Tobirama, where the mountains touch the clouds and rivers remember the old songs</span></p>
 
                             <p class="history-line" style="margin-top: -0.7%;" ><span class="history-inline">The royal line remains.</span></p>
 
@@ -44,7 +45,7 @@
 
             <section>
               
-            <div class="background1" style="z-index: 4;text-align: end; background-color: #DDD9DA; align-self: flex-end; height: max-content; width: 100%;">
+            <div class="background1">
 
               <div class="title3" >TALE OF  KATSURO KENTA</div>
 
@@ -75,17 +76,17 @@
             <section id="background2" class="background2">
 
                 
-                <div class="title2">TALE OF NOHIMARAMA</div>
+                <div class="title2">TALE OF NOHIARAMA</div>
                 
 
                 <div style="width: 90%;">
                     <span class="containerHistory2" >
-                      <p class="history-line"><span class="history-inline">In the ancient dawn, three dragons—Hifu, Yami and Shaku—lifted mankind from darkness. </span></p>
+                      <p class="history-line"><span class="history-inline">In the ancient dawn, three dragons - Hifu, Yami and Shaku - lifted mankind from darkness. </span></p>
                       <p class="history-line" style="margin-top: -0.7%;" ><span class="history-inline">They gifted wisdom, power, and energy. Civilizations thrived under their wings.</span></p>
                       <p class="history-line" style="margin-top: 2%;"><span class="history-inline">But greed grew in mortal hearts. Betrayed, the dragons withdrew beyond the Veil, leaving humanity to its fate.</span></p>
-                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">From their bloodlines rose the Tatsu—humans born with the echo of dragons in their veins. Their power</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">From their bloodlines rose the Tatsu-humans born with the echo of dragons in their veins. Their power</span></p>
                       <p class="history-line" style="margin-top: -0.7%;" ><span class="history-inline">brought fear... and fear bred destruction.</span></p>
-                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Years later, the world fractured. From the ashes soared the Citadel—a floating stronghold of the last elite.</span></p>
+                      <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Years later, the world fractured. From the ashes soared the Citadel, a floating stronghold of the last elite.</span></p>
                       <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Below, the city of Nohimara shined briefly... before falling into darkness.</span></p>
                       <p class="history-line" style="margin-top: 2%;"><span class="history-inline">Now, the Citadel rules through the iron fist of the Black Guard. Factions squabble for survival.</span></p> 
                       <p class="history-line" style="margin-top: 2%;"><span class="history-inline">The Tatsu awaken once more.</span></p>
@@ -104,10 +105,24 @@
 </template>
 
 
-<script >
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+import dragonV2 from '@/assets/images/dragonV2.png'
+import cityV2 from '@/assets/images/cityV2.png'
 
+const { startLoading, stopLoading } = useLoading()
+const { waitForImages, waitForFonts } = useAssetLoading()
 
-
+onMounted(async () => {
+  startLoading()
+  await Promise.all([
+    waitForImages([dragonV2, cityV2]),
+    waitForFonts()
+  ])
+  stopLoading()
+})
 </script>
 
 
@@ -221,7 +236,8 @@
 
 .background {
   
-    background-image:  linear-gradient(rgba(255, 255, 255, 0.382), rgba(220, 220, 220, 0.36)), url('@/assets/images/dragonV2.png');
+    background-image:  linear-gradient(rgba(255, 255, 255, 0.382), rgba(220, 220, 220, 0.36)),
+  linear-gradient(rgba(117, 63, 87, 0.45), rgba(117, 63, 87, 0.45)), url('@/assets/images/dragonV2.png');
     background-size: cover;
     background-position: center;
     background-position-y: 90%;
@@ -239,9 +255,20 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+.background1{
+  z-index: 4;
+  text-align: end; 
+  background-color:  #DDD9DA;
+  align-self: flex-end; 
+  height: max-content; 
+  width: 100%;
+  background-image:  linear-gradient( rgba(220, 220, 220, 0.36), rgba(255, 255, 255, 0.382)),
+  linear-gradient(rgba(117, 63, 87, 0.45), rgba(117, 63, 87, 0.45));
+}
 
 .background2 {
-    background-image: linear-gradient(rgba(217, 217, 217, 0.382), rgba(227, 227, 227, 0.36)), url('@/assets/images/cityV2.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.382), rgba(220, 220, 220, 0.36)),
+  linear-gradient(rgba(117, 63, 87, 0.45), rgba(117, 63, 87, 0.45)),url('@/assets/images/cityV2.png');
     background-position: top 95% center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -333,7 +360,8 @@
   line-height: 1.5;
   width: fit-content; /* shrink to fit text */
   font-family: 'Kokoro', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .history-line2{
@@ -345,12 +373,13 @@
   font-family: 'Kokoro', sans-serif;
   margin-left: auto; /* push block to the right within its container */
   display: block;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 400;
 
 }
 
 .history-inline{
-  font-size: smaller;
+  font-size: 15px;
   display: inline-block; /* background only spans text width */
   background: transparent; /* parent provides background box */
   color: inherit;
@@ -368,12 +397,13 @@
   display: grid;
   color: rgb(255, 255, 255);
   font-family: IMBPlexMono;
-  font-size: 0.6rem;
+  font-size: 11px;
   z-index: 4;
   text-align: center;
   position: absolute;
   bottom: 0;
-  left: 45%;
+  left: 50%;
+  transform: translateX(-50%);
 
 }
 
@@ -381,7 +411,6 @@
 
     text-align: start;
     font-weight: normal;
-    font-family: IMBPlexMono;
     width: 90%;
 
 }
@@ -409,6 +438,7 @@
 
 .containerHistory3 {
   height: max-content;
+  top: 2dvh;
 }
 
 
@@ -418,7 +448,19 @@
   -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
 }
 
+.background1{
+  height: 600px;
+}
 
+.history-inline{
+  font-size: 12px;
+
+}
+
+.history-inline2{
+  font-size: 12px;
+
+}
 
 .background2 {
   height: 75%;
@@ -444,7 +486,7 @@
 .title3{
     display: block;
     margin: 0;
-    padding-top: 30%;
+    padding-top: 15%;
     padding-bottom: 2.5%;
     position: relative;
   
@@ -454,9 +496,8 @@
   .title2{
     display: block;
     margin: 0;
-    padding-top: 65%;
-    padding-bottom: -50%;
     position: relative;
+    padding-top: 2dvh;
 
   }
 

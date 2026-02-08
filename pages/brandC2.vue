@@ -6,6 +6,188 @@
 
         <img class="imageSitting"  src="@/assets/images/sitting.png" alt="">
 
+
+            <div id="team-section" class="team-info">
+
+            <h2 class="title2">THE PARTY</h2>
+
+            <div class="member marketing">
+                <img 
+                    :src="showMarketingAlt ? marketingImg : marketingImg" 
+                    @mouseover="showMarketingAlt = true" 
+                    @mouseleave="showMarketingAlt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showMarketingAlt" 
+                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    MARKETING
+                </div>
+                <div v-if="showMarketingAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 124px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 304px; height: 0px; left: -8px; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@catu_you_are</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: -20px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
+                        Master of Science in Advertising (BU).<br/>Kickstarter Success.<br/>CEO of Biz Connect.
+                    </div>
+                    <div style="left: 11px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CATU</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px; font-family: 'Roboto', sans-serif;">MARKETING</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="member artist">
+                <img 
+                    :src="showArtistAlt ? artistImg : artistAltImg" 
+                    @mouseover="showArtistAlt = true" 
+                    @mouseleave="showArtistAlt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showArtistAlt" 
+                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    ARTIST
+                </div>
+                <div v-if="showArtistAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; ; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top:80px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 304px; height: 0px; left: -8px; top: 65px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: 75.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;  font-family: 'Roboto', sans-serif;">@</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: 95px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
+                        N/A.
+                    </div>
+                    <div style="left: 11px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">KIBBEN</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">ARTIST</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member programmer">
+                <img 
+                    :src="showProgrammerAlt ? programmerImg : programmerAltImg" 
+                    @mouseover="showProgrammerAlt = true" 
+                    @mouseleave="showProgrammerAlt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Programmer Member"
+                />
+                <div v-if="!showProgrammerAlt" 
+                    style="color: #0E0303; font-size: 12px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    PROGRAMMER
+                </div>
+                <div v-if="showProgrammerAlt" class="member-info" style="width: 294px; height: 107px; left: 320px; top: 0px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 10.78px; top: 700px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 304px; height: 0px; left: -8px; top: 685px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 24px; top: 695.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px;  font-family: 'Roboto', sans-serif;">@</div>
+                    <div style="width: 256px; height: 20px; left: 11px; top: 715px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
+                        N/A.
+                    </div>
+                    <div style="left: 11px; position: relative; top: 620px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">JM134</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">PROGRAMMER</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member finance">
+                <img 
+                    :src="showFinanceAlt ? financeImg : financeAltImg" 
+                    @mouseover="showFinanceAlt = true" 
+                    @mouseleave="showFinanceAlt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showFinanceAlt" 
+                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    FINANCE
+                </div>
+                <div v-if="showFinanceAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: -42px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 304px; height: 0px; left: 106%; top: -55px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: -47px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: -20px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
+                        N/A.
+                    </div>
+                    <div style="left: 331px; position: relative; top: -120px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">ALFON</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;">FINANCE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member founder">
+                <img 
+                    :src="showFounderAlt ? founderImg : founderAltImg" 
+                    @mouseover="showFounderAlt = true" 
+                    @mouseleave="showFounderAlt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showFounderAlt" 
+                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    FOUNDER
+                </div>
+                <div v-if="showFounderAlt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 124px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                     <div style="width: 304px; height: 0px; left: 106%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: 251.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@gabodds_</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: 280px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px; font-family: 'Roboto', sans-serif;">
+                        Obsessed with anime. 
+                        Find me eating Okonomiyaki at KENKA NYC or on the 
+                        world wide web playing online video-
+                        games.<br/><br/>
+
+                        Favorite anime movie: <br/><br/><br/>
+
+                        AKIRA.
+                    </div>
+                    <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: 'Bernoru', sans-serif; font-weight: 900; line-height: 51.20px;">GABODDS</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px; ">FOUNDER</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member founder2">
+                <img 
+                    :src="showFounder2Alt ? founder2Img : founder2AltImg" 
+                    @mouseover="showFounder2Alt = true" 
+                    @mouseleave="showFounder2Alt = false" 
+                    style="width: auto; height: 250px; border: 1px black solid" 
+                    alt="Marketing Member"
+                />
+                <div v-if="!showFounder2Alt" 
+                    style="color: #0E0303; font-size: 12px; left: 0px; font-family: MontSerrat; font-weight: 100; line-height: 19.20px; letter-spacing: 2.58px; word-wrap: break-word">
+                    DESGINER
+                </div>
+                <div v-if="showFounder2Alt" class="member-info" style="width: 294px; height: 107px; left: 51dw; top: 414px; position: absolute">
+                    <!-- Contenido info del miembro aquí -->
+                    <img style="width: 10.42px; height: 11.03px; left: 335px; top: 255px; position: absolute;" src="@/assets/images/team/Vector.svg"/>
+                    <div style="width: 304px; height: 0px; left: 106%; top: 245px; position: absolute; border: 0.30px #0E0303 solid"></div>
+                    <div style="width: 120px; height: 20px; left: 118%; top: 251.5px; position: absolute; color: #1B1818; font-size: 11px; font-weight: 200; line-height: 17.71px; letter-spacing: 0.82px; font-family: 'Roboto', sans-serif;">@ N/A.</div>
+                    <div style="width: 256px; height: 20px; left: 114%; top: 280px; position: absolute; color: #1D1B1B; font-size: 12px; font-weight: 200; line-height: 16px; letter-spacing: 2.15px;  font-family: 'Roboto', sans-serif;">
+                        MFA in Interior Design(PRATT), designing in NYC since 2018 and watches 
+                        anime on her free time.<br/> <br/><br/>
+
+                        Favorite animated movie: <br/> <br/> <br/>
+                        
+                        Spirited Away.
+                    </div>
+                    <div style="left: 331px; position: relative; top: 180px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                        <div style="width: 146px; height: 45px; color: #0A0101; font-size: 32px; font-family: Bernoru; font-weight: 900; line-height: 51.20px;">CRISTINA</div>
+                        <div style="width: 72.07px; height: 20.01px; color: #0A0808; font-size: 12px; font-weight: 200; line-height: 19.20px; letter-spacing: 2.58px;  font-family: 'Roboto', sans-serif;">DESIGNER</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         
         <div class="content">
 
@@ -34,64 +216,114 @@
     
 <script setup lang="ts">
 
-useHead({
-  bodyAttrs: {
-    class: 'brand-bg-color hide-scroll'
+// Importa las imágenes para que Vite/Webpack las procese
+import marketingImg from '@/assets/images/team/marketing.png'
+import marketingAltImg from '@/assets/images/team/marketing_alt.png'
+import artistImg from '@/assets/images/team/artist.png'
+import artistAltImg from '@/assets/images/team/artist_alt.png'
+import programmerImg from '@/assets/images/team/programmer.png'
+import programmerAltImg from '@/assets/images/team/programmer_alt.png'
+import financeImg from '@/assets/images/team/finance.png'
+import financeAltImg from '@/assets/images/team/finance_alt.png'
+import founderImg from '@/assets/images/team/founder.png'
+import founderAltImg from '@/assets/images/team/founder_alt.png'
+import founder2Img from '@/assets/images/team/designer.png'
+import founder2AltImg from '@/assets/images/team/designer_alt.png'
+
+
+import { onMounted, ref } from 'vue'
+
+
+
+const showMarketingAlt = ref(false)
+const showArtistAlt = ref(false)
+const showProgrammerAlt = ref(false)
+const showFinanceAlt = ref(false)
+const showFounderAlt = ref(false)
+const showFounder2Alt = ref(false)
+
+const scrollToSection = () => {
+  const section = document.querySelector('#team-section')
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
   }
-})
-
-let showFounderInfo = ref(false)
-let showMarketingInfo = ref(false)
-let showStrategistInfo = ref(false)
-let showEngineerInfo = ref(false)
-let showDesignerInfo = ref(false)
-let showProgrammerInfo = ref(false)
-
-function showHide(member: string) {
-    switch (member) {
-        case 'founder':
-            showFounderInfo.value = !showFounderInfo.value
-            break;
-        case 'marketing':
-            showMarketingInfo.value = !showMarketingInfo.value
-            break;
-        case 'strategist':
-            showStrategistInfo.value = !showStrategistInfo.value
-            break;
-        case 'developer':
-            showEngineerInfo.value = !showEngineerInfo.value
-            break;
-        case 'designer':
-            showDesignerInfo.value = !showDesignerInfo.value
-            break;
-        case 'programmer':
-            showProgrammerInfo.value = !showProgrammerInfo.value
-            break;
-        default:
-            break;
-    }
 }
+
+
+    useHead({
+    bodyAttrs: {
+        class: 'brand-bg-color hide-scroll'
+    }
+    })
+
+    let showFounderInfo = ref(false)
+    let showFounder2Info = ref(false)
+    let showMarketingInfo = ref(false)
+    let showStrategistInfo = ref(false)
+    let showEngineerInfo = ref(false)
+    let showDesignerInfo = ref(false)
+    let showProgrammerInfo = ref(false)
+
+    function showHide(member: string) {
+        switch (member) {
+            case 'founder':
+                showFounderInfo.value = !showFounderInfo.value
+                break;
+            case 'marketing':
+                showMarketingInfo.value = !showMarketingInfo.value
+                break;
+            case 'strategist':
+                showStrategistInfo.value = !showStrategistInfo.value
+                break;
+            case 'developer':
+                showEngineerInfo.value = !showEngineerInfo.value
+                break;
+            case 'designer':
+                showDesignerInfo.value = !showDesignerInfo.value
+                break;
+            case 'programmer':
+                showProgrammerInfo.value = !showProgrammerInfo.value
+                break;
+            default:
+                break;
+        }
+    }
+
 </script>
     
 <style scoped>
 
+html {
+  scroll-behavior: smooth;
+  
+}
+
+
 .hide-scroll {
   overflow: visible;
   
+  
 }
+
 .background {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
+
+    background: #DDD9DA;
 
     width: 100%;
     height: 100vh;
     position: fixed ;
     bottom: 0;
 
-    
-    z-index: 0;
+    overflow-y: auto;
+
+    /* Hide scrollbar but keep functionality */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
 
 .brand {
     width: 100%; 
@@ -102,6 +334,7 @@ function showHide(member: string) {
 }
 
 .brand-info {
+
     width: 510px; 
     height: 60.3rem; 
     left: 38px; 
@@ -119,56 +352,80 @@ function showHide(member: string) {
     /* Hide scrollbar but keep functionality */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
 }
 
 .imageSitting {
-    width: 40%; /* Adjust based on desired size relative to container */
-    max-width: 700px; /* Limit max size */
-    height: auto;
-    align-self: flex-start; /* Align image to the start (top-left) */
-    object-fit: contain; /* Ensure image fits without cropping */
-    position: absolute; /* Position the image relative to .main-container */
-    left: 5%;
-    top: 10%;
-    z-index: 1; /* Ensure image is above background but below text/title */
-    transform: translateY(-5%); /* Fine-tune vertical position */
-    width: 40%; /* Make it larger to overlap text */
+
+    display: none;
+    
+}
+
+.imageSitting2 {
+
+    display: none;
+    
+}
+
+.video-container{
+
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 30%;
+    top: 0%;
+    
+    mix-blend-mode: darken;
+    object-position: right;
+    z-index: -1;
+    
 }
 
 .content{
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     flex-grow: 1; /* Allow content area to grow */
-    padding-left: 5%; /* Adjust as needed for spacing */
+    padding-left: 1%; /* Adjust as needed for spacing */
     padding-right: 5%; /* Adjust as needed for spacing */
-    padding-top: 20%;
+    padding-top: 15%;
     justify-content: space-between; /* Push bottom button to the bottom */
     position: relative; /* For absolute positioning of bottom elements */
+    width: 100vw;
 }
 
 .brand-title {
     font-family: Bernoru;
-    font-size: 8vw; /* Responsive font size */
+    font-size: 7.5vw; /* Responsive font size */
     font-weight: 500;
     color: #222;
     text-transform: uppercase;
     letter-spacing: -0.05em; /* Adjust letter spacing for tight look */
-    margin-top: 1vw; /* Push title down, adjust based on image overlap */
+    margin-top: 1.5vw; /* Push title down, adjust based on image overlap */
     margin-left: 3vw; /* Push title right, adjust based on image overlap */
     white-space: nowrap; /* Prevent "ODD" and "STUDIOS" from breaking */
+    max-width: 45vw; /* Limit width of text for readability */
     line-height: 0.8; /* Reduce line height */
     z-index: 2; /* Ensure title is above the image */
+    word-spacing: .2em;
+
+    background-color: #ddd9dac4;
 }
 
 .brand-txt{
     margin-top: 1vw; /* Space between title and text blocks */
     margin-left: 3vw; /* Align text blocks with title */
-    max-width: 500px; /* Limit width of text for readability */
+    max-width: 45vw; /* Limit width of text for readability */
     font-size: 1.1em;
+    font-weight: 500;
     line-height: 1.6;
     z-index: 2;
-    font-family: IMBPlexMono;
+    font-family: 'Kokoro', sans-serif;
+    overflow-wrap: break-word;
+    color: #000;
+
+    background-color: #ddd9dac4;
 }
+
 
 
   /* Hide scrollbar but keep functionality for Chrome, Safari and Opera */
@@ -199,12 +456,24 @@ function showHide(member: string) {
 }
 
 .team-info {
-    width: 441px; 
-    height: 656px; 
-    position: relative;
-    margin-top: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "marketing finance"
+    "artist founder"
+    "programmer founder2";
+  gap: 40px; /* espacio entre miembros */
+  position: relative;
+  margin-top: 1000px;
+  width: auto;
+  justify-items: left;
+  align-items: start;
 
+  margin-left: 1%;
 }
+
+
 
 .team-info .title {
     width: 441px; 
@@ -224,18 +493,23 @@ function showHide(member: string) {
     width: 441px; 
     height: 100px; 
     left: 0px; 
-    top: 0px; 
+    top: -120px; 
     position: absolute; 
     color: #0A0101; 
     font-size: 64px; 
     font-family: Bernoru; 
     font-weight: 900; 
     line-height: 102.40px; 
-    letter-spacing: -3px;
+    letter-spacing: -1.5px;
 }
 
 .member {
-    mix-blend-mode: luminosity; 
+  mix-blend-mode: luminosity;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: mix-blend-mode 0.3s ease;
 }
 
 .member:hover {
@@ -255,67 +529,39 @@ function showHide(member: string) {
 }
 
 .founder {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 1px; 
-    top: 108px; 
-    position: absolute; 
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
+    grid-area: founder;
+}
+
+.founder {
+    grid-area: founder;
+}
+
+.founder2 {
+    grid-area: founder2;
 }
 
 .marketing {
-    width: 245px; 
-    /* height: 295px; 
-    padding-bottom: 54px;  */
-    padding-right: 15.50px; 
-    left: 1px; 
-    top: 361px; 
-    position: absolute; 
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 0.13px; 
-    display: inline-flex;
+
+
+    grid-area: marketing;
 }
 
-.designer {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 1px;
-    top: 1101px; 
-    position: absolute;
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
-}
+.artist {
 
-.developer {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 1px; 
-    top: 858px; 
-    position: absolute; 
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
+
+    grid-area: artist;
 }
 
 .programmer {
-    width: 227px; 
-    height: 286px; 
-    padding-bottom: 45px; 
-    left: 1px; 
-    top: 1345px; 
-    position: absolute; 
-    justify-content: flex-start; 
-    align-items: center; 
-    display: inline-flex;
+
+     grid-area: programmer;
 }
+
+.finance {
+
+    grid-area: finance;
+}
+
 
 .def{
     color: black;
@@ -330,19 +576,66 @@ function showHide(member: string) {
 
 .odd{
 
-    display: none;
-
+    display: block;
+    color: rgb(0, 0, 0);
+    font-family: IMBPlexMono;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 2%;
 }
 
 .image{
+
     display: none;
 }
 
-@media only screen and (max-width: 600px) and (max-height: 933px){
+.party {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Bernoru;
+  margin: 0;             /* Elimina márgenes del <p> */
+}
+
+.party p {
+  margin: 0;             /* Asegura que no haya espacio extra */
+}
+
+/* Row that holds the party label and the arrow icon */
+.arrow-row{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    justify-content: flex-end; /* align row to the right */
+}
+
+.arrowr{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.party{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Bernoru;
+    margin: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
 
     .background{
         height: 100%;
-        overflow-y: auto;
+        overflow-y: hidden;
 
     }
     
@@ -370,6 +663,14 @@ function showHide(member: string) {
     
 
     }
+    
+    .brand-title{
+         font-size: 10.5vw;
+         text-align: center;
+         word-spacing: normal;
+    }
+    
+
 
     .def{
         color: black;
@@ -382,6 +683,7 @@ function showHide(member: string) {
         text-align: justify; 
         width: 80%;
         text-align: center;
+        padding-top: 5dvh;
 
     }
 
@@ -415,8 +717,8 @@ function showHide(member: string) {
         color: rgb(0, 0, 0);
         font-family: IMBPlexMono;
         font-size: 0.6rem;
-        top: 119%;
-        margin: 2% 35%;
+        bottom: 1.5dvh;
+        margin: 2% 30%;
         text-align: center;
         position: absolute;
         object-fit: contain;
@@ -432,6 +734,34 @@ function showHide(member: string) {
         filter: drop-shadow(0 0 5px black);
         position: absolute;
         top: 70%;
+    }
+
+    .imageSitting{
+        display: none;
+    }
+    
+    .imageSitting2{
+        z-index: 0;
+        position: absolute;
+        display: block;
+        height: 67vh;
+        width: auto;
+        filter: blur(2px); 
+        margin-left: -47%;
+        margin-top: 65%;
+        opacity: 0.4;
+    }
+
+    .content{
+        width: 100%;
+        height: 100%;
+        padding-top: 10%;
+        overflow: hidden;
+    }
+
+    .brand-txt{
+        font-size: small;
+        padding-top: 2dvh;
     }
 
     .navbar{
@@ -500,22 +830,13 @@ function showHide(member: string) {
         display: none;
     }
 
+    .party{
+        display: none;
+    }
+
 
 }
 
 
 
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-

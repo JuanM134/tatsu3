@@ -6,35 +6,35 @@
           <!-- Nav items alineados a la izquierda -->
           <div class="left-items">
             <li class="nav-item">
-              <NuxtLink to="/history" class="nav-link">
+              <NuxtLink to="/connect" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>TALES</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/world" class="nav-link">
+              <NuxtLink to="/connect" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>WORLD</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/brandC3" class="nav-link">
+              <NuxtLink to="/connect" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>BRAND</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/roadmap" class="nav-link">
+              <NuxtLink to="/connect" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>ROADMAP</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/gallery" class="nav-link">
+              <NuxtLink to="/connect" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>GALLERY</div>
                 </div>
@@ -49,35 +49,6 @@
             </li>
           </div>
 
-          <!-- Botón HOME alineado a la derecha -->
-          <div class="right-item">
-            <li class="nav-item-2">
-              <NuxtLink to="/home" class="nav-link">
-                <div
-                  class="tab-1 justify-content-center home-button"
-                  style="box-shadow:1px 1px 1px 1px gray;"
-                >
-                  <div
-                    class="icon-wrap"
-                    style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"
-                  >
-                    <font-awesome-icon
-                      class="icon-front"
-                      icon="fa-solid fa-house"
-                      size="2xl"
-                      style="color: #F47A7A; align-items: center; position: relative; padding-bottom: 15px;"
-                    />
-                    <font-awesome-icon
-                      class="icon-back"
-                      icon="fa-solid fa-arrow-left"
-                      size="2xl"
-                      style="color: #F47A7A; position: absolute;"
-                    />
-                  </div>
-                </div>
-              </NuxtLink>
-            </li>
-          </div>
         </ul>
       </div>
     </div>
@@ -88,10 +59,10 @@
 
 <style scoped>
 .navbar {
-  position: absolute; /* ✅ fixed para que quede arriba y abarque toda la pantalla */
+  position: absolute; /* fixed para que quede arriba y abarque toda la pantalla */
   top: 0;
   left: 0;
-  width: 100vw; /* ✅ asegura ocupar todo el ancho visible */
+  width: 100vw; /* asegura ocupar todo el ancho visible */
   z-index: 1000;
   display: flex;
   align-items: center;

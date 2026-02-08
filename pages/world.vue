@@ -2,6 +2,7 @@
   <div class="background">
     <navbar style="z-index: 4;" />
     <Dropupbttn class="dropupbttn" style="top: 88.5%; position: fixed; z-index: 8;" />  
+    <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
     <menubttn style="z-index: 4;" /> 
     <navbar2 style="z-index: 11;" />
 
@@ -10,8 +11,7 @@
       <div class="map-container" ref="mapContainer">
 
         <picture>
-                <source srcset="@/assets/images/map3.jpeg" media="(min-width: 1024px)">
-                <source srcset="@/assets/images/map.jpg" media="(min-width: 768px)">
+                <source srcset="@/assets/images/map3.jpeg" media="(min-width: 677px)">
                 <source srcset="@/assets/images/map.jpg" media="(min-width: 377px)">
                 <img class="map" src="@/assets/images/map.jpg"> <!-- imagen principal -->
             </picture>
@@ -39,9 +39,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import pinOff from '@/assets/images/icons/pinOfff.png'
-import pinOn from '@/assets/images/icons/pinOm.png'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+import mapImg from '@/assets/images/map.jpg'
+
+import pinOff from '@/assets/images/icons/pinOffff.png'
+import pinOn from '@/assets/images/icons/pinOnn.png'
 
 interface Pin {
   id: number
@@ -58,7 +62,19 @@ function updateIsMobile() {
   isMobile.value = window.innerWidth <= 600
 }
 
-onMounted(() => {
+const { startLoading, stopLoading } = useLoading()
+
+onMounted(async () => {
+  startLoading()
+  
+  const { waitForImages, waitForFonts } = useAssetLoading()
+  await Promise.all([
+    waitForImages([mapImg]),
+    waitForFonts()
+  ])
+  
+  stopLoading()
+
   updateIsMobile()
   window.addEventListener('resize', updateIsMobile)
 })
@@ -173,8 +189,8 @@ function getPinImage(id: number) {
 
 .pin-icon {
   width: 2.5vw;
-  min-width: 12px;
-  max-width: 25px;
+  min-width: 10px;
+  max-width: 15px;
   transition: transform 0.4s ease;
 }
 
@@ -183,8 +199,8 @@ function getPinImage(id: number) {
 }
 
 .pin-label {
-  background-color: rgb(78, 78, 78);
-  color: white;
+  background-color: #F47A7A;
+  color: #1B1818;
   width: 125px;
   height: 14px;
   font-family: Montserrat;

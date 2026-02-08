@@ -652,8 +652,6 @@ html {
         align-content: center;
         display: block;
 
-    
-
     }
     
     .brand-title{
@@ -667,7 +665,6 @@ html {
     .def{
         color: black;
         font-size: 0.8rem;
-        font-family: IMBPlexMono; 
         font-weight: 0; 
         line-height: 0; 
         letter-spacing: 0.1px; 
@@ -740,7 +737,7 @@ html {
         width: auto;
         filter: blur(2px); 
         margin-left: -47%;
-        margin-top: 65%;
+
         opacity: 0.4;
     }
 

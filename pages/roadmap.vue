@@ -3,8 +3,16 @@
         <navbar style="z-index: 4;" />
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;"/>  
+        <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
         <menubttn style="z-index: 6;"/> 
         <navbar2 style="z-index: 11;" />
+
+        <div style="background-color: #DDD9DA;">
+            <video autoplay loop muted class="video-container" >
+                    <source src="@/assets/videos/brandNew.mp4"  type="video/mp4" > 
+                    Your browser does not support the video tag.
+            </video>
+        </div>
         
         <!-- Sección UTILITY con estructura semántica mejorada -->
         <section class="roadmap-section" aria-labelledby="utility-title">
@@ -39,17 +47,15 @@
                 </div>
             </div>
         </section>
-
-        
-        <footer class="footer">
-            <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
-        </footer>
-
+        <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+
 
 const features = ref([
     { id: 1, text: 'Airdrop of a manga version of the same image for each holder.' },
@@ -72,7 +78,21 @@ const listRef = ref<HTMLElement | null>(null)
 const listRef2 = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
-onMounted(() => {
+const { startLoading, stopLoading } = useLoading()
+const { waitForVideo, waitForFonts } = useAssetLoading()
+
+
+onMounted(async () => {
+    startLoading()
+    
+    const videoEl = document.querySelector('video')
+    await Promise.all([
+        waitForVideo(videoEl),
+        waitForFonts()
+    ])
+    
+    stopLoading()
+
     const itemsA = listRef.value?.querySelectorAll('.fade-item') ?? []
     const itemsB = listRef2.value?.querySelectorAll('.fade-item') ?? []
     observer = new IntersectionObserver((entries) => {
@@ -102,13 +122,11 @@ onBeforeUnmount(() => {
     background-position: center;
     
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
-    
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    
+
+    overflow: hidden;
+
     z-index: 0;
 }
 
@@ -136,20 +154,37 @@ onBeforeUnmount(() => {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    
+}
+
+.video-container{
+
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 30%;
+    top: 0%;
+    
+    mix-blend-mode: darken;
+    object-position: right;
+    z-index: -1;
+    
 }
 
 .title {
     /* responsive title using CSS variables (adjust via .background) */
+    font-size: 64px; /* fallback */
     font-size: clamp(var(--roadmap-title-min), var(--roadmap-title-fluid), var(--roadmap-title-max));
-    font-family: 'Konkhmer Sleokchher', sans-serif;
+    font-family: Bernoru; 
     font-weight: 900;
     line-height: 1.02;
     margin: 0;
-    margin-top: 10dvh;
+    margin-top: 7dvh;
     text-align: left;
     width: 100%;
     position: static;
     color: #111;
+
 }
 
 .description {
@@ -157,31 +192,30 @@ onBeforeUnmount(() => {
     display: flex;
     justify-content: flex-start;
     width: 100%;
+
 }
 
 .roadmap-content1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
     padding-left: 48px;
     box-sizing: border-box;
     max-width: 1100px;
     padding-top: 5dvh;
-    font-family: MontSerrat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .roadmap-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
     padding-left: 48px;
     box-sizing: border-box;
     max-width: 1100px;
     padding-top: 5dvh;
     padding-bottom: 15dvh;
-     font-family: 'Roboto';
+    font-family: 'Roboto';
 }
 
 .features {
@@ -189,7 +223,8 @@ onBeforeUnmount(() => {
     padding: 0;
     margin: 0;
     max-width: 900px;
-    width: 90%;
+    width: 100%;
+
 }
 
 .fade-item {
@@ -197,9 +232,9 @@ onBeforeUnmount(() => {
     transform: translateY(10px);
     transition: opacity 360ms ease, transform 360ms ease;
     margin: 12px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Kokoro', sans-serif;
     letter-spacing: 1.5px;
-    font-size: var(--roadmap-list-font-size);
+    font-size: 15px;
     letter-spacing: 1.04px;
 }
 
@@ -218,16 +253,16 @@ onBeforeUnmount(() => {
     display: grid;
     color: rgb(1, 1, 1);
     font-family: IMBPlexMono;
-    font-size: 0.6rem;
+    font-size: 11px;
     z-index: 4;
     text-align: center;
     position: absolute;
-    bottom: -15px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-@media only screen and (max-width: 600px) and (max-height: 933px) {
+@media only screen and (max-width: 600px)  {
     .navbar {
         display: none;
     }
@@ -236,6 +271,7 @@ onBeforeUnmount(() => {
         display: flex;
         flex-direction: column;
         width: 100vw;
+        overflow: hidden;
     }
 
     .odd {
@@ -247,8 +283,6 @@ onBeforeUnmount(() => {
         text-align: center;
         position: relative;
         object-fit: contain;
-        bottom: 15px;
-        left: 50%;
     }
 
     .title {
@@ -259,6 +293,10 @@ onBeforeUnmount(() => {
         width: 100%;
         height: auto;
     }   
+
+    .fade-item{
+        font-size: 12px;
+    }
 
     .dropupbttn {
         display: none;
@@ -284,9 +322,12 @@ onBeforeUnmount(() => {
         padding-right: 24px;
         width: 100%;
     }
+
+    .video-container{
+
+        display: none;
+    }
+    
 }
-<<<<<<< HEAD
+
 </style>
-=======
-</style>
->>>>>>> bce263a545ad74874f36dda37db1d8c2a0212ab3

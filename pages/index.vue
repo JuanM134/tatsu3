@@ -2,7 +2,7 @@
     <!-- <video src="@/assets/images/fire-sound.mp4" controls>
         Your browser does not support the video tag.
     </video>      -->
-    <div :class="{ 'intro': isDarkMode}">  
+    <div class="page-wrapper" :class="{ 'intro': isDarkMode}">  
         <div class="container min-vh-100">
             <div class="d-flex flex-column justify-content-center align-items-center container-content">
                 <!-- <img 
@@ -13,12 +13,18 @@
                     <h1 class="title mb-0 text-center" :class="{ 'title-inverted': isDarkMode}">
                         TATSU                           
                     </h1>
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/finalImage3.mp4" autoplay loop muted>
+                    <video 
+                        v-if="currentVideo"
+                        v-show="isDarkMode" 
+                        ref="videoRef" 
+                        id="myVideo" 
+                        :key="currentVideo.src"
+                        :src="currentVideo.src" 
+                        :style="{ top: currentVideo.offsetY }" 
+                        autoplay loop muted
+                    >
                         Your browser does not support the video tag.
                     </video>         
-                    <video v-show="isDarkMode" id="myVideo" src="@/assets/videos/fireWithSound.mp4" autoplay loop style="mix-blend-mode: screen; opacity: 1%;">
-                        Your browser does not support the video tag.
-                    </video>  
                 </div>
                   
                 <button @click="home"
@@ -35,12 +41,76 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
+import { useLoading } from '@/composables/useLoading'
+import { useAssetLoading } from '@/composables/useAssetLoading'
+
+
+import kenta from '@/assets/videos/kenta.mp4'
+import roy from '@/assets/videos/roy.mp4'
+import agatha from '@/assets/videos/agatha.mp4'
+import mesmer from '@/assets/videos/mesmer_1.mp4'
+import sora from '@/assets/videos/sora.mp4'
+
+interface VideoItem {
+  src: string;
+  number: number;
+  offsetX?: string;
+  offsetY?: string;
+  width?: string;
+  height?: string;
+  zIndex?: number;
+  speed?: number;
+  scale?: number;   
+}
+
+const myVideo = ref<VideoItem[]>([
+  { src: kenta, number: 20 , offsetY: '110%', speed: 0.8 },
+  { src: roy, number: 20 , offsetY: '105%', speed: 0.8 },
+  { src: agatha, number: 20 , offsetY: '110%', speed: 0.8,},
+  { src: mesmer, number: 20 , offsetY: '118%', speed: 0.8 },
+  { src: sora, number: 20 , offsetY: '100%', speed: 0.8, height: '95%'},
+]);
 
 const isActive = ref(false)
 const isDarkMode = ref(false)
 const router = useRouter()
+const { startLoading, stopLoading } = useLoading()
+const { waitForVideo, waitForFonts } = useAssetLoading()
+
+const currentVideo = ref<VideoItem | null>(null)
+const videoRef = ref<HTMLVideoElement | null>(null)
+
+onMounted(async () => {
+    startLoading()
+    
+    try {
+        // Select random video on mount
+        currentVideo.value = myVideo.value[Math.floor(Math.random() * myVideo.value.length)]
+        
+        // Wait for DOM to update
+        await nextTick()
+
+        // Wait for video and fonts with timeout protection
+        await Promise.all([
+            waitForVideo(videoRef.value),
+            waitForFonts()
+        ])
+        
+        // Set playback rate if video ref exists
+        if (videoRef.value && currentVideo.value) {
+            videoRef.value.playbackRate = currentVideo.value.speed ?? 0.5; 
+        }
+    } catch (error) {
+        console.error('Error loading assets:', error)
+    } finally {
+        // Always stop loading after a small delay
+        setTimeout(() => {
+            stopLoading()
+        }, 500)
+    }
+})
 
 function titleMouseOver() {
     isDarkMode.value = true
@@ -63,6 +133,12 @@ async function home() {
 
 <style scoped>
 
+.page-wrapper {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
 .title-container {
     /* size to title and act as positioning context for the video */
     display: inline-block;
@@ -78,6 +154,7 @@ async function home() {
 }
 
 .title {
+
     font-family: 'Bernoru';
     color: #1B1818;
     /* responsive font so title and video scale together */
@@ -85,6 +162,7 @@ async function home() {
     font-weight: 900;
     letter-spacing: -22px;
     position: relative;
+
 
 }
 
@@ -102,11 +180,11 @@ async function home() {
 
 #myVideo {
     position: absolute;
-    top: 70%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 130%;
-    height: 130%;
+    width: auto;
+    height: 185%;
     object-fit: cover; /* cover the title box and crop as needed */
     pointer-events: none;
     mix-blend-mode: darken;
@@ -115,6 +193,12 @@ async function home() {
 
 .intro {
     background-color: black !important;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .enter-btn {
@@ -137,6 +221,7 @@ async function home() {
 .enter-btn-normal {
     border: 0px #000000 solid;
     background:  #4E4E4E;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     border-radius: 10px 10px 10px 10px;
 }
 
@@ -160,7 +245,16 @@ async function home() {
 @media only screen and (max-width: 600px) {
 
     .intro{
-        overflow-y: hidden;
+        overflow: hidden;
+        height: 100vh;
+        touch-action: none;
+    }
+
+    .page-wrapper {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        touch-action: none;
     }
 
     .title{
@@ -171,6 +265,7 @@ async function home() {
 
     left: 50%;                
     transform: translateX(-50%); 
+    top: 50%;
 
     }
 
@@ -182,13 +277,24 @@ async function home() {
 
     .enter-btn {
     
-    width: 10rem;
+        width: 10rem;
     
     }
 
+    .enter-btn-flip {
+        border: 0px #ffffff solid !important;
+        background:  #ffffff;
+    }
+
+    .title-container {
+        width: 100% !important;  /* Expande contenedor base */
+        position: relative;
+
+    }
+
+
     #myVideo{
 
-    background-image: url('assets/images/home.png');
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: hidden;
@@ -220,6 +326,7 @@ async function home() {
         display: flex;
         flex-direction: column;
     }
+
 
 }
 
