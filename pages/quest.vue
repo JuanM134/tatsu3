@@ -133,7 +133,15 @@ const selectTeam = async (teamId: string) => {
 
 .image-wrapper {
   position: relative;
-  width: 420px; 
+  
+  /* CAMBIO CLAVE: Usamos 'vw' (Viewport Width) en lugar de px */
+  /* Esto hace que la imagen sea siempre el 18% del ancho de la pantalla */
+  width: 20vw; 
+  
+  /* Límites para pantallas muy extremas */
+  min-width: 180px; 
+  max-width: 450px;
+  
   height: auto;
   pointer-events: auto;
 }
@@ -161,9 +169,9 @@ const selectTeam = async (teamId: string) => {
 
 .pos-roy     { top: 0%;  left: 25%; z-index: 1; }
 .pos-mesmer  { top: 20%; left: 25%; z-index: 2; }
-.pos-agatha  { top: 38%; left: 30%; z-index: 3; }
-.pos-sora    { top: 50%; left: 17%; z-index: 4; }
-.pos-katsuro { top: 65%; left: 25%; z-index: 5; }
+.pos-agatha  { top: 30%; left: 30%; z-index: 3; }
+.pos-sora    { top: 45%; left: 23%; z-index: 4; }
+.pos-katsuro { top: 60%; left: 27%; z-index: 5; }
 
 .team-label {
   display: block;
