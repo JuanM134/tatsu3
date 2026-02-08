@@ -97,14 +97,14 @@ const selectTeam = async (teamId: string) => {
 
 .title {
   color: #0A0101;
-  font-size: 75px;
-  font-family: 'MontSerrat', sans-serif;
+  font-size: 100px;
+  font-family: 'Bernoru', sans-serif;
   font-weight: 900;
-  line-height: 75px;
-  letter-spacing: -4px;
+  line-height: 58px;
+  letter-spacing: -6px;
   position: absolute;
   bottom: 5%;
-  right: 5%;
+  right: 2%;
   text-align: right;
   max-width: 550px;
   margin: 0;
