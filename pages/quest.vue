@@ -136,7 +136,7 @@ const selectTeam = async (teamId: string) => {
   
   /* CAMBIO CLAVE: Usamos 'vw' (Viewport Width) en lugar de px */
   /* Esto hace que la imagen sea siempre el 18% del ancho de la pantalla */
-  width: 20vw; 
+  width: 22vw; 
   
   /* Límites para pantallas muy extremas */
   min-width: 180px; 
