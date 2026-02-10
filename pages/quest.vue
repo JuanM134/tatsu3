@@ -235,16 +235,16 @@ const selectTeam = async (teamId: string) => {
   }
 
   .image-wrapper {
-    width: 50vw; /* Más grande en móvil para mejor visibilidad */
+    width: 55vw; /* Más grande en móvil para mejor visibilidad */
     min-width: 150px; /* Asegura que no se vuelva demasiado pequeño */
     max-width: 300px; /* Limita el tamaño en pantallas grandes */
   }
 
-.pos-roy     { top: 17%;  left: 25%; z-index: 1; }
-.pos-mesmer  { top: 27%; left: 23%; z-index: 2; }
-.pos-agatha  { top: 32%; left: 32%; z-index: 3; }
-.pos-sora    { top: 44%; left: 21%; z-index: 4; }
-.pos-katsuro { top: 52%; left: 29%; z-index: 5; }
+.pos-roy     { top: 14%;  left: 25%; z-index: 1; }
+.pos-mesmer  { top: 27%; left: 20%; z-index: 2; }
+.pos-agatha  { top: 36%; left: 34%; z-index: 3; }
+.pos-sora    { top: 47%; left: 14%; z-index: 4; }
+.pos-katsuro { top: 54%; left: 29%; z-index: 5; }
 
 }
 </style>
