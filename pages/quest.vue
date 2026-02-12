@@ -151,8 +151,8 @@ const selectTeam = async (teamId: string) => {
   width: 23vw; 
   
   /* Límites para pantallas muy extremas */
-  min-width: 180px; 
-  max-width: 450px;
+  min-width: 150px; 
+  max-width: 300px;
   
   height: auto;
   pointer-events: auto;
@@ -205,46 +205,83 @@ const selectTeam = async (teamId: string) => {
   opacity: 1;
 }
 
+/* =========================================
+   TABLETS Y LAPTOPS PEQUEÑAS (iPad Pro, etc)
+   (Aplica a todo lo que sea menor a 1024px)
+   ========================================= */
 @media only screen and (max-width: 1024px) {
   
-}
-
-@media only screen and (max-width: 600px) {
-.title { 
-    /* POSICIONAMIENTO ABSOLUTO CENTRADO */
-    position: absolute; /* Aseguramos que sea absoluto */
+  /* TÍTULO CENTRADO */
+  .title { 
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
-
-    /* TAMAÑO Y ALINEACIÓN */
+    margin-inline: auto; /* Reemplaza a margin-left/right auto */
+    
     width: 100%;
-    max-width: 90%; /* Ocupa el 90%, el resto es margen automático */
+    max-width: 90%;
     text-align: center;
     padding: 0 15px;
 
-    /* TIPOGRAFÍA */
-    /* Ajusté el 4vw a 10vw para que escale mejor en móviles medianos */
+    /* Tamaño intermedio */
     font-size: clamp(40px, 10vw, 80px); 
     letter-spacing: -2px;
-    
-    /* IMPORTANTE: Para que no se monten las líneas si el texto baja */
     line-height: 0.9; 
   }
 
+  /* WRAPPER DE IMAGEN */
   .image-wrapper {
-    width: 55vw; /* Más grande en móvil para mejor visibilidad */
-    min-width: 150px; /* Asegura que no se vuelva demasiado pequeño */
-    max-width: 300px; /* Limita el tamaño en pantallas grandes */
+    width: 55vw; 
+    min-width: 150px; 
+    max-width: 300px; 
   }
 
-.pos-roy     { top: 14%;  left: 25%; z-index: 1; }
-.pos-mesmer  { top: 27%; left: 20%; z-index: 2; }
-.pos-agatha  { top: 36%; left: 34%; z-index: 3; }
-.pos-sora    { top: 47%; left: 14%; z-index: 4; }
-.pos-katsuro { top: 54%; left: 29%; z-index: 5; }
+  /* POSICIONES (Base para Tablet y Móvil) */
+  /* Si estas posiciones son buenas para ambos, las definimos aquí */
+  .pos-roy     { top: 14%; left: 25%; z-index: 1; }
+  .pos-mesmer  { top: 27%; left: 20%; z-index: 2; }
+  .pos-agatha  { top: 36%; left: 34%; z-index: 3; }
+  .pos-sora    { top: 47%; left: 14%; z-index: 4; }
+  .pos-katsuro { top: 54%; left: 29%; z-index: 5; }
+}
 
+
+/* =========================================
+   MÓVILES (Celulares estándar)
+   (Aplica a todo lo menor a 600px y SOBREESCRIBE lo de arriba)
+   ========================================= */
+@media only screen and (max-width: 600px) {
+
+  /* Solo cambiamos lo necesario: El tamaño de la fuente */
+  .title {
+    font-size: clamp(30px, 12vw, 60px); 
+    letter-spacing: -1.5px;
+    /* bottom, left, right, etc. se heredan de 1024px */
+  }
+
+  /* Solo cambiamos el ancho para que se vean más grandes */
+  .image-wrapper {
+    width: 70vw; 
+    min-width: 120px;
+    max-width: 250px;
+    /* Nota: 'position relative' aquí puede romper tu layout absoluto. 
+       Úsalo solo si quieres que dejen de flotar. Si no, quítalo. */
+  }
+
+  /* POSICIONES */
+  /* Solo sobreescribimos .pos-roy porque es el único diferente en tu código original.
+     Los demás (mesmer, agatha, etc) son idénticos, así que los borramos de aquí 
+     para que usen los valores definidos en 1024px. */
+     
+    .pos-roy     {  top: 13%; left: 23%; }
+    .pos-mesmer  { top: 27%; left: 17%; z-index: 2; }
+    .pos-agatha  { top: 36%; left: 33%; z-index: 3; }
+    .pos-sora    { top: 45%; left: 12%; z-index: 4; }
+    .pos-katsuro { top: 56%; left: 29%; z-index: 5; }
+
+  /* Si en el futuro quieres mover a Katsuro solo en móvil, lo agregas aquí:
+  .pos-katsuro { top: 60%; } 
+  */
 }
 </style>
