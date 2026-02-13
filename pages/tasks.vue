@@ -43,7 +43,7 @@
           <input 
             type="text" 
             v-model="repostLink" 
-            placeholder="PASTE REPOST LINK (OPTIONAL)" 
+            placeholder="PASTE REPOST LINK" 
             class="link-input"
             :class="{ 'input-error': hasError && repostLink.trim() !== '' && !isValidUrl(repostLink) }"
           />
@@ -272,7 +272,7 @@ const verifyAndNext = async () => {
   border-radius: 8px;
   padding: 10px 15px;
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   font-family: 'MontSerrat', sans-serif;
   outline: none;
   border: 1px solid transparent;
@@ -299,6 +299,15 @@ const verifyAndNext = async () => {
   cursor: pointer;
   letter-spacing: 2px;
   color: #0A0101;
+  transition: all 0.3s ease;
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+}
+
+.nav-btn:hover {
+  background-color: #4E4E4E;
+  color: #FFFFFF;
 }
 
 .next {
