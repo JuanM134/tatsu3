@@ -33,7 +33,7 @@
 
         <div class="task-item complex">
           <div class="task-row">
-            <p>Quote with a good caption (optional)</p>
+            <p>Quote with a good caption to boost your chances (optional)</p>
             <a 
               href="https://x.com/tatsu_nyc" 
               target="_blank" 
