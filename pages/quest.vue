@@ -151,8 +151,8 @@ const selectTeam = async (teamId: string) => {
   width: 23vw; 
   
   /* Límites para pantallas muy extremas */
-  min-width: 150px; 
-  max-width: 300px;
+  min-width: 200px; 
+  max-width: 350px;
   
   height: auto;
   pointer-events: auto;
