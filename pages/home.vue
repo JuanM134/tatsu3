@@ -1,7 +1,6 @@
 <template>
 
  
-        
         <div class="background"> 
             <navbar class="navbar"  style="z-index: 5;" />   
             <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
@@ -18,16 +17,13 @@
                     BECOME THE <br>
                     DRAGON WITHIN</p>
                     
-                        <img class="home-image" src="@/assets/images/home4.png" style="width: 100%; height: 100%; object-fit: contain; object-position: right;
-                         position: absolute; top: 0; right: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten;">  
+                        <img class="home-image" src="@/assets/images/home6.png" style="width: 100%; height: 100%; object-fit: contain; object-position: right;
+                         position: absolute; top: 0; right: 0; z-index: 0; background-color: #DDD9DA; mix-blend-mode:  lighten; background-image: url('@/assets/images/quest/dragonquest.png');
+                         background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-position: center;">  
                          
-                    
-                    <video autoplay loop playsinline style=" z-index: 0; position: relative; top: 0%;display: flex; mix-blend-mode: screen; mix-blend-mode: lighten; opacity: 100%;">
-                    <source src="@/assets/videos/fireWithSound.mp4" type="video/mp4" /></video>
+                            <div class="video-wrap">
 
-                        <div class="video-wrap">
-
-                            <img class="home-image-mobile" src="@/assets/images/home4.png" style="width: auto; height: 80dvh; object-fit: contain;
+                            <img class="home-image-mobile" src="@/assets/images/home5.png" style="width: auto; height: 80dvh; object-fit: contain;
                             position: absolute; top: 5dvh; left: -5dvw; z-index: 0;"> 
 
                             <video autoplay muted loop playsinline class="bg-video">
@@ -215,6 +211,7 @@ x
     .home-image{
 
         display: none;
+        
 
     }
 
