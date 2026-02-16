@@ -1,6 +1,7 @@
 <template>
 
  
+        
         <div class="background"> 
             <navbar class="navbar"  style="z-index: 5;" />   
             <Dropupbttn class="dropupbttn"  style="z-index: 5; top: 88.5%;" /> 
@@ -215,12 +216,18 @@ x
 
     }
 
-    .home-image-mobile{
-        background-color: #DDD9DA;
-        display: block;
-        left: 5dvw !important;
-
-    }
+.home-image-mobile {
+    background-color: #DDD9DA;
+    display: block;
+    
+    /* CENTRADO PERFECTO HORIZONTAL */
+    position: absolute; /* Asegúrate de que tenga position absolute */
+    left: 35% !important;
+    transform: translateX(-50%);
+    
+    /* Opcional: Asegura que no se desborde si es muy grande */
+    max-width: 100%; 
+}
 
     .hero-text {
         font-size: 28px;
