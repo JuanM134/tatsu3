@@ -14,7 +14,7 @@
       </div>
 
       <a 
-        href="https://discord.gg/qjHgtvkr" 
+        href="https://discord.gg/TnWrw6SW" 
         target="_blank" 
         class="enter-btn"
         :class="{ 'enter-btn-active-bg': isActive }"
