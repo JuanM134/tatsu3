@@ -353,20 +353,21 @@ onBeforeUnmount(() => {
 
     .title {
         font-size: 40px;
-        margin-top: 100px; 
+        /* CAMBIO: Reducido de 100px a 85px para subirlo más */
+        margin-top: 85px;
+        margin-bottom: 25px; 
     }   
 
+    /* CAMBIO: Ocultamos el contenedor completo para eliminar los márgenes de 50px */
     .quarters-container {
-        grid-template-columns: 1fr; 
-        gap: 40px;
+        display: none;
     }
     
-    .q-items-list {
-        align-items: flex-start;
-    }
-    
+    /* Esta regla ahora es redundante pero no hace daño */
     .quarter-group {
-        align-items: flex-start;
+        display: none;
     }
+
+
 }
 </style>
