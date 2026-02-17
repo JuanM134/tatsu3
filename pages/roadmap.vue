@@ -3,9 +3,13 @@
         <navbar style="z-index: 4;" />
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;"/>  
-        <home class="dropupbttn" style="z-index: 5;  position: fixed;"/> 
-        <menubttn style="z-index: 6;"/> 
-        <navbar2 style="z-index: 11;" />
+        <home class="dropupbttn" style="z-index: 5;  position: fixed; "/> 
+        
+        <div class="mobile-menu-container">
+            <menubttn /> 
+        </div>
+        
+        <navbar2 style="z-index: 11; " />
 
         <div class="video-wrapper">
             <video autoplay loop muted class="video-container" >
@@ -121,6 +125,13 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+/* Estilo base para el contenedor del menú */
+.mobile-menu-container {
+    z-index: 6;
+    /* Por defecto no forzamos posición en escritorio, 
+       dejamos que el componente actúe normal */
+}
+
 .background {
     background-color: #DDD9DA;
     background-repeat: no-repeat;
@@ -128,13 +139,12 @@ onBeforeUnmount(() => {
     background-size: cover;
     background-position: center;
     width: 100%;
-    /* CAMBIO: height auto y min-height para permitir scroll natural */
     min-height: 100vh;
     height: auto;
     position: relative;
-    overflow-x: hidden; /* Solo ocultamos scroll horizontal */
+    overflow-x: hidden;
     z-index: 0;
-    padding-bottom: 60px; /* Espacio para el footer */
+    padding-bottom: 60px;
 }
 
 .roadmap-section {
@@ -143,7 +153,6 @@ onBeforeUnmount(() => {
     justify-content: flex-start;
 }
 
-/* Wrapper para el video de fondo fijo */
 .video-wrapper {
     position: fixed;
     top: 0;
@@ -152,7 +161,7 @@ onBeforeUnmount(() => {
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    background-color: #DDD9DA; /* Fondo base por si el video tarda */
+    background-color: #DDD9DA;
 }
 
 .video-container {
@@ -172,7 +181,7 @@ onBeforeUnmount(() => {
     font-weight: 900;
     line-height: 1.02;
     margin: 0;
-    margin-top: 120px; /* Margen superior amplio para no chocar con navbar */
+    margin-top: 120px;
     text-align: left;
     width: 100%;
     color: #111;
@@ -182,23 +191,20 @@ onBeforeUnmount(() => {
 .quarters-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    column-gap: 30px; /* Espacio horizontal */
-    row-gap: 30px;    /* Espacio vertical */
+    column-gap: 30px;
+    row-gap: 30px;
     width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-/* Grupo que contiene Label y Lista */
 .quarter-group {
     display: flex;
     flex-direction: row;
-    /* CAMBIO: Centrado vertical del Q label respecto a la lista */
     align-items: center; 
     gap: 5px;
 }
 
-/* CAJA DE ETIQUETA (Q1, Q2...) */
 .q-label-box {
     color: #111;
     font-family: 'Montserrat', sans-serif;
@@ -219,17 +225,15 @@ onBeforeUnmount(() => {
     color: #FFFFFF;
 }
 
-/* LISTA DE ITEMS A LA DERECHA */
 .q-items-list {
     display: flex;
     flex-direction: column;
     align-items: center; 
     text-align: center;
-    gap: 12px; /* Más aire entre items */
+    gap: 12px;
     flex: 1;
 }
 
-/* CADA ITEM INDIVIDUAL */
 .q-item-pill {
     font-family: 'MontSerrat', sans-serif;
     font-size: 11px;
@@ -238,7 +242,7 @@ onBeforeUnmount(() => {
     letter-spacing: 1.5px;
     color: #1D1B1B;
     padding: 6px 12px;
-    border-radius: 6px; /* Redondeado suave */
+    border-radius: 6px;
     transition: all 0.2s ease;
     cursor: default;
     width: 164px; 
@@ -265,10 +269,9 @@ onBeforeUnmount(() => {
     align-items: flex-start;
     padding-left: 48px;
     box-sizing: border-box;
-    max-width: 50vw; /* Un poco más ancho para aprovechar espacio */
+    max-width: 50vw; 
     padding-top: 1dvh;
     font-family: 'Montserrat', sans-serif;
-    /* CAMBIO: Eliminado max-height y overflow para permitir scroll natural de página */
     height: auto;
     overflow: visible;
 }
@@ -323,9 +326,16 @@ onBeforeUnmount(() => {
 
 @media only screen and (max-width: 600px)  {
     .navbar { display: none; }
-    .dropupbttn { display: none; }
+    
+    /* CAMBIO CLAVE: Usamos el contenedor físico para forzar el estilo profundo */
+    .mobile-menu-container :deep(.dropbtn) { 
+        top: 1.5% !important; 
+    }
+
+    .dropupbttn { display: none !important; }
+    .box { top: 2%; }
     .navbar2 { display: block; }
-    .video-wrapper { display: none; } /* Ocultar video fondo en móvil */
+    .video-wrapper { display: none; }
 
     .background {
         height: auto;
@@ -343,7 +353,7 @@ onBeforeUnmount(() => {
 
     .title {
         font-size: 40px;
-        margin-top: 100px; /* Espacio para navbar móvil */
+        margin-top: 100px; 
     }   
 
     .quarters-container {
@@ -356,7 +366,7 @@ onBeforeUnmount(() => {
     }
     
     .quarter-group {
-        align-items: flex-start; /* En móvil puede verse mejor alineado arriba si la lista es larga */
+        align-items: flex-start;
     }
 }
 </style>
