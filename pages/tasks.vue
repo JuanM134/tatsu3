@@ -24,7 +24,7 @@
         <div class="task-item">
           <p>Like pinned post</p>
           <a 
-            href="https://x.com/tatsu_nyc/status/1994813610967564788" 
+            href="https://x.com/tatsu_nyc/status/2023804791814844707" 
             target="_blank" 
             class="go-link"
             @click="markGo('like')"
@@ -35,7 +35,7 @@
           <div class="task-row">
             <p>Quote with a good caption to boost your chances (optional)</p>
             <a 
-              href="https://x.com/tatsu_nyc" 
+              href="https://x.com/tatsu_nyc/status/2023804791814844707" 
               target="_blank" 
               class="go-link"
             >GO</a>
@@ -53,7 +53,7 @@
           <div class="task-row">
             <p>Tag two friends in comments</p>
             <a 
-              href="https://x.com/tatsu_nyc/status/1994813610967564788" 
+              href="https://x.com/tatsu_nyc/status/2023804791814844707" 
               target="_blank" 
               class="go-link"
             >GO</a>
