@@ -9,7 +9,6 @@
 
     <p class="title">WALLET CHECKER</p>
 
-    <!-- WALLET SECTION -->
     <div class="wallet-section">
 
       <button class="connect-btn" @click="connectWallet">
@@ -25,7 +24,6 @@
       </p>
 
     </div>
-
   </div>
 </template>
 
@@ -33,6 +31,7 @@
 
 import { ref, computed, onMounted } from "vue"
 import { ethers } from "ethers"
+import EthereumProvider from "@walletconnect/ethereum-provider"
 
 import { useLoading } from '@/composables/useLoading'
 import { useAssetLoading } from '@/composables/useAssetLoading'
@@ -67,17 +66,29 @@ async function connectWallet(){
 
   try{
 
-    if(!(window as any).ethereum){
+    let provider
 
-      alert("Please install MetaMask")
+    if((window as any).ethereum){
 
-      return
+      const browserProvider = new ethers.BrowserProvider((window as any).ethereum)
+
+      await browserProvider.send("eth_requestAccounts", [])
+
+      provider = browserProvider
+
+    }else{
+
+      const wcProvider = await EthereumProvider.init({
+        projectId: "c9572485a6d2c94d0d5f7dc312063696",
+        chains: [1],
+        showQrModal: true
+      })
+
+      await wcProvider.connect()
+
+      provider = new ethers.BrowserProvider(wcProvider)
 
     }
-
-    const provider = new ethers.BrowserProvider((window as any).ethereum)
-
-    await provider.send("eth_requestAccounts", [])
 
     const signer = await provider.getSigner()
 
@@ -126,7 +137,6 @@ function checkWhitelist(){
   height: 100%;
   position: fixed;
   bottom: 0;
-
   z-index: 0;
 }
 
@@ -142,19 +152,14 @@ function checkWhitelist(){
   position: absolute;
 }
 
-/* WALLET SECTION */
-
 .wallet-section{
-
   position:absolute;
   top:60%;
   width:100%;
   text-align:center;
-
 }
 
 .connect-btn{
-
   padding:14px 30px;
   font-size:16px;
   font-family:'MontSerrat';
@@ -164,36 +169,23 @@ function checkWhitelist(){
   color:white;
   cursor:pointer;
   transition:0.2s;
-
 }
 
 .connect-btn:hover{
-
   transform:scale(1.05);
-
 }
 
 .wallet{
-
   margin-top:15px;
-
   font-family:IMBPlexMono;
-
   font-size:14px;
-
 }
 
 .wl-status{
-
   margin-top:10px;
-
   font-family:IMBPlexMono;
-
   font-size:14px;
-
 }
-
-/* MOBILE */
 
 @media only screen and (max-width: 600px) and (max-height: 933px){
 
@@ -202,38 +194,28 @@ display:none;
 }
 
 .title{
-
   position:absolute;
   font-size:2rem;
   top:50%;
   text-align:center;
   width:100%;
-
 }
 
 .dropupbttn{
-
   display:none;
-
 }
 
 .navbar2{
-
   display:block;
-
 }
 
 .background{
-
   display:flex;
   flex-direction:column;
-
 }
 
 .wallet-section{
-
   top:65%;
-
 }
 
 }
