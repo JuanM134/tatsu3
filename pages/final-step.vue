@@ -156,6 +156,13 @@ function mouseLeave() {
 }
 
 @media (max-width: 768px) {
+    .background-container {
+    height: 100dvh; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
   .main-title { font-size: 32px; }
   .enter-btn { width: 220px; }
 }

@@ -33,7 +33,7 @@
 
         <div class="task-item complex">
           <div class="task-row">
-            <p>Quote with a good caption adding "Become the dragon"</p>
+            <p>Quote with a good caption to boost your chances (optional)</p>
             <a 
               href="https://x.com/tatsu_nyc" 
               target="_blank" 
@@ -45,7 +45,7 @@
             v-model="repostLink" 
             placeholder="PASTE REPOST LINK" 
             class="link-input"
-            :class="{ 'input-error': hasError && !isValidUrl(repostLink) }"
+            :class="{ 'input-error': hasError && repostLink.trim() !== '' && !isValidUrl(repostLink) }"
           />
         </div>
 
@@ -93,9 +93,8 @@ const { saveLocal, getPayload } = useQuestStorage()
 
 const repostLink = ref('')
 const commentLink = ref('')
-const hasError = ref(false) // Para pintar los inputs de rojo si fallan
+const hasError = ref(false)
 
-// Solo rastreamos los 2 primeros botones obligatorios
 const clickedButtons = reactive({
   follow: false,
   like: false
@@ -105,66 +104,55 @@ const markGo = (task: keyof typeof clickedButtons) => {
   clickedButtons[task] = true
 }
 
-// --- LÓGICA DE VALIDACIÓN DE LINKS (REGEX) ---
-// Esta expresión busca: x.com o twitter.com + usuario + /status/ + numeros
 const linkPattern = /https?:\/\/(www\.)?(x\.com|twitter\.com)\/[a-zA-Z0-9_]+\/status\/[0-9]+/
 
 const isValidUrl = (url: string) => {
   return linkPattern.test(url.trim())
 }
 
-// Estado visual del botón (Verde si todo está OK)
 const isComplete = computed(() => {
   const buttonsOk = clickedButtons.follow && clickedButtons.like
-  const linksOk = isValidUrl(repostLink.value) && isValidUrl(commentLink.value)
-  return buttonsOk && linksOk
+  const repostOk = repostLink.value.trim() === '' || isValidUrl(repostLink.value)
+  const commentOk = isValidUrl(commentLink.value)
+  return buttonsOk && repostOk && commentOk
 })
 
-// --- FUNCIÓN PRINCIPAL ---
 const verifyAndNext = async () => {
-  // 1. Resetear errores visuales
   hasError.value = false
 
-  // 2. Validar Botones
   if (!clickedButtons.follow || !clickedButtons.like) {
-    return alert('Please click the first two "GO" buttons (Follow & Like) before proceeding.')
+    return alert('Please click the first two "GO" buttons (Follow & Like).')
   }
 
-  // 3. Validar Estructura de Links (Aquí está la notificación que pediste)
-  if (!isValidUrl(repostLink.value)) {
+  if (repostLink.value.trim() !== '' && !isValidUrl(repostLink.value)) {
     hasError.value = true
-    return alert('Invalid Repost Link. Please paste a valid X post link (e.g., x.com/user/status/123...).')
+    return alert('Invalid Repost Link. Check format.')
   }
 
   if (!isValidUrl(commentLink.value)) {
     hasError.value = true
-    return alert('Invalid Comment Link. Please paste a valid X comment link.')
+    return alert('Invalid Comment Link.')
   }
 
-  // 4. Si todo está bien, enviamos a Supabase
   try {
     saveLocal('repost_link', repostLink.value)
     saveLocal('comment_link', commentLink.value)
 
     const finalPayload = getPayload()
-    console.log('Enviando a Supabase:', finalPayload)
-
-    const { error } = await supabase
-      .from('team_selections') 
-      .insert([ finalPayload ])
-
+    const { error } = await supabase.from('team_selections').insert([ finalPayload ])
     if (error) throw error
 
     await router.push('/final-step')
 
   } catch (error: any) {
-    console.error('Error detallado de Supabase:', error)
-    alert(`Error saving: ${error.message || 'Unknown error'}`)
+    console.error('Error:', error)
+    alert(`Error saving: ${error.message}`)
   }
 }
 </script>
 
 <style scoped>
+/* ESTILOS BASE (PC) */
 .background-container {
   width: 100%;
   height: 100vh;
@@ -172,20 +160,18 @@ const verifyAndNext = async () => {
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .bg-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -2;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  z-index: -2;
 }
 
 .overlay {
@@ -202,6 +188,7 @@ const verifyAndNext = async () => {
   width: 580px;
   padding: 40px;
   z-index: 10;
+  max-height: 95vh; 
 }
 
 .task-title {
@@ -219,10 +206,21 @@ const verifyAndNext = async () => {
   gap: 20px;
 }
 
-.task-item, .task-row {
+/* CLAVE DEL ARREGLO 1: Ancho completo en items */
+.task-item {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  align-items: center;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* CLAVE DEL ARREGLO 2: La fila interna de los items complejos */
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* ESTO FORZARÁ LA ALINEACIÓN A LOS BORDES */
 }
 
 .task-item p, .task-row p {
@@ -231,13 +229,16 @@ const verifyAndNext = async () => {
   font-size: 15px;
   margin: 0;
   line-height: 1.2;
-  flex: 1;
+  flex: 1; /* Ocupa el espacio disponible y empuja el botón GO */
+  text-align: left; /* Asegura alineación a la izquierda */
 }
 
 .complex {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* CLAVE DEL ARREGLO 3: Sobreescribe el 'align-items: center' heredado */
+  align-items: stretch; 
 }
 
 .go-link {
@@ -271,14 +272,13 @@ const verifyAndNext = async () => {
   border-radius: 8px;
   padding: 10px 15px;
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   font-family: 'MontSerrat', sans-serif;
   outline: none;
-  border: 1px solid transparent; /* Para evitar saltos al poner borde rojo */
+  border: 1px solid transparent;
   transition: border-color 0.3s;
 }
 
-/* CLASE NUEVA: Input con error */
 .input-error {
   border: 1px solid #ff4444;
   background-color: rgba(50, 0, 0, 0.6);
@@ -299,22 +299,90 @@ const verifyAndNext = async () => {
   cursor: pointer;
   letter-spacing: 2px;
   color: #0A0101;
+  transition: all 0.3s ease;
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+}
+
+.nav-btn:hover {
+  background-color: #4E4E4E;
+  color: #FFFFFF;
 }
 
 .next {
   opacity: 0.3;
   transition: all 0.3s ease;
-  /* IMPORTANTE: Quitamos pointer-events: none para permitir el click y mostrar el error */
   cursor: pointer;
 }
 
 .next.active {
   opacity: 1;
-  /* Cuando está activo, sigue siendo clickeable */
 }
 
+/* MÓVIL */
 @media (max-width: 600px) {
-  .task-card { width: 95%; padding: 20px; }
-  .go-link { width: 80px; font-size: 14px; }
+  .background-container {
+    height: 100dvh; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .task-card {
+    width: 95%; 
+    padding: 20px 15px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 98dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .task-title {
+    font-size: 22px; 
+    margin-bottom: 15px; 
+  }
+
+  .tasks-list {
+    gap: 12px; 
+  }
+
+  /* Aseguramos que el gap horizontal se reduzca en móvil pero mantenga alineación */
+  .task-item, .task-row {
+    gap: 10px; 
+  }
+
+  .task-item p, .task-row p {
+    font-size: 12px; 
+  }
+
+  .go-link {
+    width: 70px; 
+    height: 30px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .complex {
+    gap: 5px; 
+  }
+
+  .link-input {
+    padding: 8px 10px; 
+    font-size: 11px;
+  }
+
+  .nav-footer {
+    margin-top: 20px; 
+  }
+  
+  .nav-btn {
+    font-size: 14px;
+  }
 }
 </style>

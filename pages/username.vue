@@ -156,6 +156,14 @@ const submitUsername = async () => {
 
 /* RESPONSIVE */
 @media only screen and (max-width: 600px) {
+    .background{
+    height: 100dvh; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
   .title {
     font-size: 28px;
     padding: 0 20px;

@@ -6,11 +6,11 @@
                 <div class="dropup" :class="{ 'menu-open': ocultar && !closing, 'menu-closing': closing }">
                         <div class="menu-container" v-if="ocultar || closing">
         <ul>
-          <li><a href="/connect">TALES</a></li>
-          <li><a href="/connect">WORLD</a></li>
-          <li><a href="/connect">BRAND</a></li>
-          <li><a href="/connect">ROADMAP</a></li>
-          <li><a href="/connect">GALLERY</a></li>
+          <li><a href="/history">TALES</a></li>
+          <li><a href="/world">WORLD</a></li>
+          <li><a href="/brandC3">BRAND</a></li>
+          <li><a href="/roadmap">ROADMAP</a></li>
+          <li><a href="/gallery">GALLERY</a></li>
           <li><a href="/connect">CONNECT</a></li>
 
           <p style="line-height: -202px; font-weight: lighter; font-family: IMBPlexMono;margin-top: 2%;">

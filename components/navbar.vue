@@ -6,35 +6,35 @@
           <!-- Nav items alineados a la izquierda -->
           <div class="left-items">
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/history" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>TALES</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/world" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>WORLD</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/brandC3" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>BRAND</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/roadmap" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>ROADMAP</div>
                 </div>
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/gallery" class="nav-link">
                 <div class="tab justify-content-center">
                   <div>GALLERY</div>
                 </div>
@@ -59,10 +59,10 @@
 
 <style scoped>
 .navbar {
-  position: absolute; /* fixed para que quede arriba y abarque toda la pantalla */
+  position: absolute; /* ✅ fixed para que quede arriba y abarque toda la pantalla */
   top: 0;
   left: 0;
-  width: 100vw; /* asegura ocupar todo el ancho visible */
+  width: 100vw; /* ✅ asegura ocupar todo el ancho visible */
   z-index: 1000;
   display: flex;
   align-items: center;
