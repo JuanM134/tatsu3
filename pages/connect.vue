@@ -112,7 +112,7 @@ function checkWhitelist(){
 
   if(wlList.includes(address)){
 
-    wlStatus.value = "WL GTD — 1 mint guaranteed"
+    wlStatus.value = "WL FCFS — 1 mint guaranteed"
 
   }else{
 
