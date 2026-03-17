@@ -38,6 +38,16 @@
                     </div>
                 </div>
 
+                <div class="whitepaper-wrapper">
+                    <button @click="showWhitepaper = true" class="whitepaper-btn">
+                        <span>READ THE WHITEPAPER</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+
                 <div class="description">
                     <ul class="features" ref="listRef">
                         <li v-for="(f, i) in features" :key="f.id" 
@@ -52,6 +62,33 @@
         </section>
 
         <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
+
+        <transition name="fade-modal">
+            <div v-if="showWhitepaper" class="whitepaper-modal-overlay" @click.self="showWhitepaper = false">
+                <div class="whitepaper-modal-content">
+                    <div class="modal-header">
+                        <h2>TATSU WHITEPAPER</h2>
+                        <button @click="showWhitepaper = false" class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <iframe 
+                            src="https://docs.google.com/document/d/14fslCYwT85a-8L-bAnCOt0KNb03hwNe0xDdF6YWku-k/edit?usp=preview" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0"
+                            allow="autoplay">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
     </div>
 </template>
 
@@ -59,6 +96,9 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useLoading } from '@/composables/useLoading'
 import { useAssetLoading } from '@/composables/useAssetLoading'
+
+// Variable reactiva para controlar el modal
+const showWhitepaper = ref(false)
 
 const quarters = [
     { 
@@ -128,8 +168,6 @@ onBeforeUnmount(() => {
 /* Estilo base para el contenedor del menú */
 .mobile-menu-container {
     z-index: 6;
-    /* Por defecto no forzamos posición en escritorio, 
-       dejamos que el componente actúe normal */
 }
 
 .background {
@@ -195,7 +233,7 @@ onBeforeUnmount(() => {
     row-gap: 30px;
     width: 100%;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px; 
 }
 
 .quarter-group {
@@ -251,6 +289,48 @@ onBeforeUnmount(() => {
 .q-item-pill:hover {
     background-color: #4E4E4E;
     color: #FFFFFF;
+    transform: translateX(5px);
+}
+
+/* --- ESTILOS DEL BOTON WHITEPAPER --- */
+.whitepaper-wrapper {
+    margin: 0 0 40px 0; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.whitepaper-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;
+    color: #111;
+    border: 2px solid #111;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 6px; 
+}
+
+.whitepaper-btn:hover {
+    background-color: #111;
+    color: #DDD9DA; 
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.whitepaper-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.whitepaper-btn:hover svg {
     transform: translateX(5px);
 }
 
@@ -324,10 +404,104 @@ onBeforeUnmount(() => {
     transform: translateX(-50%);
 }
 
+/* --- ESTILOS DEL MODAL DEL WHITEPAPER --- */
+.whitepaper-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(17, 17, 17, 0.8); 
+    backdrop-filter: blur(5px); 
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.whitepaper-modal-content {
+    background-color: #DDD9DA;
+    width: 100%;
+    max-width: 800px; 
+    max-height: 85vh; 
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 2px solid #111;
+    background-color: #DDD9DA;
+}
+
+.modal-header h2 {
+    font-family: 'Bernoru', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    color: #111;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #111;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 0; /* Sin padding para que el iframe ocupe todo */
+    height: 75vh; /* Altura generosa para leer cómodamente */
+    overflow: hidden;
+    background-color: #f1f3f4; /* Color de fondo por si el drive tarda en cargar */
+    display: flex; 
+}
+
+.modal-body iframe {
+    flex-grow: 1;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.fade-modal-enter-active,
+.fade-modal-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-modal-enter-from,
+.fade-modal-leave-to {
+    opacity: 0;
+}
+
+.fade-modal-enter-active .whitepaper-modal-content,
+.fade-modal-leave-active .whitepaper-modal-content {
+    transition: transform 0.3s ease;
+}
+
+.fade-modal-enter-from .whitepaper-modal-content,
+.fade-modal-leave-to .whitepaper-modal-content {
+    transform: translateY(20px);
+}
+
 @media only screen and (max-width: 600px)  {
     .navbar { display: none; }
     
-    /* CAMBIO CLAVE: Usamos el contenedor físico para forzar el estilo profundo */
     .mobile-menu-container :deep(.dropbtn) { 
         top: 1.5% !important; 
     }
@@ -353,21 +527,42 @@ onBeforeUnmount(() => {
 
     .title {
         font-size: 40px;
-        /* CAMBIO: Reducido de 100px a 85px para subirlo más */
         margin-top: 85px;
         margin-bottom: 25px; 
     }   
 
-    /* CAMBIO: Ocultamos el contenedor completo para eliminar los márgenes de 50px */
     .quarters-container {
         display: none;
     }
     
-    /* Esta regla ahora es redundante pero no hace daño */
     .quarter-group {
         display: none;
     }
-
-
+    
+    /* Ajustes específicos de móvil para el botón del whitepaper */
+    .whitepaper-wrapper {
+        margin: 10px 0 40px 0; 
+        justify-content: center; 
+    }
+    
+    .whitepaper-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 20px;
+    }
+    
+    /* Ajustes del modal en móvil */
+    .whitepaper-modal-content {
+        max-height: 90vh; 
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    .modal-body {
+        padding: 0;
+        height: 80vh; /* Un poco más alto en móvil para maximizar el espacio del PDF */
+    }
 }
 </style>
