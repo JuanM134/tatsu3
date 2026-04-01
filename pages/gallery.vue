@@ -16,7 +16,7 @@
         
         <aside class="filters-sidebar">
           <div class="filter-header-main">
-            <h3>Attributtes</h3>
+            <h3>Attributes</h3>
             <button class="clear-btn" @click="clearAllFilters">Clear All</button>
           </div>
           
