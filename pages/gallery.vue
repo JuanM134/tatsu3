@@ -16,11 +16,11 @@
         
         <aside class="filters-sidebar">
           <div class="filter-header-main">
-            <h3>Atributos</h3>
+            <h3>Atributtes</h3>
             <button class="clear-btn" @click="clearAllFilters">Clear All</button>
           </div>
           
-          <div v-if="isLoading" class="loading-text">Cargando filtros...</div>
+          <div v-if="isLoading" class="loading-text">Loading filters...</div>
           
           <div v-else class="filter-accordion">
             <div 
@@ -83,8 +83,8 @@
 
           <div class="results-bar">
             <div class="results-count">
-              <span v-if="isLoading">Cargando la colección...</span>
-              <span v-else>{{ filteredNFTs.length }} RESULTADOS</span>
+              <span v-if="isLoading">Loading collection...</span>
+              <span v-else>{{ filteredNFTs.length }} RESULTS</span>
             </div>
             
             <div class="results-actions" v-if="!isLoading">
