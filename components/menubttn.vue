@@ -106,7 +106,7 @@ z-index: -1;
     height: 3rem;
     width: 3rem;
     left: 84%;
-    top: 3%;
+    top: 3dvh;
     border-radius: 10%;;
     z-index: 11;
     background-repeat: no-repeat;
