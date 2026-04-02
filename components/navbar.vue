@@ -40,13 +40,6 @@
                 </div>
               </NuxtLink>
             </li>
-            <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
-                <div class="tab justify-content-center">
-                  <div>CONNECT</div>
-                </div>
-              </NuxtLink>
-            </li>
           </div>
 
         </ul>
