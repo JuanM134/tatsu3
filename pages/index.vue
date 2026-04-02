@@ -47,11 +47,8 @@ import { useLoading } from '@/composables/useLoading'
 import { useAssetLoading } from '@/composables/useAssetLoading'
 
 
-import kenta from '@/assets/videos/kenta.mp4'
-import roy from '@/assets/videos/roy.mp4'
-import agatha from '@/assets/videos/agatha.mp4'
-import mesmer from '@/assets/videos/mesmer_1.mp4'
-import sora from '@/assets/videos/sora.mp4'
+import characters from '@/assets/videos/charactersweb.mp4'
+
 
 interface VideoItem {
   src: string;
@@ -66,11 +63,8 @@ interface VideoItem {
 }
 
 const myVideo = ref<VideoItem[]>([
-  { src: kenta, number: 20 , offsetY: '110%', speed: 0.8 },
-  { src: roy, number: 20 , offsetY: '105%', speed: 0.8 },
-  { src: agatha, number: 20 , offsetY: '110%', speed: 0.8,},
-  { src: mesmer, number: 20 , offsetY: '118%', speed: 0.8 },
-  { src: sora, number: 20 , offsetY: '100%', speed: 0.8, height: '95%'},
+  { src: characters, number: 20 , offsetY: '80%', speed: 0.7 },
+
 ]);
 
 const isActive = ref(false)
@@ -184,7 +178,7 @@ async function home() {
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
-    height: 185%;
+    height: 125%;
     object-fit: cover; /* cover the title box and crop as needed */
     pointer-events: none;
     mix-blend-mode: darken;
