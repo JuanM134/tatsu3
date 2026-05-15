@@ -41,9 +41,9 @@
               </NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/connect" class="nav-link">
+              <NuxtLink to="/hall-of-fame" class="nav-link">
                 <div class="tab justify-content-center">
-                  <div>CONNECT</div>
+                  <div>HOF</div>
                 </div>
               </NuxtLink>
             </li>

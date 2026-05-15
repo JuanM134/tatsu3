@@ -1,5 +1,4 @@
 <template>
-
   <div class="background">
     <navbar class="navbar" style="z-index: 4;" />  
     <Dropupbttn class="dropupbttn" style="z-index: 5; top: 88.5%; position: fixed;"/> 
@@ -7,11 +6,7 @@
     <navbar2 style="z-index: 6;" />
     <home class="dropupbttn" style="z-index: 5; position: fixed;"/> 
 
-    
-
-    <!--  GRID PRINCIPAL -->
     <div class="main-grid">
-      <!-- Columna Izquierda -->
       <div class="content">
         <h1 class="brand-title">ODD STUDIOS</h1>
 
@@ -33,25 +28,21 @@
           </p>
 
           <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
-
         </div>
         
         <img class="imageSitting" src="@/assets/images/sitting.png" alt="">
-        
-
       </div>
 
-      <!-- Columna Derecha -->
       <section id="team-section" class="team-section">
         <div class="team-title">
           <h2>MEET THE PARTY</h2>
         </div>
 
         <div class="team-grid">
-          <!-- MARKETING -->
-          <div class="member marketing" @mouseenter="show.founder = true" @mouseleave="show.founder = false">
+          
+          <div class="member founder" @mouseenter="show.founder = true" @mouseleave="show.founder = false">
             <div class="image-wrapper">
-              <img :src="show.founder ? founderColor : founderGray" alt="Marketing Member" class="member-img" />
+              <img :src="show.founder ? founderColor : founderGray" alt="Founder Member" class="member-img" />
               <div class="member-info" :class="{ hidden: show.founder}">
                 <div class="text-container">
                   <div class="member-name">GABODDS</div>
@@ -59,10 +50,31 @@
                 </div>
               </div>
             </div>
+            <div class="social-icons" :class="{ visible: show.founder }">
+              <a href="https://x.com/gabodds_" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+            </div>
           </div>
 
-          <!-- ARTIST -->
-          <div class="member artist" @mouseenter="show.programmer = true" @mouseleave="show.programmer = false">
+          <div class="member marketing" @mouseenter="show.marketing = true" @mouseleave="show.marketing = false">
+            <div class="image-wrapper">
+              <img :src="show.marketing ? marketingColor : marketingGray" alt="Marketing Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.marketing }">
+                <div class="text-container">
+                  <div class="member-name">SMART</div>
+                  <div class="member-role">MARKETING</div>
+                </div>
+              </div>
+            </div>
+            <div class="social-icons" :class="{ visible: show.marketing }">
+              <a href="https://x.com/xmartsol" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="member programmer" @mouseenter="show.programmer = true" @mouseleave="show.programmer = false">
             <div class="image-wrapper">
               <img :src="show.programmer ? programmerColor : programmerGray" alt="Programmer Member" class="member-img" />
               <div class="member-info" :class="{ hidden: show.programmer }">
@@ -72,10 +84,31 @@
                 </div>
               </div>
             </div>
+            <div class="social-icons" :class="{ visible: show.programmer }">
+              <a href="https://x.com/tu_enlace_aqui" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+            </div>
           </div>
 
-          <!-- PROGRAMMER -->
-          <div class="member programmer" @mouseenter="show.finance = true" @mouseleave="show.finance = false">
+          <div class="member artist" @mouseenter="show.artist = true" @mouseleave="show.artist = false">
+            <div class="image-wrapper">
+              <img :src="show.artist ? artistColor : artistGray" alt="Artist Member" class="member-img" />
+              <div class="member-info" :class="{ hidden: show.artist }">
+                <div class="text-container">
+                  <div class="member-name">KIBBEN</div>
+                  <div class="member-role">ARTIST</div>
+                </div>
+              </div>
+            </div>
+            <div class="social-icons" :class="{ visible: show.artist }">
+              <a href="https://x.com/druweng" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="member finance" @mouseenter="show.finance = true" @mouseleave="show.finance = false">
             <div class="image-wrapper">
               <img :src="show.finance ? financeColor : financeGray" alt="Finance Member" class="member-img" />
               <div class="member-info" :class="{ hidden: show.finance }">
@@ -85,35 +118,13 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- FINANCE -->
-          <div class="member finance" @mouseenter="show.marketing = true" @mouseleave="show.marketing = false"">
-            <div class="image-wrapper">
-              <img :src="show.marketing ? marketingColor : marketingGray" alt="Artist Member" class="member-img" />
-              <div class="member-info" :class="{ hidden: show.marketing }">
-                <div class="text-container">
-                  <div class="member-name">SMART</div>
-                  <div class="member-role">MARKETING</div>
-                </div>
-              </div>
+            <div class="social-icons" :class="{ visible: show.finance }">
+              <a href="https://x.com/tu_enlace_aqui" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
             </div>
           </div>
 
-          <!-- FOUNDER -->
-          <div class="member founder" @mouseenter="show.artist = true" @mouseleave="show.artist = false">
-            <div class="image-wrapper">
-              <img :src="show.artist ? artistColor : artistGray" alt="Founder Member" class="member-img" />
-              <div class="member-info" :class="{ hidden: show.artist }">
-                <div class="text-container">
-                  <div class="member-name">KIBBEN</div>
-                  <div class="member-role">ARTIST</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FOUNDER2 / DESIGNER -->
           <div class="member founder2" @mouseenter="show.founder2 = true" @mouseleave="show.founder2 = false">
             <div class="image-wrapper">
               <img :src="show.founder2 ? founder2Color : founder2Gray" alt="Designer Member" class="member-img" />
@@ -124,7 +135,13 @@
                 </div>
               </div>
             </div>
+            <div class="social-icons" :class="{ visible: show.founder2 }">
+              <a href="https://x.com/tu_enlace_aqui" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+            </div>
           </div>
+
         </div>
       </section>
     </div>
@@ -135,7 +152,6 @@
 import { reactive, onMounted } from 'vue'
 import { useLoading } from '@/composables/useLoading'
 import { useAssetLoading } from '@/composables/useAssetLoading'
-
 
 // imágenes color / gris
 import marketingColor from '@/assets/images/team/marketing.png'
@@ -213,7 +229,7 @@ onMounted(async () => {
 /* --- GRID PRINCIPAL --- */
 .main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* dos columnas */
+  grid-template-columns: 1fr 1fr; 
   align-items: stretch;
   gap: 2rem;
   width: 100%;
@@ -254,9 +270,8 @@ onMounted(async () => {
   letter-spacing: 8%;
 }
 
-.odd{
+.odd {
     display: none;
-
 }
 
 .arrow-row {
@@ -277,7 +292,6 @@ onMounted(async () => {
 .team-section {
   display: flex;
   flex-direction: column;
-  
 }
 
 .team-title h2 {
@@ -299,10 +313,11 @@ onMounted(async () => {
   column-gap: 90px;
   row-gap: 20px;
   justify-items: center;
+  /* MAPA DEL GRID CORREGIDO AL ORDEN ORIGINAL */
   grid-template-areas: 
-  "marketing finance" 
-  "artist founder" 
-  "programmer founder2";
+  "founder marketing" 
+  "programmer artist" 
+  "finance founder2";
 }
 
 .founder { grid-area: founder; } 
@@ -310,10 +325,13 @@ onMounted(async () => {
 .marketing { grid-area: marketing; } 
 .artist { grid-area: artist; } 
 .programmer { grid-area: programmer; }
- .finance { grid-area: finance; }
+.finance { grid-area: finance; }
 
 .member {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .image-wrapper {
@@ -362,34 +380,62 @@ onMounted(async () => {
   color: rgba(255,255,255,0.95);
 }
 
+/* --- ESTILOS DE LOS ICONOS SOCIALES --- */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none; 
+}
+
+.social-icons.visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto; 
+}
+
+.social-icons a {
+  color: #111;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: #F47A7A; 
+  transform: scale(1.1);
+}
 
 /* Responsive */
 @media (max-width: 600px) and (max-height: 933px){
 
   .background {
     width: 100%;
-    height: 100dvh; /* Usa d = dynamic para móviles */
-    overflow: hidden; /* evita scroll */
+    height: 100dvh; 
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* separa texto y copyright */
+    justify-content: space-between; 
     position: relative;
   }
-
 
   .main-grid {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     height: 100vh;
   }
-      .content{
-        width: 100%;
-        height: 100vh;
-        padding-top: 5%;
-        overflow: hidden;
-    }
+  
+  .content{
+    width: 100%;
+    height: 100vh;
+    padding-top: 5%;
+    overflow: hidden;
+  }
 
   .team-section {
     display: none;
@@ -407,60 +453,49 @@ onMounted(async () => {
     z-index: 0;
   }
 
-        .brand-title {
-
-        width: 100%;
-        height: 80px;
-        text-align: center;
-        font-size: 32px;
-        font-weight: 900;
-        padding-top: 12vh;
-
-    }
-
-    .brand-txt {
-        font-family: 'Kokoro', sans-serif;
-        font-weight: 400;
-        color: #000;
-        line-height: 1.6;
-        font-size: 15px;
-        padding-left: 3%;
-        z-index: 2;
-        text-align: justify;
-        padding-top: .5vh;
-    }
-
-    .odd{
-
-        display: block;
-        color: rgb(0, 0, 0);
-        font-family: IMBPlexMono;
-        font-size: 0.6rem;
-        bottom: 1.5dvh;
-        text-align: center;
-        position: absolute;
-        object-fit: contain;
-
-        left: 50%;
-        transform: translateX(-50%);
-
-    }
-
-  .navbar{
-
-    display: none;
-
+  .brand-title {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    padding-top: 12vh;
   }
 
+  .brand-txt {
+    font-family: 'Kokoro', sans-serif;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.6;
+    font-size: 15px;
+    padding-left: 3%;
+    z-index: 2;
+    text-align: justify;
+    padding-top: .5vh;
+  }
+
+  .odd{
+    display: block;
+    color: rgb(0, 0, 0);
+    font-family: IMBPlexMono;
+    font-size: 0.6rem;
+    bottom: 1.5dvh;
+    text-align: center;
+    position: absolute;
+    object-fit: contain;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar{
+    display: none;
+  }
 
   .dropupbttn{
-
     display: none;
-
   }
 
   .navbar2{
-
     display: block;
   }
 }

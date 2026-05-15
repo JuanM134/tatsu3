@@ -11,7 +11,7 @@
           <li><a href="/brandC3">BRAND</a></li>
           <li><a href="/roadmap">ROADMAP</a></li>
           <li><a href="/gallery">GALLERY</a></li>
-          <li><a href="/connect">CONNECT</a></li>
+          <li><a href="/hall-of-fame">HOF</a></li>
 
           <p style="line-height: -202px; font-weight: lighter; font-family: IMBPlexMono;margin-top: 2%;">
             ODD STUDIOS 2024 <br> MADE IN NEW YORK, NY
@@ -106,7 +106,7 @@ z-index: -1;
     height: 3rem;
     width: 3rem;
     left: 84%;
-    top: 3%;
+    top: 3dvh;
     border-radius: 10%;;
     z-index: 11;
     background-repeat: no-repeat;
