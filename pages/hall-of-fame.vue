@@ -36,8 +36,8 @@
       </div>
 
       <div v-else-if="hasError" class="empty-wrap">
-        <p>Hubo un problema conectando con la red de OpenSea. Intenta de nuevo más tarde.</p>
-        <button class="limit-btn active" style="margin-top: 15px; border: 1px solid #111;" @click="fetchSales">REINTENTAR</button>
+        <p>There was a problem connecting to the OpenSea network. Please try again later.</p>
+        <button class="limit-btn active" style="margin-top: 15px; border: 1px solid #111;" @click="fetchSales">TRY AGAIN</button>
       </div>
 
       <div v-else-if="topSales.length === 0 && !hasError" class="empty-wrap">
