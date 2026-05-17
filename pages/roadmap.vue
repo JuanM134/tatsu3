@@ -1,6 +1,6 @@
 <template>
     <div class="background">
-        <navbar style="z-index: 4;" />
+        <navbar style="z-index: 4; position: fixed;" />
 
         <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;"/>  
         <home class="dropupbttn" style="z-index: 5;  position: fixed; "/> 
@@ -12,7 +12,7 @@
         <navbar2 style="z-index: 11; " />
 
         <div class="video-wrapper">
-            <video autoplay loop muted class="video-container" >
+            <video ref="videoRef" autoplay loop muted playsinline class="video-container" >
                     <source src="@/assets/videos/brandNew.mp4"  type="video/mp4" > 
                     Your browser does not support the video tag.
             </video>
@@ -63,31 +63,33 @@
 
         <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
 
-        <transition name="fade-modal">
-            <div v-if="showWhitepaper" class="whitepaper-modal-overlay" @click.self="showWhitepaper = false">
-                <div class="whitepaper-modal-content">
-                    <div class="modal-header">
-                        <h2>TATSU WHITEPAPER</h2>
-                        <button @click="showWhitepaper = false" class="close-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <div class="modal-body">
-                        <iframe 
-                            src="https://docs.google.com/document/d/14fslCYwT85a-8L-bAnCOt0KNb03hwNe0xDdF6YWku-k/edit?usp=preview" 
-                            width="100%" 
-                            height="100%" 
-                            frameborder="0"
-                            allow="autoplay">
-                        </iframe>
+        <Teleport to="body">
+            <transition name="fade-modal">
+                <div v-if="showWhitepaper" class="whitepaper-modal-overlay" @click.self="showWhitepaper = false">
+                    <div class="whitepaper-modal-content">
+                        <div class="modal-header">
+                            <h2>TATSU WHITEPAPER</h2>
+                            <button @click="showWhitepaper = false" class="close-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <iframe 
+                                src="https://docs.google.com/document/d/14fslCYwT85a-8L-bAnCOt0KNb03hwNe0xDdF6YWku-k/edit?usp=preview" 
+                                width="100%" 
+                                height="100%" 
+                                frameborder="0"
+                                allow="autoplay">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </transition>
+            </transition>
+        </Teleport>
 
     </div>
 </template>
@@ -97,8 +99,10 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useLoading } from '@/composables/useLoading'
 import { useAssetLoading } from '@/composables/useAssetLoading'
 
-// Variable reactiva para controlar el modal
+// Refs de Vue
 const showWhitepaper = ref(false)
+const videoRef = ref<HTMLVideoElement | null>(null)
+const listRef = ref<HTMLElement | null>(null)
 
 const quarters = [
     { 
@@ -131,7 +135,6 @@ const features = [
     { id: 9, text: "Everything from the first collection to future drops is 100% focused on brand growth, storytelling, and rewarding those who believed first.", isHighlight: false }
 ]
 
-const listRef = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
 const { startLoading, stopLoading } = useLoading()
@@ -139,9 +142,9 @@ const { waitForVideo, waitForFonts } = useAssetLoading()
 
 onMounted(async () => {
     startLoading()
-    const videoEl = document.querySelector('video')
+    // Usamos el ref nativo en lugar de querySelector
     await Promise.all([
-        waitForVideo(videoEl),
+        waitForVideo(videoRef.value),
         waitForFonts()
     ])
     stopLoading()
@@ -405,7 +408,9 @@ onBeforeUnmount(() => {
 }
 
 /* --- ESTILOS DEL MODAL DEL WHITEPAPER --- */
-.whitepaper-modal-overlay {
+/* Nota: Como usamos Teleport, este estilo podría necesitar ir de forma global 
+   si usas Vue antiguo, pero en Vue 3/Nuxt 3 el scoped funciona bien con Teleport */
+:global(.whitepaper-modal-overlay) {
     position: fixed;
     top: 0;
     left: 0;
@@ -421,7 +426,7 @@ onBeforeUnmount(() => {
     box-sizing: border-box;
 }
 
-.whitepaper-modal-content {
+:global(.whitepaper-modal-content) {
     background-color: #DDD9DA;
     width: 100%;
     max-width: 800px; 
@@ -433,7 +438,7 @@ onBeforeUnmount(() => {
     overflow: hidden;
 }
 
-.modal-header {
+:global(.modal-header) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -442,14 +447,14 @@ onBeforeUnmount(() => {
     background-color: #DDD9DA;
 }
 
-.modal-header h2 {
+:global(.modal-header h2) {
     font-family: 'Bernoru', sans-serif;
     font-size: 24px;
     margin: 0;
     color: #111;
 }
 
-.close-btn {
+:global(.close-btn) {
     background: transparent;
     border: none;
     color: #111;
@@ -460,42 +465,42 @@ onBeforeUnmount(() => {
     justify-content: center;
 }
 
-.close-btn:hover {
+:global(.close-btn:hover) {
     transform: scale(1.1);
 }
 
-.modal-body {
-    padding: 0; /* Sin padding para que el iframe ocupe todo */
-    height: 75vh; /* Altura generosa para leer cómodamente */
+:global(.modal-body) {
+    padding: 0; 
+    height: 75vh; 
     overflow: hidden;
-    background-color: #f1f3f4; /* Color de fondo por si el drive tarda en cargar */
+    background-color: #f1f3f4; 
     display: flex; 
 }
 
-.modal-body iframe {
+:global(.modal-body iframe) {
     flex-grow: 1;
     border: none;
     width: 100%;
     height: 100%;
 }
 
-.fade-modal-enter-active,
-.fade-modal-leave-active {
+:global(.fade-modal-enter-active),
+:global(.fade-modal-leave-active) {
     transition: opacity 0.3s ease;
 }
 
-.fade-modal-enter-from,
-.fade-modal-leave-to {
+:global(.fade-modal-enter-from),
+:global(.fade-modal-leave-to) {
     opacity: 0;
 }
 
-.fade-modal-enter-active .whitepaper-modal-content,
-.fade-modal-leave-active .whitepaper-modal-content {
+:global(.fade-modal-enter-active .whitepaper-modal-content),
+:global(.fade-modal-leave-active .whitepaper-modal-content) {
     transition: transform 0.3s ease;
 }
 
-.fade-modal-enter-from .whitepaper-modal-content,
-.fade-modal-leave-to .whitepaper-modal-content {
+:global(.fade-modal-enter-from .whitepaper-modal-content),
+:global(.fade-modal-leave-to .whitepaper-modal-content) {
     transform: translateY(20px);
 }
 
@@ -531,17 +536,24 @@ onBeforeUnmount(() => {
         margin-bottom: 25px; 
     }   
 
+    /* CORRECCIÓN DE UX PARA MÓVIL: En lugar de ocultarlo, lo apilamos verticalmente */
     .quarters-container {
         display: none;
     }
     
     .quarter-group {
-        display: none;
+        display: flex;
+        flex-direction: column; /* Apila el título (Q1) sobre los items */
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .q-items-list {
+        align-items: flex-start;
     }
     
-    /* Ajustes específicos de móvil para el botón del whitepaper */
     .whitepaper-wrapper {
-        margin: 10px 0 40px 0; 
+        margin: 30px 0 40px 0; 
         justify-content: center; 
     }
     
@@ -551,18 +563,16 @@ onBeforeUnmount(() => {
         padding: 16px 20px;
     }
     
-    /* Ajustes del modal en móvil */
-    .whitepaper-modal-content {
+    :global(.whitepaper-modal-content) {
         max-height: 90vh; 
     }
     
-    .modal-header {
+    :global(.modal-header) {
         padding: 15px 20px;
     }
     
-    .modal-body {
-        padding: 0;
-        height: 80vh; /* Un poco más alto en móvil para maximizar el espacio del PDF */
+    :global(.modal-body) {
+        height: 80vh; 
     }
 }
 </style>
