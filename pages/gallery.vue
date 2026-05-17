@@ -498,10 +498,6 @@ onMounted(async () => {
 }
 
 
-:deep(.dropup .menu-container) {
-  top: -13% !important; 
-}
-
 /* ------------------ Layout ------------------ */
 /* Se ajustó el padding superior porque ahora el navbar es sticky y ocupa espacio físico */
 .gallery-container { max-width: 1440px; margin: 0 auto; padding-top: 10px; min-height: 100vh; box-sizing: border-box; }
