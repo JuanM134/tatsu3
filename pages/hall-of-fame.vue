@@ -4,7 +4,7 @@
     <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;" />
     <home class="dropupbttn" style="z-index: 5; position: fixed;" />
     <menubttn style="z-index: 6; top: 0%;" /> 
-    <navbar2 class="navbar2" style="z-index: 6;" />
+    <navbar2 class="navbar2" style="z-index: 50;" />
 
     <div class="hof-container">
       
