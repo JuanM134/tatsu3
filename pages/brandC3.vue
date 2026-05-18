@@ -334,8 +334,14 @@ onMounted(async () => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* La transición asegura que el cambio de gris a color sea suave */
   transition: filter 0.35s ease, transform 0.35s ease;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: filter, transform;
+  image-rendering: -webkit-optimize-contrast; 
 }
 
 .member-info {
