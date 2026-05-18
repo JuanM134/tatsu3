@@ -21,7 +21,7 @@
                         :key="currentVideo.src"
                         :src="currentVideo.src" 
                         :style="{ top: currentVideo.offsetY }" 
-                        autoplay loop muted
+                        autoplay playtsinline loop muted
                     >
                         Your browser does not support the video tag.
                     </video>         
