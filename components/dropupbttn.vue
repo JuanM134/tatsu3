@@ -7,7 +7,7 @@
             <div class="dropup-content">
                 <a href="https://x.com/tatsu_nyc"><font-awesome-icon id="prueba" icon="fa-brands fa-x-twitter" size="lg" style="color: #F47A7A; " /></a> 
                 <a href="https://www.instagram.com/tatsu_nyc/"><font-awesome-icon id="prueba" icon="fa-brands fa-instagram" size="xl" style="color: #F47A7A; " /></a>
-                <a href="https://discord.gg/WUBNtNHB"><font-awesome-icon id="prueba" icon="fa-brands fa-discord" size="lg" style="color: #F47A7A; " /></a>
+                <a href="https://discord.gg/tatsuofficial"><font-awesome-icon id="prueba" icon="fa-brands fa-discord" size="lg" style="color: #F47A7A; " /></a>
                 <a href="https://opensea.io/es/collection/tatsuofficial/explore"><span id="prueba" class="opensea-icon"></span></a>
             </div>
         </div> 
