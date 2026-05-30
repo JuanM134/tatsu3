@@ -114,7 +114,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onUnmounted, nextTick } from 'vue';
+import { ref, computed, watch, onUnmounted, nextTick, onMounted } from 'vue';
+import { useLoading } from '@/composables/useLoading';
 import { createMangaViewer } from '@yui540/comimi';
 import type { MangaViewerInstance } from '@yui540/comimi';
 
@@ -264,6 +265,12 @@ onUnmounted(() => {
   }
   document.body.style.overflow = '';
 });
+
+const { stopLoading } = useLoading();
+
+onMounted(() => {
+  stopLoading();
+});
 </script>
 
 <style scoped>
@@ -293,7 +300,7 @@ onUnmounted(() => {
 
 /* Navbars posicionales */
 .navbar { position: sticky; top: 0; z-index: 50; width: 100%; }
-.navbar2 { display: none; position: sticky; top: 0; z-index: 50; }
+.navbar2 { display: none; position: sticky; top: 6dvh; z-index: 50; }
 
 /* ================================================================
    CONTENEDOR DE CONTENIDO
@@ -722,5 +729,9 @@ onUnmounted(() => {
   :global(.reader-chapter-counter) { display: none; }
   :global(.nav-btn-label) { display: none; }
   :global(.reader-nav-btn) { padding: 7px 10px; }
+
+  .home{
+    display: none;
+  }
 }
 </style>
