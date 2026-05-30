@@ -4,6 +4,7 @@
       <div class="btn-line"></div>
     </button>
     
+<<<<<<< HEAD
     <div class="dropup-content">
       <a href="https://x.com/tatsu_nyc" target="_blank" rel="noopener noreferrer">
         <font-awesome-icon class="social-icon" icon="fa-brands fa-x-twitter" size="lg" />
@@ -22,6 +23,21 @@
       </a>
     </div>
   </div> 
+=======
+    <div class="dropup">
+            <button class="dropbtn"> 
+            <div style="background-color: #F47A7A; height: 20%;width: 100%; border-radius: 1px;"></div>
+            </button>
+            <div class="dropup-content">
+                <a href="https://x.com/tatsu_nyc"><font-awesome-icon id="prueba" icon="fa-brands fa-x-twitter" size="lg" style="color: #F47A7A; " /></a> 
+                <a href="https://www.instagram.com/tatsu_nyc/"><font-awesome-icon id="prueba" icon="fa-brands fa-instagram" size="xl" style="color: #F47A7A; " /></a>
+                <a href="https://discord.gg/tatsuofficial"><font-awesome-icon id="prueba" icon="fa-brands fa-discord" size="lg" style="color: #F47A7A; " /></a>
+                <a href="https://opensea.io/es/collection/tatsuofficial/explore"><span id="prueba" class="opensea-icon"></span></a>
+            </div>
+        </div> 
+        
+
+>>>>>>> 242058c7fe07b0aa379e517254155fa88827071d
 </template>
 
 <script setup lang="ts">
@@ -157,5 +173,33 @@
 .dropup-content a:hover .social-icon {
   color: #a04040;
   transform: scale(1.2);
+}
+
+/* Máscara CSS para que el logo de OpenSea herede los colores y comportamientos de texto */
+.opensea-icon {
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-image: url('/assets/images/icons/opensea.png');
+    mask-image: url('/assets/images/icons/opensea.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
+/* Tamaño específico del logo de OpenSea */
+#prueba.opensea-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Centrar el contenido del enlace que envuelve el logo de OpenSea */
+a:has(.opensea-icon) {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
 }
 </style>

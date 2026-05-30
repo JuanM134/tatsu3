@@ -232,4 +232,8 @@ const toggleMenu = () => {
     display: none;
   }
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> 242058c7fe07b0aa379e517254155fa88827071d
