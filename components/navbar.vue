@@ -5,45 +5,10 @@
         <ul class="navbar-nav full-width">
           <!-- Nav items alineados a la izquierda -->
           <div class="left-items">
-            <li class="nav-item">
-              <NuxtLink to="/history" class="nav-link">
+            <li v-for="link in navLinks" :key="link.to" class="nav-item">
+              <NuxtLink :to="link.to" class="nav-link">
                 <div class="tab justify-content-center">
-                  <div>TALES</div>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/world" class="nav-link">
-                <div class="tab justify-content-center">
-                  <div>WORLD</div>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/brandC3" class="nav-link">
-                <div class="tab justify-content-center">
-                  <div>BRAND</div>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/roadmap" class="nav-link">
-                <div class="tab justify-content-center">
-                  <div>ROADMAP</div>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/gallery" class="nav-link">
-                <div class="tab justify-content-center">
-                  <div>GALLERY</div>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/hall-of-fame" class="nav-link">
-                <div class="tab justify-content-center">
-                  <div>HOF</div>
+                  <div>{{ link.label }}</div>
                 </div>
               </NuxtLink>
             </li>
@@ -54,8 +19,17 @@
     </div>
   </nav>
 </template>
-
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const navLinks = [
+  { to: '/history', label: 'TALES' },
+  { to: '/world', label: 'WORLD' },
+  { to: '/brandC3', label: 'BRAND' },
+  { to: '/roadmap', label: 'ROADMAP' },
+  { to: '/gallery', label: 'GALLERY' },
+  { to: '/hall-of-fame', label: 'HOF' },
+  { to: '/manga', label: 'MANGA' }
+];
+</script>
 
 <style scoped>
 .navbar {

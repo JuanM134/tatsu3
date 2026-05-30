@@ -3,7 +3,7 @@
     <navbar class="navbar" style="z-index: 4;" />  
     <Dropupbttn class="dropupbttn" style="z-index: 5; top: 88.5%; position: fixed;"/> 
     <menubttn style="z-index: 6;"/> 
-    <navbar2 style="z-index: 6;" />
+    <navbar2 style="z-index: 50;" />
     <home class="dropupbttn" style="z-index: 5; position: fixed;"/> 
 
     <div class="main-grid">
@@ -30,7 +30,7 @@
           <p class="odd">ODD STUDIOS, 2024<br/>MADE IN NEW YORK, NY</p>
         </div>
         
-        <img class="imageSitting" src="@/assets/images/sitting.png" alt="">
+        <img class="imageSitting" src="@/assets/images/sitting.png" alt="Odd Studios" loading="lazy">
       </div>
 
       <section id="team-section" class="team-section">
@@ -42,7 +42,7 @@
           
           <div class="member founder" @mouseenter="show.founder = true" @mouseleave="show.founder = false">
             <div class="image-wrapper">
-              <img :src="show.founder ? founderColor : founderGray" alt="Founder Member" class="member-img" />
+              <img :src="founderColor" alt="Founder Member" class="member-img" :class="{ 'is-gray': !show.founder }" />
               <div class="member-info" :class="{ hidden: show.founder}">
                 <div class="text-container">
                   <div class="member-name">GABODDS</div>
@@ -59,7 +59,7 @@
 
           <div class="member marketing" @mouseenter="show.marketing = true" @mouseleave="show.marketing = false">
             <div class="image-wrapper">
-              <img :src="show.marketing ? marketingColor : marketingGray" alt="Marketing Member" class="member-img" />
+              <img :src="marketingColor" alt="Marketing Member" class="member-img" :class="{ 'is-gray': !show.marketing }" />
               <div class="member-info" :class="{ hidden: show.marketing }">
                 <div class="text-container">
                   <div class="member-name">SMART</div>
@@ -76,7 +76,7 @@
 
           <div class="member programmer" @mouseenter="show.programmer = true" @mouseleave="show.programmer = false">
             <div class="image-wrapper">
-              <img :src="show.programmer ? programmerColor : programmerGray" alt="Programmer Member" class="member-img" />
+              <img :src="programmerColor" alt="Programmer Member" class="member-img" :class="{ 'is-gray': !show.programmer }" />
               <div class="member-info" :class="{ hidden: show.programmer }">
                 <div class="text-container">
                   <div class="member-name">JM134</div>
@@ -93,7 +93,7 @@
 
           <div class="member artist" @mouseenter="show.artist = true" @mouseleave="show.artist = false">
             <div class="image-wrapper">
-              <img :src="show.artist ? artistColor : artistGray" alt="Artist Member" class="member-img" />
+              <img :src="artistColor" alt="Artist Member" class="member-img" :class="{ 'is-gray': !show.artist }" />
               <div class="member-info" :class="{ hidden: show.artist }">
                 <div class="text-container">
                   <div class="member-name">KIBBEN</div>
@@ -110,7 +110,7 @@
 
           <div class="member finance" @mouseenter="show.finance = true" @mouseleave="show.finance = false">
             <div class="image-wrapper">
-              <img :src="show.finance ? financeColor : financeGray" alt="Finance Member" class="member-img" />
+              <img :src="financeColor" alt="Finance Member" class="member-img" :class="{ 'is-gray': !show.finance }" />
               <div class="member-info" :class="{ hidden: show.finance }">
                 <div class="text-container">
                   <div class="member-name">ALFON</div>
@@ -127,7 +127,7 @@
 
           <div class="member founder2" @mouseenter="show.founder2 = true" @mouseleave="show.founder2 = false">
             <div class="image-wrapper">
-              <img :src="show.founder2 ? founder2Color : founder2Gray" alt="Designer Member" class="member-img" />
+              <img :src="founder2Color" alt="Designer Member" class="member-img" :class="{ 'is-gray': !show.founder2 }" />
               <div class="member-info" :class="{ hidden: show.founder2 }">
                 <div class="text-container">
                   <div class="member-name">CRISTINA</div>
@@ -153,26 +153,14 @@ import { reactive, onMounted } from 'vue'
 import { useLoading } from '@/composables/useLoading'
 import { useAssetLoading } from '@/composables/useAssetLoading'
 
-// imágenes color / gris
+// Solo importamos las imágenes a color
 import marketingColor from '@/assets/images/team/marketing.png'
-import marketingGray from '@/assets/images/team/marketing_alt.png'
-
 import artistColor from '@/assets/images/team/artist.png'
-import artistGray from '@/assets/images/team/artist_alt.png'
-
 import programmerColor from '@/assets/images/team/programmer.png'
-import programmerGray from '@/assets/images/team/programmer_alt.png'
-
 import financeColor from '@/assets/images/team/finance.png'
-import financeGray from '@/assets/images/team/finance_alt.png'
-
 import founderColor from '@/assets/images/team/founder.png'
-import founderGray from '@/assets/images/team/founder_alt.png'
-
 import founder2Color from '@/assets/images/team/designer.png'
-import founder2Gray from '@/assets/images/team/designer_alt.png'
 
-// estado hover para cada tarjeta
 const show = reactive({
   marketing: false,
   artist: false,
@@ -182,25 +170,20 @@ const show = reactive({
   founder2: false
 })
 
-// scroll suave al team-section
-const scrollToSection = () => {
-  const section = document.querySelector('#team-section')
-  section?.scrollIntoView({ behavior: 'smooth' })
-}
-
 const { startLoading, stopLoading } = useLoading()
 const { waitForImages, waitForFonts } = useAssetLoading()
 
 onMounted(async () => {
   startLoading()
   
+  // Ahora el loader es rapidísimo porque solo procesa las 6 imágenes base
   const imagesToLoad = [
-    marketingColor, marketingGray,
-    artistColor, artistGray,
-    programmerColor, programmerGray,
-    financeColor, financeGray,
-    founderColor, founderGray,
-    founder2Color, founder2Gray
+    marketingColor,
+    artistColor,
+    programmerColor,
+    financeColor,
+    founderColor,
+    founder2Color
   ]
 
   await Promise.all([
@@ -213,6 +196,11 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+/* Filtro CSS Mágico: Pone la imagen en blanco y negro (y un poco más oscura) */
+.member-img.is-gray {
+  filter: grayscale(100%) brightness(0.8);
+}
+
 .background {
   background: #DDD9DA;
   width: 100%;
@@ -313,7 +301,6 @@ onMounted(async () => {
   column-gap: 90px;
   row-gap: 20px;
   justify-items: center;
-  /* MAPA DEL GRID CORREGIDO AL ORDEN ORIGINAL */
   grid-template-areas: 
   "founder marketing" 
   "programmer artist" 
@@ -348,6 +335,13 @@ onMounted(async () => {
   height: 100%;
   object-fit: cover;
   transition: filter 0.35s ease, transform 0.35s ease;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: filter, transform;
+  image-rendering: -webkit-optimize-contrast; 
 }
 
 .member-info {
@@ -412,7 +406,6 @@ onMounted(async () => {
 
 /* Responsive */
 @media (max-width: 600px) and (max-height: 933px){
-
   .background {
     width: 100%;
     height: 100dvh; 

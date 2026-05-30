@@ -4,7 +4,7 @@
     <Dropupbttn class="dropupbttn" style="z-index: 4; top: 88.5%; position: fixed;" />
     <home class="dropupbttn" style="z-index: 5; position: fixed;" />
     <menubttn style="z-index: 6; top: 0%;" /> 
-    <navbar2 class="navbar2" style="z-index: 6;" />
+    <navbar2 class="navbar2" style="z-index: 50;" />
 
     <div class="hof-container">
       
@@ -36,8 +36,8 @@
       </div>
 
       <div v-else-if="hasError" class="empty-wrap">
-        <p>Hubo un problema conectando con la red de OpenSea. Intenta de nuevo más tarde.</p>
-        <button class="limit-btn active" style="margin-top: 15px; border: 1px solid #111;" @click="fetchSales">REINTENTAR</button>
+        <p>There was a problem connecting to the OpenSea network. Please try again later.</p>
+        <button class="limit-btn active" style="margin-top: 15px; border: 1px solid #111;" @click="fetchSales">TRY AGAIN</button>
       </div>
 
       <div v-else-if="topSales.length === 0 && !hasError" class="empty-wrap">
@@ -310,7 +310,6 @@ onMounted(async () => {
 
 .navbar { position: absolute; top: 0; width: 100%; }
 .navbar2 { display: none; position: absolute; top: 0; }
-:deep(.dropup .menu-container) { top: -13% !important; }
 
 /* ---- HOF CONTAINER ---- */
 .hof-container { 
