@@ -4,7 +4,6 @@
       <div class="btn-line"></div>
     </button>
     
-<<<<<<< HEAD
     <div class="dropup-content">
       <a href="https://x.com/tatsu_nyc" target="_blank" rel="noopener noreferrer">
         <font-awesome-icon class="social-icon" icon="fa-brands fa-x-twitter" size="lg" />
@@ -23,7 +22,7 @@
       </a>
     </div>
   </div> 
-=======
+
     <div class="dropup">
             <button class="dropbtn"> 
             <div style="background-color: #F47A7A; height: 20%;width: 100%; border-radius: 1px;"></div>
@@ -36,8 +35,6 @@
             </div>
         </div> 
         
-
->>>>>>> 242058c7fe07b0aa379e517254155fa88827071d
 </template>
 
 <script setup lang="ts">
