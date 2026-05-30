@@ -224,7 +224,7 @@ watch(activeComic, async (comic) => {
       readingDirection: 'ltr',
       pageTurnMode: 'single',
       pageTurnAnimation: true,
-      layoutMode: 'browserFullscreen',
+      layoutMode: 'inline',
       backgroundColor: 'black',
       hasCover: false,
       zoom: { min: 1, max: 3, step: 0.25 },
@@ -481,7 +481,7 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   background-color: #0A0A0A;
   z-index: 99999;
   display: flex;
@@ -618,10 +618,8 @@ onUnmounted(() => {
   --comimi-border: rgba(255, 255, 255, 0.08);
   --comimi-text: #ffffff;
   --comimi-text-muted: rgba(255, 255, 255, 0.45);
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 }
 
 /* Toolbar / controles de comimi */
@@ -679,7 +677,7 @@ onUnmounted(() => {
     display: none;
   }
   
-  .dropupbttn {
+  dropupbttn {
     display: none;
   }
   
