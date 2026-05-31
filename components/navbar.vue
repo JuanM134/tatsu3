@@ -33,15 +33,15 @@ const navLinks = [
 
 <style scoped>
 .navbar {
-  position: absolute; /* ✅ fixed para que quede arriba y abarque toda la pantalla */
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; /* ✅ asegura ocupar todo el ancho visible */
+  width: 100vw;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: transparent; /* puedes cambiar a un color si quieres */
+  background: transparent;
   padding: 0;
   margin: 0;
 }
@@ -56,7 +56,7 @@ const navLinks = [
 /* Distribución principal */
 .full-width {
   display: flex;
-  justify-content: space-between; /* izquierda y derecha separadas */
+  justify-content: space-between;
   align-items: center;
   width: 96%;
   padding: 0;
@@ -68,32 +68,40 @@ const navLinks = [
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
+  /* gap se reduce progresivamente: de 0.5rem en 1200px a casi 0 en 600px */
+  gap: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 8), 8px);
 }
 
 .right-item {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
 }
 
 /* Tabs principales */
 .tab {
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   display: inline-flex;
-  width: 135px;
-  height: 30px;
-  padding: 0 20px;
-  border-radius: 15px;
+  /* Ancho: de 135px en ≥1200px hasta 0px en ≤600px */
+  width: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 135), 135px);
+  /* Alto: de 30px en ≥1200px a 0px en ≤600px */
+  height: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 30), 30px);
+  /* Padding lateral: de 20px a 0px */
+  padding: 0 clamp(0px, calc((100vw - 600px) / (1200 - 600) * 20), 20px);
+  border-radius: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 15), 15px);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   color: #000;
   font-family: MontSerrat;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 2.04px;
-  font-size: 11px;
+  /* letter-spacing: de 2.04px a 0px */
+  letter-spacing: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 2.04), 2.04px);
+  /* font-size: de 11px a 0px */
+  font-size: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 11), 11px);
+  /* Ocultar overflow para que no se desborde al encoger */
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .tab:hover {
@@ -106,16 +114,17 @@ const navLinks = [
   justify-content: space-between;
   align-items: flex-end;
   display: inline-flex;
-  width: 50px;
-  height: 50px;
-  padding: 0 20px;
-  border-radius: 25px;
+  width: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 50), 50px);
+  height: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 50), 50px);
+  padding: 0 clamp(0px, calc((100vw - 600px) / (1200 - 600) * 20), 20px);
+  border-radius: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 25), 25px);
   background-color: #4e4e4e;
   font-family: MontSerrat;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 2.04px;
-  font-size: 11px;
+  letter-spacing: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 2.04), 2.04px);
+  font-size: clamp(0px, calc((100vw - 600px) / (1200 - 600) * 11), 11px);
+  overflow: hidden;
 }
 
 /* Iconos animados */
@@ -163,18 +172,20 @@ const navLinks = [
   justify-content: center;
 }
 
-/* Responsive */
+/* En móvil el navbar ya se oculta desde cada página con display:none,
+   pero por si acaso forzamos que los tabs tengan tamaño 0 */
 @media (max-width: 600px) {
-  .tab {
-    width: 90px;
-    font-size: 10px;
-    padding: 0 10px;
-  }
-
+  .tab,
   .tab-1 {
-    width: 40px;
-    height: 40px;
-    padding: 0 10px;
+    width: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .left-items {
+    gap: 0 !important;
   }
 }
 </style>

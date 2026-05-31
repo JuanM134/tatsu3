@@ -1,5 +1,7 @@
 <template>
+
   <div class="background">
+    
     <navbar class="navbar" style="z-index: 4;" />  
     <Dropupbttn class="dropupbttn" style="z-index: 5; top: 88.5%; position: fixed;"/> 
     <menubttn style="z-index: 6;"/> 
@@ -484,7 +486,7 @@ onMounted(async () => {
     display: none;
   }
 
-  .dropupbttn{
+  dropupbttn{
     display: none;
   }
 

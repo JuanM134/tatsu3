@@ -16,7 +16,7 @@
           <li><a href="/gallery">GALLERY</a></li>
           <li><a href="/hall-of-fame">HOF</a></li>
           <li><a href="/manga">MANGA</a></li>
-          
+
 
           <li class="footer-li">
             <p class="footer-text">
@@ -232,8 +232,4 @@ const toggleMenu = () => {
     display: none;
   }
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> 242058c7fe07b0aa379e517254155fa88827071d
