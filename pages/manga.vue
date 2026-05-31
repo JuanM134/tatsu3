@@ -59,7 +59,7 @@
     <transition name="fade-reader">
       <div v-if="activeComic" class="reader-overlay">
 
-        <!-- Header TATSU con info del capítulo y botón cerrar -->
+        <!-- Header fijo -->
         <div class="reader-header">
           <div class="reader-header-info">
             <span class="reader-chapter">{{ activeComic.chapter }}</span>
@@ -105,8 +105,39 @@
           </div>
         </div>
 
-        <!-- Comimi se monta aquí -->
-        <div class="comimi-wrapper" ref="comimiContainerRef"></div>
+        <!-- Scroll de páginas -->
+        <div class="scroll-reader" ref="scrollReaderRef">
+          <div class="pages-container">
+            <img
+              v-for="(page, i) in activeComic.pages"
+              :key="i"
+              :src="page"
+              :alt="`Página ${i + 1}`"
+              class="manga-page"
+              loading="lazy"
+            />
+
+            <!-- Footer "To be continued" -->
+            <div class="end-card">
+              <p class="end-text">TO BE CONTINUED...</p>
+              <div class="end-actions">
+                <button class="end-btn end-btn--outline" @click="closeReader">
+                  LIBRARY
+                </button>
+                <button
+                  v-if="hasNext"
+                  class="end-btn end-btn--primary"
+                  @click="goToNext"
+                >
+                  {{ nextChapterLabel }}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </transition>
@@ -116,8 +147,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, onUnmounted, nextTick, onMounted } from 'vue';
 import { useLoading } from '@/composables/useLoading';
-import { createMangaViewer } from '@yui540/comimi';
-import type { MangaViewerInstance } from '@yui540/comimi';
 
 // --- IMPORTS DE PORTADAS ---
 import cover from '@/assets/images/manga/cover.png';
@@ -153,7 +182,7 @@ const comicsList = ref<Comic[]>([
     title: 'Winds of the Past',
     chapter: 'CHAPTER 01',
     author: 'ODD STUDIOS',
-    available: true, // Change it to true to read chapter 1
+    available: true,
     cover: cover1,
     pages: [page1, page2, page3, page4]
   },
@@ -170,8 +199,7 @@ const comicsList = ref<Comic[]>([
 
 // --- ESTADO DEL LECTOR ---
 const activeComic = ref<Comic | null>(null);
-const comimiContainerRef = ref<HTMLElement | null>(null);
-let viewerInstance: MangaViewerInstance | null = null;
+const scrollReaderRef = ref<HTMLElement | null>(null);
 
 const activeIndex = computed(() =>
   activeComic.value
@@ -189,51 +217,18 @@ const hasNext = computed(() =>
   comicsList.value[activeIndex.value + 1]?.available === true
 );
 
-// --- INICIALIZAR COMIMI cuando el comic activo cambia ---
-watch(activeComic, async (comic) => {
-  // Destruir instancia anterior si existe
-  if (viewerInstance) {
-    viewerInstance.destroy();
-    viewerInstance = null;
-  }
+const nextChapterLabel = computed(() => {
+  if (!hasNext.value) return '';
+  const next = comicsList.value[activeIndex.value + 1];
+  return next?.chapter ?? 'NEXT';
+});
 
-  if (!comic) return;
-
-  // Esperar a que el DOM esté listo con el contenedor de comimi
+// Scroll al inicio cuando cambia el capítulo
+watch(activeComic, async () => {
   await nextTick();
-
-  const container = comimiContainerRef.value;
-  if (!container) return;
-
-  // Construir el objeto manga para comimi
-  const mangaData = {
-    id: comic.id,
-    title: comic.title,
-    author: comic.author,
-    pages: comic.pages.map((src, i) => ({
-      id: `page-${i}`,
-      type: 'image' as const,
-      src,
-    })),
-  };
-
-  viewerInstance = createMangaViewer(container, {
-    manga: mangaData,
-    locale: 'en',
-    lockLayoutMode: true,
-    settings: {
-      readingDirection: 'ltr',
-      pageTurnMode: 'single',
-      pageTurnAnimation: true,
-      layoutMode: 'inline',
-      backgroundColor: 'black',
-      hasCover: false,
-      zoom: { min: 1, max: 3, step: 0.25 },
-      autoPageTurnIntervalMs: 0,
-    },
-    // Desactivar máscota por defecto
-    mascot: false,
-  });
+  if (scrollReaderRef.value) {
+    scrollReaderRef.value.scrollTop = 0;
+  }
 });
 
 // --- ABRIR / CERRAR ---
@@ -259,10 +254,6 @@ const goToNext = () => {
 };
 
 onUnmounted(() => {
-  if (viewerInstance) {
-    viewerInstance.destroy();
-    viewerInstance = null;
-  }
   document.body.style.overflow = '';
 });
 
@@ -482,7 +473,7 @@ onMounted(() => {
 .comic-author { font-family: 'Montserrat', sans-serif; font-size: 12px; color: #888; font-weight: 600; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
 
 /* ================================================================
-   MODAL LECTOR — COMIMI
+   MODAL LECTOR — SCROLL CUSTOM
 ================================================================ */
 :global(.reader-overlay) {
   position: fixed;
@@ -495,6 +486,7 @@ onMounted(() => {
   flex-direction: column;
 }
 
+/* --- Header --- */
 :global(.reader-header) {
   display: flex;
   justify-content: space-between;
@@ -505,7 +497,7 @@ onMounted(() => {
   flex-shrink: 0;
   z-index: 10;
   gap: 12px;
-  min-height: 44px;
+  min-height: 52px;
 }
 
 :global(.reader-header-info) {
@@ -540,7 +532,7 @@ onMounted(() => {
 :global(.reader-nav-controls) {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
@@ -603,70 +595,108 @@ onMounted(() => {
 }
 
 /* ================================================================
-   CONTENEDOR COMIMI — ocupa todo el espacio restante del modal
+   SCROLL READER — área de páginas
 ================================================================ */
-:global(.comimi-wrapper) {
+:global(.scroll-reader) {
   flex: 1;
-  min-height: 0;
-  overflow: hidden;
-  position: relative;
-}
-
-/* ================================================================
-   OVERRIDES CSS DE COMIMI — ajustar al branding TATSU
-================================================================ */
-
-/* Acento principal → rojo TATSU */
-:global(.comimi-wrapper .comimi) {
-  --comimi-accent: #F47A7A;
-  --comimi-accent-hover: #e86060;
-  --comimi-bg: #0A0A0A;
-  --comimi-surface: #111111;
-  --comimi-border: rgba(255, 255, 255, 0.08);
-  --comimi-text: #ffffff;
-  --comimi-text-muted: rgba(255, 255, 255, 0.45);
-  width: 100%;
-  height: 100%;
-}
-
-/* Toolbar / controles de comimi */
-:global(.comimi-wrapper .comimi-toolbar),
-:global(.comimi-wrapper .comimi-header),
-:global(.comimi-wrapper .comimi-footer) {
-  background-color: rgba(10, 10, 10, 0.92) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-/* Botones de navegación */
-:global(.comimi-wrapper button) {
-  font-family: 'Montserrat', sans-serif !important;
-  transition: background 0.25s ease, color 0.25s ease !important;
-}
-
-/* Botón activo/hover */
-:global(.comimi-wrapper button:hover:not(:disabled)),
-:global(.comimi-wrapper .comimi-btn:hover) {
-  background-color: rgba(244, 122, 122, 0.15) !important;
-  color: #F47A7A !important;
-  border-color: #F47A7A !important;
-}
-
-/* Página actual highlight */
-:global(.comimi-wrapper .comimi-page-thumb--active),
-:global(.comimi-wrapper [data-active="true"]) {
-  border-color: #F47A7A !important;
-}
-
-/* Scrollbar dentro del visor */
-:global(.comimi-wrapper *) {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #0A0A0A;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #2a2a2a #0A0A0A;
 }
-:global(.comimi-wrapper *::-webkit-scrollbar) { width: 5px; }
-:global(.comimi-wrapper *::-webkit-scrollbar-track) { background: #0A0A0A; }
-:global(.comimi-wrapper *::-webkit-scrollbar-thumb) { background: #2a2a2a; border-radius: 10px; }
-:global(.comimi-wrapper *::-webkit-scrollbar-thumb:hover) { background: #F47A7A; }
+
+:global(.scroll-reader::-webkit-scrollbar) { width: 5px; }
+:global(.scroll-reader::-webkit-scrollbar-track) { background: #0A0A0A; }
+:global(.scroll-reader::-webkit-scrollbar-thumb) { background: #2a2a2a; border-radius: 10px; }
+:global(.scroll-reader::-webkit-scrollbar-thumb:hover) { background: #F47A7A; }
+
+:global(.pages-container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 0 0;
+  gap: 0;
+}
+
+:global(.manga-page) {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* --- Tarjeta final de capítulo --- */
+:global(.end-card) {
+  width: 100%;
+  max-width: 800px;
+  padding: 60px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+:global(.end-text) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+:global(.end-actions) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+:global(.end-btn) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 24px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+:global(.end-btn--outline) {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+:global(.end-btn--outline:hover) {
+  border-color: #fff;
+  color: #fff;
+}
+
+:global(.end-btn--primary) {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+:global(.end-btn--primary:hover) {
+  background: rgba(244, 122, 122, 0.15);
+  border-color: #F47A7A;
+  color: #F47A7A;
+}
 
 /* ================================================================
    TRANSICIÓN DEL MODAL
@@ -677,7 +707,7 @@ onMounted(() => {
 :global(.fade-reader-leave-to) { opacity: 0; }
 
 /* ================================================================
-   MEDIA QUERY BASE RESPETADO Y ADAPTADO
+   MEDIA QUERY MÓVIL
 ================================================================ */
 @media only screen and (max-width: 600px) and (max-height: 933px) {
   .navbar {
@@ -724,13 +754,21 @@ onMounted(() => {
     font-size: 20px;
   }
 
-  :global(.reader-header) { padding: 10px 16px; gap: 8px; }
-  :global(.reader-title) { font-size: 16px; }
+  :global(.reader-header) { padding: 10px 16px; gap: 8px; min-height: 48px; }
+  :global(.reader-title) { font-size: 15px; }
   :global(.reader-chapter-counter) { display: none; }
   :global(.nav-btn-label) { display: none; }
   :global(.reader-nav-btn) { padding: 7px 10px; }
 
-  .home{
+  :global(.manga-page) {
+    max-width: 100%;
+  }
+
+  :global(.end-card) {
+    padding: 40px 20px 100px;
+  }
+
+  .home {
     display: none;
   }
 }
