@@ -251,4 +251,8 @@ async function home() {
         transform: rotate(0deg); /* Lo pone derecho en móvil */
     }
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> eeae3a625036676bdcb2015e1b194ee3140100ff

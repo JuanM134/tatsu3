@@ -831,7 +831,11 @@ onMounted(() => {
     padding: 40px 20px 100px;
   }
 
+<<<<<<< HEAD
   home {
+=======
+  .home {
+>>>>>>> eeae3a625036676bdcb2015e1b194ee3140100ff
     display: none;
   }
 }
